@@ -1,0 +1,80 @@
+<%- include("overall_header") %>
+
+<script type="text/javascript">
+
+var parentnav = '<%= mod.parent.path %>';
+var crnmod = '<%= mod.path %>';
+
+$(function() {
+	init();
+    doList();
+    $("#sdatefr").datepicker({
+        firstDay: 1,
+        dateFormat: 'dd/mm/yy',
+    });
+    $("#sdateto").datepicker({
+        firstDay: 1,
+        dateFormat: 'dd/mm/yy',
+    });
+	$("#semail").focus();
+});
+
+function init() {
+    $("#forms input[type=text]").keypress(function(event) {
+        if (event.keyCode == 13) {
+            doSearch();
+        }
+    });
+}
+
+function doList() {
+	setTB('list');
+	actList();
+	$("#ssbtndiv").css('display', 'block');  
+}
+
+function doSearch() {
+	actSearch();
+}
+
+function doRefresh() {
+	actList();
+}
+
+function doPage(p) {
+	actPage(p);
+}
+
+</script>
+
+<%- include("tags/modheader") %>
+<%- include("tags/remsg") %>
+
+<div id="panel_content">
+    <div class="toolbar">
+		<%- include("tags/tool_button", {tg: {name:"Back", image:"back_s.png", onclick:"doBack()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Search", image:"search_s.png", onclick:"openSearch()"} }) %>
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="panel_search" class="hidepan">
+        <div class="search_go">
+            <input type="button" onclick="doSearch()" value="  GO  "></div>
+        <div class="search_x">
+            <input type="button" onclick="closeSearch()" value=" X "></div>
+        <div id="search_form" class="search_form">
+            <form name="forms" id="forms" onsubmit="return false;">
+			<%- include("tags/search_text", {tg: {name:"Email", id:"semail", val:"", width:"150px"} }) %>
+			<%- include("tags/search_text", {tg: {name:"Date From", id:"sdatefr", val:"", width:"80px"} }) %>
+			<%- include("tags/search_text", {tg: {name:"Date To", id:"sdateto", val:"", width:"80px"} }) %>
+            </form>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+	<div id="f1content"></div>
+	
+</div>
+
+<%- include("overall_footer") %>

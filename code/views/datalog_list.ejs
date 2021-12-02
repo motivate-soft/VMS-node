@@ -1,0 +1,43 @@
+
+    <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <th class="tbltitle" align="left" width="9%">Email<br>Date/Time</th>
+        <th class="tbltitle" align="left" width="12%">Email</th>
+        <th class="tbltitle" align="center" width="5%">Email<br>UID</th>
+        <th class="tbltitle" align="left" width="30%">Email Data</th>
+        <th class="tbltitle" align="left" width="30%">GPS Data</th>
+        <th class="tbltitle" align="left" width="9%">Date of received</th>
+        <th class="tbltitle" align="center" width="3%">VMS_Sent</th>
+        <th class="tbltitle" align="center" width="3%">TRC_Sent</th>
+    </tr>
+
+<% if(msg) { %>
+    <tr id="tid<%= itemlist.idx %>" idx="<%= itemlist.idx %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+        <td colspan="100"><%- msg %></td>
+    </tr>
+
+<% } else{ %>
+
+    <% var tidcnt = 1; itemlist.forEach(function(itemlist){ %>
+    <tr id="tid<%= tidcnt %>" idx="<%= itemlist.idx %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+        <td class="tblitem pntr" style="text-align:left;" ><%- itemlist.emaildate %></td>
+        <td class="tblitem pntr" style="text-align:left;" ><%- itemlist.email %></td>
+        <td class="tblitem pntr" style="text-align:center;" ><%- itemlist.uid %></td>
+        <td class="tblitem pntr" style="text-align:left;" ><%- itemlist.emaildata %></td>
+        <td class="tblitem pntr" style="text-align:left;" ><%- itemlist.gpsdata %></td>
+        <td class="tblitem pntr" style="text-align:left;" ><%- itemlist.date %></td>
+        <td class="tblitem pntr" style="text-align:center;" ><%- itemlist.vmssent %></td>
+        <td class="tblitem pntr" style="text-align:center;" ><%- itemlist.gpssent %></td>
+    </tr>
+    <% tidcnt++; }) %>
+    </table>
+
+    <table width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <td class="text12" align="left">Total&nbsp;Record:&nbsp;<%= tolfound %></td>
+        <td class="text12" align="right">Page: <%- include("tags/pagenum") %></td>
+    </tr>
+    </table>
+    
+<% } %>
+&nbsp;<br>

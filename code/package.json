@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "vms",
+  "scripts": {
+    "start": "node ./app.js",
+    "start:dev": "nodemon ./app.js"
+  },
+  "dependencies": {
+    "crc": "^3.8.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "imap": "^0.8.19",
+    "log4j": "^1.0.0",
+    "log4js": "^6.3.0",
+    "md5": "^2.3.0",
+    "node-bitarray": "^0.1.0",
+    "sqlite3": "^5.0.2",
+    "xml-parser": "^1.2.1"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "nodemon": "^2.0.15"
+  }
+}

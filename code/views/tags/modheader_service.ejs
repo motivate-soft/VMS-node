@@ -1,0 +1,9 @@
+<div class="modheader">
+    <div style="float:left;"><img src="/images/mods/<%= mod.image %>" width="32" height="32"></div>
+    <div class="text20b" style="float:left; padding-top: 2px; padding-left: 2px;"><%= mod.name %></div>
+	<div id="e2gservice" style="float:right; margin-right:40px;">
+		<div><%= tg.name %>: <span id="<%= tg.id %>">-</span></div>
+		<div id="ssbtndiv"><input type="button" id="btnstarts" value="Start Service" onclick="startserv()">&nbsp;<input type="button" id="btnstops" value="Stop Service" onclick="stopserv()"></div>
+	</div>	
+    <div style="clear:both"></div>
+</div>

@@ -1,0 +1,215 @@
+
+module.exports = {
+	getMaxUID: getMaxUID,
+	searchLog: searchLog,
+	saveLog: saveLog,
+	getLog: getLog,
+	getLogCount: getLogCount,
+	getLogVMS: getLogVMS,
+	updateVMS: updateVMS,
+	getLog4TC: getLog4TC,
+	update4TC: update4TC,
+}
+
+function getMaxUID(email, callback) {
+
+    var sql = 'select max(elgUID) as muid from ' + dbu.qTbl('emaillog') + 
+            ' where elgEmail=' + dbu.qStr(email);
+			
+    dbo.query(sql, function(err, rows) {
+    
+        if (!err) {
+            callback(null, rows);
+        }
+        else callback(err, null);
+        
+    });
+
+}
+
+function searchLog(criteria, callback) {
+
+    var sql = 'select * from ' + dbu.qTbl('emaillog') + 
+            ' where ' + criteria;
+			
+    dbo.query(sql, function(err, rows) {
+    
+        if (!err) {
+            callback(null, rows);
+        }
+        else callback(err, null);
+        
+    });
+
+}
+
+function saveLog(data, callback) {
+
+	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailDate=' + dbu.qDate(data.emaildate), function(err, rows) {
+	
+        //console.log(rows);
+        //callback(err, 1);
+		if (cfn.length(rows) == 0) {
+
+			var sql = 'insert into ' + dbu.qTbl('emaillog') + 
+						' ( ' +
+						'elgEmail, ' +
+						'elgUID, ' +
+						'elgDate, ' +
+						'elgEmailDate, ' +
+						'elgEmailData, ' +
+						'elgGPSData, ' +
+						'elgVMS_sent, ' +
+						'elgRemark ' +
+						' ) values ( ' +
+						dbu.qStr(data.email) + ', ' +
+						dbu.qNum(data.uid) + ', ' +
+						dbu.qNum(cfn.dateNow()) + ', ' +
+						dbu.qDate(data.emaildate) + ', ' +
+						dbu.qJson(data.emaildata) + ', ' +
+						dbu.qJson(data.gpsdata) + ', ' +
+						dbu.qNum(0) + ', ' +
+						dbu.qStr(data.remark) + ' ' +
+						' ) ';
+
+			//allback(null, 1);
+					
+			dbo.exec(sql, function(err) {
+                //console.log('save data: '+data.email);
+				callback(err, 1);
+			});
+		} 
+        else {
+            //console.log('found');
+            callback(null, 0);
+        }
+	});
+
+}
+
+function getLogSearch(search) {
+
+	var ftr = '';
+
+	var joint = function(val) {
+		return (val) ? ' and ': ' where ';	
+	}
+	
+	if (search && typeof search == 'object') {
+
+		if (cfn.strVal(search.email)) {
+			ftr += joint(ftr) + ' elgEmail like ' + dbu.qLike(search.email);
+		}
+		if (cfn.strVal(search.datefr)) {
+			ftr += joint(ftr) + ' elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss');
+		}
+		if (cfn.strVal(search.dateto)) {
+			ftr += joint(ftr) + ' elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
+		}
+	}
+
+	return ftr;
+}
+
+function getLog(offset, length, search, callback) {
+
+    var sql = 'select * from ' + dbu.qTbl('emaillog');
+
+	sql += getLogSearch(search) + ' order by elgEmailDate ';
+			
+	if (offset > -1 && length > -1)
+		sql += ' limit ' + offset + ', ' + length;
+	
+    dbo.query(sql, function(err, rows) {
+    
+        if (!err && cfn.length(rows) > 0) {
+
+			callback(null, rows);
+		
+        }
+        else callback(err, null);
+        
+    });
+}
+
+function getLogCount(search, callback)	{
+
+	var sql = 'select count(elgIdx) as midx from ' + dbu.qTbl('emaillog');
+            
+	sql += getLogSearch(search);
+
+    dbo.query(sql, function(err, rows) {
+    
+        if (!err && cfn.length(rows) > 0) {
+		
+			callback(null, rows[0].midx);
+        }
+        else callback(err, 0);
+        
+    });
+		
+}
+
+function getLogVMS(limit, callback) {
+
+    var sql = 'select * from ' + dbu.qTbl('emaillog') + 
+			' left join ' +  dbu.qTbl('gpsacc') + 
+			' on elgEmail=gacEmail ' +
+            ' where elgVMS_sent=' + dbu.qNum(0) +
+            //' where elgEmail=' + dbu.qStr('dof_0055@orbcomm.my') +
+            ' order by elgIdx desc ' +
+            //' order by elgEmailDate desc ' +
+            ' limit 0, ' + limit;
+
+    dbo.query(sql, function(err, rows) {
+        callback(err, rows);
+    });
+
+}
+
+//function updateVMS(idxs, callback) {
+function updateVMS(fridx, toidx, callback) {
+
+    //for (i in idxs) {
+
+		var sql = 'update ' + dbu.qTbl('emaillog') +
+				' set elgVMS_sent=' + dbu.qNum(1) +
+				//' where elgIdx=' + dbu.qNum(idxs[i]);
+				' where elgIdx>=' + dbu.qNum(fridx) +
+				' and elgIdx<=' + dbu.qNum(toidx);
+				
+		dbo.exec(sql, function(err) {
+			if (callback) callback(err);
+		});
+
+    //}
+}
+
+function getLog4TC(callback) {
+
+    var sql = 'select * from ' + dbu.qTbl('emaillog') + 
+			' left join ' +  dbu.qTbl('gpsacc') + 
+			' on elgEmail=gacEmail ' +
+            ' where elgGPS_sent=' + dbu.qNum(0) +
+            //' order by elgIdx ' +
+            ' order by elgEmailDate desc ' +
+            ' limit 1 ';
+			
+    dbo.query(sql, function(err, rows) {
+        callback(err, rows);
+    });
+
+}
+
+function update4TC(idx, callback) {
+
+	var sql = 'update ' + dbu.qTbl('emaillog') +
+			' set elgGPS_sent=' + dbu.qNum(1) +
+			' where elgIdx=' + dbu.qNum(idx);
+			
+	dbo.exec(sql, function(err) {
+		if (callback) callback(err);
+	});
+
+}
+

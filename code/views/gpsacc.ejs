@@ -1,0 +1,54 @@
+<%- include("overall_header") %>
+
+<script src="/js/mods/gpsacc.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var parentnav = '<%= mod.parent.path %>';
+var crnmod = '<%= mod.path %>';
+
+$(function() {
+	init();
+    doList();
+	get_ServiceStatus()
+});
+
+</script>
+
+<%- include("tags/dialog_delete") %>
+
+<%- include("tags/modheader_gpsacc") %>
+<%- include("tags/remsg") %>
+
+<div id="panel_content">
+    <div class="toolbar">
+		<%- include("tags/tool_button", {tg: {name:"Back", image:"back_s.png", onclick:"doBack()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Add", image:"add_s.png", onclick:"doAdd()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Delete", image:"delete_s.png", onclick:"doMassDel()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Search", image:"search_s.png", onclick:"openSearch()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Save", image:"save_s.png", onclick:"doSave()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Cancel", image:"cancel_s.png", onclick:"doCancel()"} }) %>
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="panel_search" class="hidepan">
+        <div class="search_go">
+            <input type="button" onclick="doSearch()" value="  GO  "></div>
+        <div class="search_x">
+            <input type="button" onclick="closeSearch()" value=" X "></div>
+        <div id="search_form" class="search_form">
+            <form name="forms" id="forms" onsubmit="return false;">
+            <%- include("tags/search_text", {tg: {name:"Name", id:"sname", val:"", width:"150px"} }) %>
+            <%- include("tags/search_text", {tg: {name:"Email", id:"semail", val:"", width:"150px"} }) %>
+            <%- include("tags/search_text", {tg: {name:"PGID", id:"spgid", val:"", width:"150px"} }) %>
+            </form>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+	<div id="f1content"></div>
+	
+</div>
+
+<%- include("overall_footer") %>

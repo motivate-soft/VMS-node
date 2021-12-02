@@ -1,0 +1,43 @@
+
+    <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <th class="tbltitle" align="center" width="3%"><input type="checkbox" id="boxtop" onclick="toggleCheck()"></th>
+        <th class="tbltitle" align="left" width="18%">Name</th>
+        <th class="tbltitle" align="left" width="25%">Email</th>
+        <th class="tbltitle" align="left" width="18%">PGID</th>
+        <th class="tbltitle" align="left" width="20%">Description</th>
+        <th class="tbltitle" align="center" width="10%">Suspended</th>
+        <th class="tbltitle" align="center" width="3%">Edit</th>
+        <th class="tbltitle" align="center" width="3%">Del</th>
+    </tr>
+
+<% if(msg) { %>
+    <tr id="tid<%= itemlist.idx %>" idx="<%= itemlist.idx %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+        <td colspan="100"><%- msg %></td>
+    </tr>
+
+<% } else{ %>
+
+    <% var tidcnt = 1; itemlist.forEach(function(itemlist){ %>
+    <tr id="tid<%= tidcnt %>" idx="<%= itemlist.idx %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+        <td class="tblitem0 pntr" style="text-align:center;"><input type="checkbox" ischk="1" id="box<%= tidcnt %>" name="ccind<%= itemlist.idx %>"></td>
+        <td class="tblitem pntr" style="text-align:left;" onclick="doEdit(this)"><%- itemlist.name %></td>
+        <td class="tblitem pntr" style="text-align:left;" onclick="doEdit(this)"><%- itemlist.email %></td>
+        <td class="tblitem pntr" style="text-align:left;" onclick="doEdit(this)"><%- itemlist.pgid %></td>
+        <td class="tblitem pntr" style="text-align:left;" onclick="doEdit(this)"><%- itemlist.desc %></td>
+        <td class="tblitem pntr" style="text-align:center;" onclick="doEdit(this)"><%- itemlist.suspend %></td>
+        <td class="tblitem pntr" style="text-align:center;" onclick="doEdit(this)"><img src="images/b_edit.png" border="0" title="Edit"></a></td>
+        <td class="tblitem0 pntr" style="text-align:center;" onclick="doDelete(this)"><img src="images/b_delete.png" border="0" title="Delete"></a></td>
+    </tr>
+    <% tidcnt++; }) %>
+    </table>
+
+    <table width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <td class="text12" align="left">Total&nbsp;Record:&nbsp;<%= tolfound %></td>
+        <td class="text12" align="right">Page: <%- include("tags/pagenum") %></td>
+    </tr>
+    </table>
+    
+<% } %>
+&nbsp;<br>

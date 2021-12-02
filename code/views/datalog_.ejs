@@ -1,0 +1,134 @@
+<script language="JavaScript">
+<!--
+$(function() {
+    $( "#sdtfr" ).datepicker({
+        firstDay: 1,
+        dateFormat: 'dd/mm/yy',
+        defaultDate: '{-sdtfr-}',
+    });
+    $( "#sdtto" ).datepicker({
+        firstDay: 1,
+        dateFormat: 'dd/mm/yy',
+        defaultDate: '{-sdtto-}',
+    });
+});
+
+var parentnav = "{-navfile-}";
+
+function validateok() {
+
+    return true;
+
+}
+
+function dogen() {
+
+    if (!$("#ssite").val()) {
+        alert('Invalid Site!');
+        return false;
+    }
+
+    $("#a").val("gen");
+    $("#i").val("");
+    $("#pg").val("");
+    $("#form1").submit();
+}
+
+
+//-->
+</script>
+
+<form name="form1" id="form1" method="post" action="{-modfile-}">
+<input type="hidden" name="a" id="a" value="">
+<input type="hidden" name="i" id="i" value="">
+<input type="hidden" name="step" id="step" value="1">
+{-hid-}
+
+<!--TAG modheader_prn_lang-->
+<!--TAG remsg_blank-->
+
+<!--TAG dialog_delete-->
+
+<div id="panel_content">
+
+    <div class="toolbar">
+        <!--TAG tool_button SET{"name":"Delete", "onclick":"dodelete()", "img":"delete_s.png"}-->
+        <!--TAG tool_button_right SET{"name":"Back", "onclick":"doback()", "img":"back_s.png"}-->
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="panel_search" class="showpan">
+        <div class="search_form">
+            <table cellpadding="0" cellspacing="0" border="0" width="auto">
+                <tr>
+                    <td>From:&nbsp;</td>
+                    <td style="padding-top: 4px; padding-bottom: 4px;"><input type="text" name="sdtfr" id="sdtfr" class="tbl_input" value="{-sdtfr-}" style="width:100px;"></td>
+                    <td>&nbsp;hr:&nbsp;</td>
+                    <td><select name="shrfr" id="shrfr" class="tbl_input" style="width:50px;">
+                        <option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>                    
+                        </select></td>
+                    <td>&nbsp;mn:&nbsp;</td>
+                    <td><select name="smnfr" id="smnfr" class="tbl_input" style="width:50px;">
+                        <option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
+                        </select></td>
+                    <td style="padding-left:20px;">Sites:&nbsp;</td>
+                    <td><select name="ssite" id="ssite" class="tbl_input" style="width: 250px;" onchange="">
+                        <option value="">&nbsp;</option>
+                        <!--BEGIN ssitelist-->
+                        <option value="{-idx-}" {-slt-}>{-name-}</option>
+                        <!--END ssitelist-->
+                        </select></td>
+                    <td rowspan="2" valign="middle" style="padding-left:20px;"><input type="button" onclick="dogen()" value="  Generate  "></td>
+                </tr>
+                <tr>
+                    <td>To:&nbsp;</td>
+                    <td style="padding-top: 4px; padding-bottom: 4px;"><input type="text" name="sdtto" id="sdtto" class="tbl_input" value="{-sdtto-}" style="width:100px;"></td>
+                    <td>&nbsp;hr:&nbsp;</td>
+                    <td><select name="shrto" id="shrto" class="tbl_input" style="width:50px;">
+                        <option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>                    
+                        </select></td>
+                    <td>&nbsp;mn:&nbsp;</td>
+                    <td><select name="smnto" id="smnto" class="tbl_input" style="width:50px;">
+                        <option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
+                        </select></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    
+    <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <th height="24" class="tbltitle" align="center" width="3%"><input type="checkbox" id="boxtop" onclick="toggleCheck()"></th>
+        <th height="24" class="tbltitle" align="left" width="10%">Date</th>
+        <th height="24" class="tbltitle" align="left" width="10%">Time</th>
+        <th height="24" class="tbltitle" align="left" width="34%">Sites</th>
+        <th height="24" class="tbltitle" align="left" width="40%">File</th>
+        <th height="24" class="tbltitle" align="center" width="3%">Del</th>
+    </tr>
+    <!--BEGIN itemlist-->
+    <tr id="tid{-tid-}" onmouseover="highlight('tid{-tid-}')" onmouseout="unhighlight('tid{-tid-}')">
+        <td class="tblitem0" align="center"><input type="checkbox" id="box{-tid-}" name="ccidx{-idx-}" onclick="chkclicked=true"></td>
+        <td class="tblitem">{-date-}</td>
+        <td class="tblitem">{-time-}</td>
+        <td class="tblitem">{-site-}</td>
+        <td class="tblitem"><a href="{-file-}">{-file-}</a></td>
+        <td class="tblitem" style="cursor: pointer;" onclick="dodelete({-delparam-})"><img src="{-tplpath-}images/b_delete.png" border="0" title="Delete"></td>
+    </tr>
+    <!--END itemlist-->
+
+    </table>
+    <table width="100%" cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <td class="text12" align="left">Total&nbsp;Record:&nbsp;{-tolfound-}</td>
+        <td class="text12" align="right">Page: {-pagenum-}</td>
+    </tr>
+    </table>
+
+</div>
+</form>
+

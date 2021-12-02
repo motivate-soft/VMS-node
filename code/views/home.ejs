@@ -1,0 +1,23 @@
+<%- include("overall_header") %>
+
+<% modlist.forEach(function(mod){ %>
+<div id="panel_mod">
+
+    <div class="navimg"><img src="images/nav.png"></div>
+    <div class="navtitle"><%= mod.name %></div>
+    <div style="clear:both"></div>
+
+    <div class="modbox">
+		<% mod.sublist.forEach(function(sub){ %>
+        <div class="mod" id="mod" onclick="doMod('<%= sub.link %>')">
+          <div class="mod_icon"><img src="/images/mods/<%= sub.image %>"></div>
+          <div class="mod_text"><%= sub.name %></div>
+        </div>
+		<% }); %>
+    </div>
+
+    <div style="clear:both">&nbsp;</div>
+</div>
+<% }); %>
+
+<%- include("overall_footer") %>

@@ -1,0 +1,6 @@
+<% pagelist.forEach(function(pagelist){ %>
+	
+<a href="#" onclick="doPage('<%= pagelist.page %>')" class="pagenav<%= pagelist.css %>"><span><%- pagelist.pagestr %></span></a><%- pagelist.spacing %>	
+	
+<% }) %>
+

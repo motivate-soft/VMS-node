@@ -1,0 +1,98 @@
+<%- include("overall_header") %>
+
+<script type="text/javascript">
+
+$(function() {
+    $("input[type=password]:first").focus();
+    $("#form1 input[type=password]").keypress(function(event) {
+        if (event.keyCode == 13) {
+            doSubmit();
+        }
+    });    
+});
+
+var parentnav = "<%= mod.parent.path %>";
+var crnmod = '<%= mod.path %>';
+
+function save_validateOK() {
+
+    if (validateForm([
+                        {id: "foldpass", type: "val", msg: "Old Password"},
+                        {id: "fnewpass", type: "pass", msg: "New Password", min: 4, max: 15},
+                        {id: "fnewpass", type: "comp", msg: "New Password", id2: "fconpass"}
+                    ])) {
+        if (!confirm("Confirm to change the password?")) {
+
+			return false;
+        }
+        else {
+			return true;
+		}
+    }
+    else
+        return false;
+
+}
+
+function doSubmit() {
+
+    if (save_validateOK()) {
+
+        actAjax($("#form1").serialize(), function(ret) {
+        
+			if (!ret.re && !ret.msg) 
+				$("#msgpan").html('Session Expired');
+			else
+				$("#msgpan").html(ret.msg);
+            $("input[type=password]").each(function(k, v) {
+                $(this).val("");
+            });
+            $("input[type=password]:first").focus();
+                
+        });
+    }
+}
+
+function doBack() {
+	actBack();
+}
+
+</script>
+
+<form name="form1" id="form1">
+
+<%- include("tags/modheader") %>
+<%- include("tags/remsg") %>
+
+<div id="panel_content">
+    <div class="toolbar">
+		<%- include("tags/tool_button", {tg: {name:"Save", image:"save_s.png", onclick:"doSubmit()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Back", image:"back_s.png", onclick:"doBack()"} }) %>
+        <div style="clear:both"></div>
+    </div>
+
+    <table width="100%" cellpadding="3" cellspacing="0" border="0" class="tbl">
+	<%- include("tags/errmsg") %>
+    <%- include("tags/input_text_req", {tg: {name:"Old Password", id:"foldpass", val:"", type:"password", width:"150px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"New Password", id:"fnewpass", val:"", type:"password", width:"150px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Confirm Password", id:"fconpass", val:"", type:"password", width:"150px", remk:"" } }) %>
+    <tr> 
+      <td colspan=2>&nbsp;</td>
+    </tr>
+    </table>
+
+    <div class="toolbar" style="margin-top:0px">
+		<%- include("tags/tool_button", {tg: {name:"Save", image:"save_s.png", onclick:"doSubmit()"} }) %>
+		<%- include("tags/tool_button", {tg: {name:"Back", image:"back_s.png", onclick:"doBack()"} }) %>
+        <div style="clear:both"></div>
+    </div>
+	
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    
+
+</div>
+
+</form>
+
+<%- include("overall_footer") %>

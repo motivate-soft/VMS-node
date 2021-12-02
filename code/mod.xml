@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<modules>
+
+    <module name="Home" path="/home" xid="home" image="">
+        <action name="View" xid="view" />
+    </module>
+    
+    <module name="Admin" path="/admin" xid="admin" group="" image="">
+        <action name="View" xid="view" />
+		
+		<sub name="Change Password" path="/chgpass" xid="chgpass" image="chgpass.png">
+			<action name="View" xid="view" />
+		</sub>
+		<sub name="GPS account" path="/gpsacc" xid="gpsacc" image="gpsacc.png">
+			<action name="View" xid="view" />
+		</sub>
+		<sub name="Traccar Setting" path="/tcsetting" xid="tcsetting" image="tcsetting.png">
+			<action name="View" xid="view" />
+		</sub>
+    </module>
+    
+    <module name="Logging" path="/logging" xid="logging" group="" image="">
+        <action name="View" xid="view" />
+		
+		<sub name="Data Logging" path="/datalog" xid="datalog" image="datalog.png">
+			<action name="View" xid="view" />
+		</sub>
+    </module>
+   
+</modules>
