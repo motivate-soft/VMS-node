@@ -2597,3 +2597,547 @@ Error: Timed out while connecting to server
     at listOnTimeout (internal/timers.js:554:17)
     at processTimers (internal/timers.js:497:7)
 
+[2021-12-03T01:34:43.615] [INFO] app - Initializing database -- OK
+[2021-12-03T01:34:43.619] [INFO] app - Loading modules -- OK
+[2021-12-03T01:34:43.631] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T01:34:43.631] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T01:34:43.632] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T01:34:43.633] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T01:34:43.634] [INFO] app - Application Started Now
+[2021-12-03T01:34:56.800] [ERROR] app - 3 Dec 01:34:56 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T01:37:06.962] [ERROR] app - 3 Dec 01:37:06 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T01:39:17.124] [ERROR] app - 3 Dec 01:39:17 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T01:41:27.306] [ERROR] app - 3 Dec 01:41:27 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T01:43:37.471] [ERROR] app - 3 Dec 01:43:37 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T01:45:47.645] [ERROR] app - 3 Dec 01:45:47 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:42:02.343] [INFO] app - Initializing database -- OK
+[2021-12-03T08:42:02.347] [INFO] app - Loading modules -- OK
+[2021-12-03T08:42:02.358] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:42:02.358] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:42:02.360] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:42:02.362] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:42:02.363] [INFO] app - Application Started Now
+[2021-12-03T08:42:24.684] [INFO] app - Initializing database -- OK
+[2021-12-03T08:42:24.688] [INFO] app - Loading modules -- OK
+[2021-12-03T08:42:24.699] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:42:24.699] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:42:24.701] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:42:24.702] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:42:24.702] [INFO] app - Application Started Now
+[2021-12-03T08:42:37.849] [ERROR] app - 3 Dec 08:42:37 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:44:01.300] [INFO] app - Initializing database -- OK
+[2021-12-03T08:44:01.304] [INFO] app - Loading modules -- OK
+[2021-12-03T08:44:01.316] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:44:01.316] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:44:01.317] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:44:01.318] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:44:01.318] [INFO] app - Application Started Now
+[2021-12-03T08:44:14.475] [ERROR] app - 3 Dec 08:44:14 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:46:24.643] [ERROR] app - 3 Dec 08:46:24 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:47:30.525] [INFO] app - Initializing database -- OK
+[2021-12-03T08:47:30.529] [INFO] app - Loading modules -- OK
+[2021-12-03T08:47:30.541] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:47:30.541] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:47:30.543] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:47:30.545] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:47:30.545] [INFO] app - Application Started Now
+[2021-12-03T08:47:43.695] [ERROR] app - 3 Dec 08:47:43 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:48:10.383] [INFO] app - Initializing database -- OK
+[2021-12-03T08:48:10.387] [INFO] app - Loading modules -- OK
+[2021-12-03T08:48:10.399] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:48:10.399] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:48:10.400] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:48:10.401] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:48:10.402] [INFO] app - Application Started Now
+[2021-12-03T08:48:23.562] [ERROR] app - 3 Dec 08:48:23 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:48:30.686] [INFO] app - Initializing database -- OK
+[2021-12-03T08:48:30.690] [INFO] app - Loading modules -- OK
+[2021-12-03T08:48:30.701] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:48:30.701] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:48:30.703] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:48:30.704] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:48:30.704] [INFO] app - Application Started Now
+[2021-12-03T08:48:35.781] [INFO] app - Initializing database -- OK
+[2021-12-03T08:48:35.785] [INFO] app - Loading modules -- OK
+[2021-12-03T08:48:35.797] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:48:35.797] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:48:35.798] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:48:35.800] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:48:35.800] [INFO] app - Application Started Now
+[2021-12-03T08:48:48.958] [ERROR] app - 3 Dec 08:48:48 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:49:09.572] [INFO] app - Initializing database -- OK
+[2021-12-03T08:49:09.576] [INFO] app - Loading modules -- OK
+[2021-12-03T08:49:09.587] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:49:09.587] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:49:09.588] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:49:09.590] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:49:09.590] [INFO] app - Application Started Now
+[2021-12-03T08:49:22.740] [ERROR] app - 3 Dec 08:49:22 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:49:39.124] [INFO] app - Initializing database -- OK
+[2021-12-03T08:49:39.128] [INFO] app - Loading modules -- OK
+[2021-12-03T08:49:39.139] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:49:39.140] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:49:39.141] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:49:39.142] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:49:39.142] [INFO] app - Application Started Now
+[2021-12-03T08:49:52.294] [ERROR] app - 3 Dec 08:49:52 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:50:15.264] [INFO] app - Initializing database -- OK
+[2021-12-03T08:50:15.267] [INFO] app - Loading modules -- OK
+[2021-12-03T08:50:31.403] [INFO] app - Initializing database -- OK
+[2021-12-03T08:50:31.407] [INFO] app - Loading modules -- OK
+[2021-12-03T08:50:31.418] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:50:31.419] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:50:31.420] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:50:31.421] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:50:31.422] [INFO] app - Application Started Now
+[2021-12-03T08:50:44.581] [ERROR] app - 3 Dec 08:50:44 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:51:04.676] [INFO] app - Initializing database -- OK
+[2021-12-03T08:51:04.681] [INFO] app - Loading modules -- OK
+[2021-12-03T08:52:22.011] [INFO] app - Initializing database -- OK
+[2021-12-03T08:52:22.015] [INFO] app - Loading modules -- OK
+[2021-12-03T08:52:22.027] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T08:52:22.028] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T08:52:22.029] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T08:52:22.030] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T08:52:22.031] [INFO] app - Application Started Now
+[2021-12-03T08:52:35.184] [ERROR] app - 3 Dec 08:52:35 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:54:45.353] [ERROR] app - 3 Dec 08:54:45 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:56:55.512] [ERROR] app - 3 Dec 08:56:55 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T08:59:05.684] [ERROR] app - 3 Dec 08:59:05 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:00:33.589] [INFO] app - Initializing database -- OK
+[2021-12-03T09:00:33.593] [INFO] app - Loading modules -- OK
+[2021-12-03T09:00:33.606] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:00:33.606] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:00:33.608] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:00:33.609] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:00:33.609] [INFO] app - Application Started Now
+[2021-12-03T09:00:46.760] [ERROR] app - 3 Dec 09:00:46 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:01:24.540] [INFO] app - Initializing database -- OK
+[2021-12-03T09:01:24.544] [INFO] app - Loading modules -- OK
+[2021-12-03T09:01:24.555] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:01:24.555] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:01:24.556] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:01:24.558] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:01:24.558] [INFO] app - Application Started Now
+[2021-12-03T09:01:37.715] [ERROR] app - 3 Dec 09:01:37 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:03:47.876] [ERROR] app - 3 Dec 09:03:47 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:05:58.038] [ERROR] app - 3 Dec 09:05:58 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:06:15.034] [INFO] app - Initializing database -- OK
+[2021-12-03T09:06:15.038] [INFO] app - Loading modules -- OK
+[2021-12-03T09:06:15.049] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:06:15.050] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:06:15.051] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:06:15.052] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:06:15.052] [INFO] app - Application Started Now
+[2021-12-03T09:06:28.203] [ERROR] app - 3 Dec 09:06:28 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:08:38.365] [ERROR] app - 3 Dec 09:08:38 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:09:06.759] [INFO] app - Initializing database -- OK
+[2021-12-03T09:09:06.763] [INFO] app - Loading modules -- OK
+[2021-12-03T09:09:06.774] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:09:06.775] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:09:06.776] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:09:06.777] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:09:06.777] [INFO] app - Application Started Now
+[2021-12-03T09:09:19.926] [ERROR] app - 3 Dec 09:09:19 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:11:30.100] [ERROR] app - 3 Dec 09:11:30 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:13:31.288] [INFO] app - Initializing database -- OK
+[2021-12-03T09:13:31.292] [INFO] app - Loading modules -- OK
+[2021-12-03T09:13:31.303] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:13:31.304] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:13:31.305] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:13:31.306] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:13:31.306] [INFO] app - Application Started Now
+[2021-12-03T09:13:44.459] [ERROR] app - 3 Dec 09:13:44 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:15:54.647] [ERROR] app - 3 Dec 09:15:54 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:18:04.816] [ERROR] app - 3 Dec 09:18:04 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:18:43.842] [INFO] app - Initializing database -- OK
+[2021-12-03T09:18:43.846] [INFO] app - Loading modules -- OK
+[2021-12-03T09:18:43.857] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:18:43.858] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:18:43.859] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:18:43.861] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:18:43.861] [INFO] app - Application Started Now
+[2021-12-03T09:18:57.011] [ERROR] app - 3 Dec 09:18:57 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:19:12.694] [INFO] app - Initializing database -- OK
+[2021-12-03T09:19:12.698] [INFO] app - Loading modules -- OK
+[2021-12-03T09:19:12.709] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:19:12.710] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:19:12.711] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:19:12.712] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:19:12.712] [INFO] app - Application Started Now
+[2021-12-03T09:19:25.884] [ERROR] app - 3 Dec 09:19:25 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:21:45.582] [INFO] app - Initializing database -- OK
+[2021-12-03T09:21:45.586] [INFO] app - Loading modules -- OK
+[2021-12-03T09:21:45.597] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:21:45.598] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:21:45.599] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:21:45.600] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:21:45.600] [INFO] app - Application Started Now
+[2021-12-03T09:21:47.465] [INFO] app - Initializing database -- OK
+[2021-12-03T09:21:47.469] [INFO] app - Loading modules -- OK
+[2021-12-03T09:21:47.479] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:21:47.479] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:21:47.480] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:21:47.481] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:21:47.481] [INFO] app - Application Started Now
+[2021-12-03T09:22:00.632] [ERROR] app - 3 Dec 09:22:00 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:23:26.417] [INFO] app - Initializing database -- OK
+[2021-12-03T09:23:26.422] [INFO] app - Loading modules -- OK
+[2021-12-03T09:23:26.433] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:23:26.433] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:23:26.434] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:23:26.435] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:23:26.436] [INFO] app - Application Started Now
+[2021-12-03T09:23:38.877] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof__%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:23:39.599] [ERROR] app - 3 Dec 09:23:39 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:23:40.260] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof_%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:23:42.799] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof0%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:23:44.971] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:23:51.906] [INFO] app - Initializing database -- OK
+[2021-12-03T09:23:51.910] [INFO] app - Loading modules -- OK
+[2021-12-03T09:23:51.923] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:23:51.923] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:23:51.925] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:23:51.926] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:23:51.926] [INFO] app - Application Started Now
+[2021-12-03T09:24:01.493] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:24:05.084] [ERROR] app - 3 Dec 09:24:05 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:24:09.759] [ERROR] app - SQLITE_ERROR: ESCAPE expression must be a single character
+Error: SQLITE_ERROR: ESCAPE expression must be a single character
+--> in Database#all("select count(elgIdx) as midx from `emaillog` where elgEmail like '%dof%' ESCAPE 'escape_char' ", [Function])
+    at Object.query (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:125:19)
+    at Object.getLogCount (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:160:9)
+    at Object.getLogList (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:68:11)
+    at list_datalog (E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:56:12)
+    at E:\kcs\Projects\nodejs\VMS-node\code\controllers\logging\datalog.js:30:5
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\comrrf.js:85:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:35:4
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\sesobj.js:47:3
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:61:6
+[2021-12-03T09:25:04.856] [INFO] app - Initializing database -- OK
+[2021-12-03T09:25:04.860] [INFO] app - Loading modules -- OK
+[2021-12-03T09:25:04.871] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:25:04.872] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:25:04.873] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:25:04.874] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:25:04.875] [INFO] app - Application Started Now
+[2021-12-03T09:25:18.025] [ERROR] app - 3 Dec 09:25:18 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:27:28.192] [ERROR] app - 3 Dec 09:27:28 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:29:38.361] [ERROR] app - 3 Dec 09:29:38 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:31:16.651] [INFO] app - Initializing database -- OK
+[2021-12-03T09:31:16.656] [INFO] app - Loading modules -- OK
+[2021-12-03T09:31:16.667] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:31:16.668] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:31:16.669] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:31:16.670] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:31:16.670] [INFO] app - Application Started Now
+[2021-12-03T09:31:23.822] [INFO] app - Initializing database -- OK
+[2021-12-03T09:31:23.826] [INFO] app - Loading modules -- OK
+[2021-12-03T09:31:23.836] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:31:23.836] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:31:23.837] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:31:23.839] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:31:23.839] [INFO] app - Application Started Now
+[2021-12-03T09:31:36.991] [ERROR] app - 3 Dec 09:31:36 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:32:38.866] [INFO] app - Initializing database -- OK
+[2021-12-03T09:32:38.870] [INFO] app - Loading modules -- OK
+[2021-12-03T09:32:38.881] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:32:38.882] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:32:38.883] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:32:38.884] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:32:38.884] [INFO] app - Application Started Now
+[2021-12-03T09:32:42.416] [INFO] app - Initializing database -- OK
+[2021-12-03T09:32:42.420] [INFO] app - Loading modules -- OK
+[2021-12-03T09:32:42.432] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:32:42.433] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:32:42.434] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:32:42.436] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:32:42.436] [INFO] app - Application Started Now
+[2021-12-03T09:32:55.592] [ERROR] app - 3 Dec 09:32:55 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:33:00.639] [INFO] app - Initializing database -- OK
+[2021-12-03T09:33:00.643] [INFO] app - Loading modules -- OK
+[2021-12-03T09:33:00.655] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:33:00.656] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:33:00.657] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:33:00.659] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:33:00.659] [INFO] app - Application Started Now
+[2021-12-03T09:33:13.814] [ERROR] app - 3 Dec 09:33:13 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:33:51.842] [INFO] app - Initializing database -- OK
+[2021-12-03T09:33:51.846] [INFO] app - Loading modules -- OK
+[2021-12-03T09:33:51.858] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-03T09:33:51.858] [INFO] app - Starting VMS service  -- OK
+[2021-12-03T09:33:51.859] [INFO] app - Starting Traccar service -- OK
+[2021-12-03T09:33:51.861] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-03T09:33:51.861] [INFO] app - Application Started Now
+[2021-12-03T09:34:05.018] [ERROR] app - 3 Dec 09:34:05 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-03T09:36:15.203] [ERROR] app - 3 Dec 09:36:15 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+

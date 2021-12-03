@@ -103,8 +103,8 @@ function actSearch(callback) {
 	_pageNo = 1;
 	
     var search = getSearchParams();
-    
-	_searchParams = '{' + search + '}';
+
+    _searchParams = '{' + search + '}';
 	
 	actList(callback);
 }

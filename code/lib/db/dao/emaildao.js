@@ -97,16 +97,35 @@ function getLogSearch(search) {
 	
 	if (search && typeof search == 'object') {
 
-		if (cfn.strVal(search.email)) {
-			ftr += joint(ftr) + ' elgEmail like ' + dbu.qLike(search.email);
+		var searchEmail = cfn.strVal(search.email) ? search.email : '';
+		searchEmail = searchEmail.replace('_' , '\\_');
+		var searchDateFr = cfn.strVal(search.datefr) ? search.datefr : '';
+		var searchDateTo = cfn.strVal(search.dateto) ? search.dateto : '';
+
+		if (searchEmail !== '' && searchDateFr !== '' && searchDateTo !== '') {
+			ftr += ' where elgEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ' + ' AND elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' AND elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
 		}
-		if (cfn.strVal(search.datefr)) {
-			ftr += joint(ftr) + ' elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss');
+		else if (searchEmail !== '' && searchDateFr !== '') {
+			ftr += ' where elgEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ' + ' AND elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss');
 		}
-		if (cfn.strVal(search.dateto)) {
-			ftr += joint(ftr) + ' elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
+		else if (searchEmail !== '' && searchDateTo !== '') {
+			ftr += ' where elgEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ' + ' AND elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
+		}
+		else if (searchDateFr !== '' && searchDateTo !== '') {
+			ftr += ' where elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' AND elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
+		}
+		else if (searchEmail !== '') {
+			ftr += ' where elgEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ';
+		}
+		else if (searchDateFr !== '') {
+			ftr += ' where elgEmailDate >= ' + dbu.qDate(search.datefr + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss');
+		}
+		else if (searchDateTo !== '') {
+			ftr += ' where elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
 		}
 	}
+
+	console.log(ftr)
 
 	return ftr;
 }
