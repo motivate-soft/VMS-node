@@ -16,20 +16,21 @@ function getGpsAccSearch(search) {
 
 		var searchName = cfn.strVal(search.name) ? search.name : '';
 		var searchEmail = cfn.strVal(search.email) ? search.email : '';
+		searchEmail = searchEmail.replace('_' , '\\_');
 		var searchPGID = cfn.strVal(search.pgid) ? search.pgid : '';
 
 		if (searchName !== '' && searchEmail !== '' && searchPGID !== '')
-			ftr += ' where gacName like ' + dbu.qLike(searchName) + ' AND gacEmail like ' + dbu.qLike(searchEmail) + ' AND gacPGID like ' + dbu.qLike(searchPGID);
+			ftr += ' where gacName like ' + dbu.qLike(searchName) + ' AND gacEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ' + ' AND gacPGID like ' + dbu.qLike(searchPGID);
 		else if (searchName !== '' && searchEmail !== '')
-			ftr += ' where gacName like ' + dbu.qLike(searchName) + ' AND gacEmail like ' + dbu.qLike(searchEmail);
+			ftr += ' where gacName like ' + dbu.qLike(searchName) + ' AND gacEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ';
 		else if (searchName !== '' && searchPGID !== '')
 			ftr += ' where gacName like ' + dbu.qLike(searchName) + ' AND gacPGID like ' + dbu.qLike(searchPGID);
 		else if (searchEmail !== '' && searchPGID !== '')
-			ftr += ' where gacEmail like ' + dbu.qLike(searchEmail) + ' AND gacPGID like ' + dbu.qLike(searchPGID);
+			ftr += ' where gacEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ' + ' AND gacPGID like ' + dbu.qLike(searchPGID);
 		else if (searchName !== '')
 			ftr += ' where gacName like ' + dbu.qLike(searchName);
 		else if (searchEmail !== '')
-			ftr += ' where gacEmail like ' + dbu.qLike(searchEmail);
+			ftr += ' where gacEmail like ' + dbu.qLike(searchEmail) + ' ESCAPE \'\\\' ';
 		else if (searchPGID !== '')
 			ftr += ' where gacPGID like ' + dbu.qLike(searchPGID);
 	}

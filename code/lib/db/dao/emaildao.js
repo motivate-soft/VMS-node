@@ -90,10 +90,6 @@ function saveLog(data, callback) {
 function getLogSearch(search) {
 
 	var ftr = '';
-
-	var joint = function(val) {
-		return (val) ? ' and ': ' where ';	
-	}
 	
 	if (search && typeof search == 'object') {
 
@@ -124,8 +120,6 @@ function getLogSearch(search) {
 			ftr += ' where elgEmailDate <= ' + dbu.qDate(search.dateto + ' 23:59:59', 'DD/MM/YYYY HH:mm:ss');
 		}
 	}
-
-	console.log(ftr)
 
 	return ftr;
 }
