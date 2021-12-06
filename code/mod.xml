@@ -18,6 +18,9 @@
 		<sub name="Traccar Setting" path="/tcsetting" xid="tcsetting" image="tcsetting.png">
 			<action name="View" xid="view" />
 		</sub>
+		<sub name="FTP Test" path="/ftp" xid="ftp" image="ftp.png">
+			<action name="View" xid="view" />
+		</sub>
     </module>
     
     <module name="Logging" path="/logging" xid="logging" group="" image="">

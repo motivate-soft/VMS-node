@@ -50,6 +50,7 @@ global.choc = require(appConfig.lib_path + '/comhoc.js');
 global.e2g = require(appConfig.service_path + '/emailtogps.js');
 global.vms = require(appConfig.service_path + '/vmshandler.js');
 global.tcs = require(appConfig.service_path + '/traccarservice.js');
+global.ftpService = require(appConfig.service_path + '/ftpservice.js');
 
 function initDB(callback) {
     dbo.connect(function() {

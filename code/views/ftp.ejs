@@ -1,0 +1,54 @@
+<%- include("overall_header") %>
+
+<script src="/js/mods/ftp.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var parentnav = '<%= mod.parent.path %>';
+var crnmod = '<%= mod.path %>';
+
+$(function() {
+	init();
+	get_ServiceStatus()
+});
+
+</script>
+
+<%- include("tags/dialog_test") %>
+
+<%- include("tags/modheader_ftp", {tg: {name: "ftp", id: "tcsstatus"} }) %>
+<%- include("tags/remsg") %>
+
+<form name="form1" id="form1">
+    
+    <div id="panel_content">
+        <div class="toolbar">
+            <%- include("tags/tool_button", {tg: {name:"Save", image:"save_s.png", onclick:"doSubmit()"} }) %>
+            <%- include("tags/tool_button", {tg: {name:"Back", image:"back_s.png", onclick:"doBack()"} }) %>
+            <div style="clear:both"></div>
+        </div>
+    
+        <table width="100%" cellpadding="3" cellspacing="0" border="0" class="tbl">
+        <%- include("tags/errmsg") %>
+        <%- include("tags/input_text_req", {tg: {name:"Host", id:"ftpip", val:data.ip, type:"text", width:"300px", remk:"" } }) %>
+        <%- include("tags/input_text_req", {tg: {name:"Username", id:"ftpusername", val:data.username, type:"text", width:"300px", remk:"" } }) %>
+        <%- include("tags/input_text_req", {tg: {name:"Password", id:"ftppassword", val:data.password, type:"text", width:"300px", remk:"" } }) %>
+        <%- include("tags/input_text_req", {tg: {name:"Port", id:"ftpport", val:data.port, type:"text", width:"150px", remk:"" } }) %>
+        <tr> 
+            <td align="right" width="150" height="22" class="text12">&nbsp;</td>
+            <td valign="top"><input type="button" id="connectftp" name="connectftp" value=" Connect to FTP " onclick="doFTP()"></td>
+        </tr>    
+        <tr> 
+          <td colspan=2>&nbsp;</td>
+        </tr>
+        </table>
+            
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        
+    
+    </div>
+    
+    </form>
+    
+<%- include("overall_footer") %>

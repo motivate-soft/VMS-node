@@ -19,8 +19,8 @@ function parse(obj, callback) {
     try {
         
         _modules = [];
-        var chlds = obj.root.children;
-        
+		var chlds = obj.root.children;
+		
         for (var i=0; i < chlds.length; i++) {
 
             var act = [];
@@ -73,7 +73,7 @@ function parse(obj, callback) {
                             action: act,
                             sub: sub,
                         });
-        }
+		}
         
         callback();
         

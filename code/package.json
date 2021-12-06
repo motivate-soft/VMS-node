@@ -20,6 +20,7 @@
     "xml-parser": "^1.2.1"
   },
   "devDependencies": {
+    "ftp": "^0.3.10",
     "install": "^0.13.0",
     "nodemon": "^2.0.15"
   }
