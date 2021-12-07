@@ -1,7 +1,7 @@
 var express = require('express');
 var ftp_rt = express.Router();
 module.exports = ftp_rt;
-
+var gaco = require(appConfig.lib_path + '/gacobj.js');
 var mod_xid = 'ftp';
 
 ftp_rt.get('/', function(req, res) {
@@ -34,6 +34,9 @@ ftp_rt.post('/service', function(req, res){
 		case 'connect':
 			ftp_connection(req, res);
 
+		case 'read_xml':
+			read_xml(req, res);
+
 		break;
 	}
 });
@@ -43,34 +46,46 @@ ftp_rt.post('/', function(req, res){
     crrf.sessionCheck(req, res, function() {
 		
 		crrf.setCurrentMod(mod_xid);
-	
-		var ftpip = req.body.ftpip;
-		var ftpusername = req.body.ftpusername;
-		var ftppassword = req.body.ftppassword;
-		var ftpport = req.body.ftpport;
-		
-		var emsg = cfn.validCheck([
-								{type:'str', val:ftpip, msg:'IP Address'},
-								{type:'str', val:ftpusername, msg:'Username'},
-								{type:'num', val:ftpport, msg:'Port'},
-							]);
-		
-		if (!emsg) {
-		
-			var savedata = JSON.stringify({ip: ftpip, username: ftpusername, password: ftppassword, port: ftpport});
+
+		var action = req.body.action;
+		if (action && action == 'list') {
+			var data = cfn.parseJSON(req.body.data);
 			
-			dbo.setMData('ftp', savedata, function(err) {
-			
-				if (!err) {
-				
-					res.send({re: 0, msg: 'FTP setting saved.'});
-				}
-				else
-					res.send({re: 1, msg: err.message});
-			
+			res.render('ftpfile_list', {
+				msg: '',
+				itemlist: data
 			});
+			
 		}
-		else res.send({re: 1, msg: emsg});
+		else {
+			var ftpip = req.body.ftpip;
+			var ftpusername = req.body.ftpusername;
+			var ftppassword = req.body.ftppassword;
+			var ftpport = req.body.ftpport;
+			
+			var emsg = cfn.validCheck([
+									{type:'str', val:ftpip, msg:'IP Address'},
+									{type:'str', val:ftpusername, msg:'Username'},
+									{type:'num', val:ftpport, msg:'Port'},
+								]);
+			
+			if (!emsg) {
+			
+				var savedata = JSON.stringify({ip: ftpip, username: ftpusername, password: ftppassword, port: ftpport});
+				
+				dbo.setMData('ftp', savedata, function(err) {
+				
+					if (!err) {
+					
+						res.send({re: 0, msg: 'FTP setting saved.'});
+					}
+					else
+						res.send({re: 1, msg: err.message});
+				
+				});
+			}
+			else res.send({re: 1, msg: emsg});
+		}
     });
 		
 });
@@ -132,7 +147,18 @@ function ftp_connection(req, res) {
 	var port = req.body.port;
 
 	ftpService.ftp_connect(ip, username, password, port, function(re) {
+		res.statusCode = 200;
 		res.send(re);
 	});
 	
+}
+
+function read_xml(req, res) {
+	var ip = req.body.ip;
+	var username = req.body.username;
+	var password = req.body.password;
+	var port = req.body.port;
+	var filePath = req.body.file;
+
+	ftpService.read_xml(ip, username, password, port, filePath, res);
 }

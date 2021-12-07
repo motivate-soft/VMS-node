@@ -7,6 +7,7 @@
     "start:dev": "nodemon ./app.js"
   },
   "dependencies": {
+    "basic-ftp": "^4.6.6",
     "crc": "^3.8.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
@@ -17,6 +18,7 @@
     "md5": "^2.3.0",
     "node-bitarray": "^0.1.0",
     "sqlite3": "^5.0.2",
+    "ssh2-sftp-client": "^7.2.0",
     "xml-parser": "^1.2.1"
   },
   "devDependencies": {

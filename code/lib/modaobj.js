@@ -7,6 +7,7 @@ var _modules,
 
 module.exports = {
 	parse: parse,
+	parseResultXML: parseResultXML,
     getModules: getModules,
     getModule: getModule,
 	initAuth: initAuth,
@@ -76,6 +77,68 @@ function parse(obj, callback) {
 		}
         
         callback();
+        
+    } catch(err) {
+        cfn.logError(err, true);
+    }
+}
+
+function parseResultXML(obj, callback) {
+
+    try {
+		var chlds = obj.root.children;
+
+		var esn_number,
+			unixTime,
+			gps,
+			messageId,
+			timeStamp,
+			payloadLength,
+			payloadSource,
+			payloadEncoding,
+			payloadValue
+		
+			messageId = obj.root.attributes.messageID;
+			timeStamp = obj.root.attributes.timeStamp;
+
+        for (var i=0; i < chlds.length; i++) {
+            if (chlds[i].children) {
+                
+                for (var j=0; j < chlds[i].children.length; j++) {
+                
+                    if (chlds[i].children[j].name == 'esn') {
+						esn_number = chlds[i].children[j].content;
+                    }
+                    else if (chlds[i].children[j].name == 'unixTime') {
+						unixTime = chlds[i].children[j].content
+					}
+					else if (chlds[i].children[j].name == 'gps') {
+						gps = chlds[i].children[j].content;
+					}
+					else if (chlds[i].children[j].name == 'payload') {
+						payloadLength = chlds[i].children[j].attributes.length;
+						payloadSource = chlds[i].children[j].attributes.source;
+						payloadEncoding = chlds[i].children[j].attributes.encoding;
+						payloadValue = chlds[i].children[j].content;
+					}
+					
+                }
+            }
+		}
+
+		var result = {
+			messageId: messageId,
+			timeStamp: timeStamp,
+			esn: esn_number,
+			unixTime: unixTime,
+			gps: gps,
+			payloadLength: payloadLength,
+			payloadSource: payloadSource,
+			payloadEncoding: payloadEncoding,
+			payloadValue: payloadValue
+		};
+        
+        callback(result);
         
     } catch(err) {
         cfn.logError(err, true);

@@ -85,10 +85,10 @@ function actAjax(data, callback) {
 
 function actList(callback) {
 
-	var params = {"action": "list", "page": _pageNo};
+    var params = {"action": "list", "page": _pageNo};
 	
 	if (_searchOn && _searchParams) 
-		params['search'] = _searchParams;
+        params['search'] = _searchParams;
 
     actAjax(params, function(ret) {
 

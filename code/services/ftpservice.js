@@ -2,6 +2,10 @@ var moment = require('moment');
 var fs = require('fs');
 var FTPClient = require('ftp');
 var c = new FTPClient();
+var path = require('path')
+var parse = require('xml-parser');
+const ftp = require("basic-ftp");
+const { FileInfo } = require('basic-ftp');
 
 var ftpip = '';
 var ftpport = 0;
@@ -21,7 +25,8 @@ module.exports = {
 	reload: reload,
 	start: start,
     stop: stop,
-    ftp_connect: ftp_connect
+    ftp_connect: ftp_connect,
+    read_xml: read_xml
 }
 
 function getStatus() {
@@ -39,45 +44,70 @@ function init(callback) {
 		callback();
     });
 }
+let xmlFilePaths = [];
+async function ftp_connect(ip, username, password, port, callback) {
+    xmlFilePaths = [];
+    await socket_ftp(ip, username, password, port, "", callback);
+}
 
-function ftp_connect(ip, username, password, port, callback) {
-    var connected = false;
-    var errmsg = '';
-    
-    c.connect({
-        host: ip,
-        user: username,
-        password: password,
-        port: port
-      });
-    
-    c.on('ready', function() {
-        connected = true;
-        // c.get('/Alfa/file4457.csv', function(err, stream) {
-        //      var content = '';
-        //      stream.on('data', function(chunk) {
-        //          content += chunk.toString();
-        //      });
-        //      stream.on('end', function() {
-        //          // content variable now contains all file content. 
-        //      });
-        // })
-        callback('connected');
-    });
-    
-	c.on('error', function(err) {
-        errmsg = err.message;
+async function socket_ftp(ip, username, password, port, directory, callback = '') {
+    const client = new ftp.Client()
+    client.ftp.verbose = true
+    try {
+        await client.access({
+            host: ip,
+            user: username,
+            password: password,
+            port: port,
+            secure: false
+        })
+        const ftpList = await client.list(directory);
+        for (let index = 0; index < ftpList.length; index++) {
+            const fileInfo = new FileInfo(ftpList[index]);
+            const file_name = fileInfo.name.name;
+            if (ftpList[index].type == 1 && getFileExtension(file_name) === 'xml') {
+                xmlFilePaths.push(directory + '/' + file_name);
+            } else if (ftpList[index].type == 2) {
+                await socket_ftp(ip, username, password, port, directory + '/' + file_name)
+            }
+        }
+    }
+    catch(err) {
+        if (callback !== '')
+            callback({status: false, message: 'Failed, error: ' + err, data: xmlFilePaths})
+    }
+    if (callback !== '') {
+        callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
+    }
+    client.close()
+}
 
-        console.log(errmsg)
-	});
-
-	c.on('close', function() {
-		
-		if (errmsg)
-			callback(errmsg);
-		else
-			callback('Connection OK');
-	});	
+function read_xml(ip, username, password, port, filePath, res) {
+    if (filePath) {
+        c.connect({
+            host: ip,
+            user: username,
+            password: password,
+            port: port
+         });
+    
+         c.get(filePath, function (err, stream) { //get file from ftp
+            if (err) return res.status(200).json({status: false, message: 'Failed'})
+            var content = '';
+            stream.on('data', function(chunk) {
+                content += chunk.toString();
+            });
+            stream.once('close', function() {
+                var obj = parse(content);
+                moda.parseResultXML(obj, function(re) {
+                    cfn.logInfo('Reading xml file: ' + filePath, true);
+                    c.end();
+                    console.log(re)
+                    return res.status(200).json({status: true, message: 'Reading', data: re})
+                });
+            });
+          })
+    }
 }
 
 function reload(callback) {
@@ -141,6 +171,10 @@ function run() {
 	_sleeping = false;
 	
 	
+}
+
+function getFileExtension(fileName) {
+    return path.extname(fileName).slice(1)
 }
 
 function datetimetoUTC(dt) {

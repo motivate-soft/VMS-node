@@ -111,8 +111,22 @@ function doFTP() {
 				$("#dlgtest").dialog('open').html("<p>Connecting to " + ip + ":" + port + "...</p>");
 			},
 			success: function(ret) {
-                $("#connectftp").prop('disabled', true);
-				$('#dlgtest').html("<p>" + ret + "</p>");
+                $("#f1content").empty();
+                if (ret.status && ret.data && ret.data != '[]')
+                {
+                    $("#connectftp").prop('disabled', true);
+                    var xhr1 = $.ajax({
+                        type: 'POST',
+                        url: crnmod + '/',
+                        data: {"action": "list", "data": JSON.stringify(ret.data)},
+                        beforeSend: function(){
+                            $('#dlgtest').html("<p>" + ret.message + "</p>");
+                        },
+                        success: function(ret) {
+                            $("#f1content").html(ret);
+                        }
+                    });
+                }
 			}
 		});
 	}
@@ -151,4 +165,21 @@ function doBack() {
 	actBack();
 }
 
+function doParse(filePath) {
+    var ip = $("#ftpip").val();
+    var username = $("#ftpusername").val();
+    var password = $("#ftppassword").val();
+    var port = $("#ftpport").val();
+    var xhr = $.ajax({
+        type: 'POST',
+        url: crnmod + '/service',
+        data: {"action": "read_xml", "ip": ip, "port": port, "username": username, "password": password, "file": filePath },
+        beforeSend: function(){
+            $("#dlgtest").dialog('open').html("<p>Reading " + filePath + "...</p>");
+        },
+        success: function(ret) {
+            $('#dlgtest').html("<p>" + ret.message + "</p><p>" + JSON.stringify(ret.data) + "</p>");
+        }
+    });
+}
 
