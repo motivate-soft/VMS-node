@@ -160,5 +160,8 @@ function read_xml(req, res) {
 	var port = req.body.port;
 	var filePath = req.body.file;
 
-	ftpService.read_xml(ip, username, password, port, filePath, res);
+	ftpService.read_xml(ip, username, password, port, filePath, function(re) {
+		res.statusCode = 200;
+		res.send(re);
+	});
 }
