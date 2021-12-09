@@ -25,6 +25,14 @@ module.exports = {
         copyright: 'Copyright & Copy; 2016 Fraser Technologies Sdn Bhd',
     },
 
+    mysqldb: {
+        host: "139.162.39.237", // 139.162.39.237
+        port: 3306,
+        user: "dinhlong", // dinhlong
+        password: "stm32f", // stm32f
+        database: "smartc"
+    },
+
     item_rpp: 30,
 	
 	

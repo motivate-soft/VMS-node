@@ -6,6 +6,7 @@ var path = require('path')
 var parse = require('xml-parser');
 const ftp = require("basic-ftp");
 const { FileInfo } = require('basic-ftp');
+const MessageService = require('../models/message.service');
 
 var ftpip = '';
 var ftpport = 0;
@@ -122,16 +123,19 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
     }
     catch(err) {
         if (callback !== '')
+        {
+            client.close()
             callback({status: false, message: 'Failed, error: ' + err, data: xmlFilePaths})
+        }
     }
     if (callback !== '') {
+        client.close()
         try {
             callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
         } catch (error) {
             
         }
     }
-    client.close()
 }
 
 async function read_xml(ip, username, password, port, filePath, callback ) {
@@ -145,22 +149,14 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
          c.on('error',console.dir)
 
-         c.on('close',() => {
-            console.log('CLOOSE------------------------------')
-         })
-
-         c.on('end', () => {
-            console.log('END------------------------------')
-         })
-
          c.on('ready', () => {
             try {
                 c.get(filePath, function (err, stream) { //get file from ftp
                     if (err) {
                         try {
-                            callback({status: false, message: 'Failed'})
+                            callback({status: false, message: 'Failed', data: err})
                         } catch (error) {
-                            return {status: false, message: 'Failed'}
+                            return {status: false, message: 'Failed', data: err}
                         }
                         return
                     }
@@ -240,12 +236,29 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Stand_Message_Decoding.highConfidenceGPS = parseInt(eighthBinary.slice(0, 1), 2) != 0;
         
                                     console.dir(Stand_Message_Decoding);
-                                    // c.destroy()
-                                    try {
-                                        callback({status: true, message: subtype, data: Stand_Message_Decoding})
-                                    } catch (error) {
-                                        return {status: true, message: subtype, data: Stand_Message_Decoding}
-                                    }
+
+                                    MessageService.create({
+                                        messageId: re.messageId,
+                                        esn: re.esn,
+                                        timeStamp: re.timeStamp,
+                                        unixTime: re.unixTime,
+                                        encodeValue: re.payloadValue,
+                                        decodeValue: JSON.stringify(Stand_Message_Decoding),
+                                        level: Stand_Message_Decoding.level,
+                                        type: subtype
+                                    }).then(() => {
+                                        try {
+                                            callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
+                                        } catch (error) {
+                                            return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
+                                        }
+                                    }).catch((err) => {
+                                        try {
+                                            callback({status: true, message: subtype, data: err})
+                                        } catch (error) {
+                                            return {status: true, message: subtype, data: err}
+                                        }
+                                    })
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) != 24) {
                                     Nonstandard_Message_Decoding.level = 3;
@@ -279,12 +292,30 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Nonstandard_Message_Decoding.noOfTransmissions = byteArray[7] * 256 + byteArray[8];
         
                                     console.dir(Nonstandard_Message_Decoding)
-                                    // c.destroy()
-                                    try {
-                                        callback({status: true, message: message_type, data: Nonstandard_Message_Decoding})
-                                    } catch (error) {
-                                        return {status: true, message: message_type, data: Nonstandard_Message_Decoding}
-                                    }
+
+                                    MessageService.create({
+                                        messageId: re.messageId,
+                                        esn: re.esn,
+                                        timeStamp: re.timeStamp,
+                                        unixTime: re.unixTime,
+                                        encodeValue: re.payloadValue,
+                                        decodeValue: JSON.stringify(Nonstandard_Message_Decoding),
+                                        level: Nonstandard_Message_Decoding.level,
+                                        type: message_type
+                                    }).then(() => {
+                                        try {
+                                            callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
+                                        } catch (error) {
+                                            return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
+                                        }
+                                    }).catch((err) => {
+                                        try {
+                                            callback({status: true, message: message_type, data: err})
+                                        } catch (error) {
+                                            return {status: true, message: message_type, data: err}
+                                        }
+                                    })
+                                    
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) == 24) {
                                     Accumulated_Message_Decoding.level = 3;
@@ -296,12 +327,29 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Accumulated_Message_Decoding.numOfOpenOrCloseOfInput2 = byteArray[8] == 255 ? -1 : byteArray[7];
         
                                     console.dir(Accumulated_Message_Decoding)
-                                    // c.destroy()
-                                    try {
-                                        callback({status: true, message: 'Accumulate/Count Message', data: Accumulated_Message_Decoding})
-                                    } catch (error) {
-                                        return {status: true, message: 'Accumulate/Count Message', data: Accumulated_Message_Decoding}
-                                    }
+
+                                    MessageService.create({
+                                        messageId: re.messageId,
+                                        esn: re.esn,
+                                        timeStamp: re.timeStamp,
+                                        unixTime: re.unixTime,
+                                        encodeValue: re.payloadValue,
+                                        decodeValue: JSON.stringify(Accumulated_Message_Decoding),
+                                        level: Accumulated_Message_Decoding.level,
+                                        type: 'Accumulate/Count Message'
+                                    }).then(() => {
+                                        try {
+                                            callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
+                                        } catch (error) {
+                                            return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
+                                        }
+                                    }).catch((err) => {
+                                        try {
+                                            callback({status: true, message: 'Accumulate/Count Message', data: err})
+                                        } catch (error) {
+                                            return {status: true, message: 'Accumulate/Count Message', data: err}
+                                        }
+                                    })
                                 }
                                 else {
                                     // c.destroy()
@@ -318,7 +366,6 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                   })
             }
             catch(e){
-                c.destroy()
                 throw new Error('Cloud not upload file, Please make sure FTP user has write permissions.')
             }
         });
