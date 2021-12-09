@@ -111,7 +111,8 @@ function doFTP() {
 				$("#dlgtest").dialog('open').html("<p>Connecting to " + ip + ":" + port + "...</p>");
 			},
 			success: function(ret) {
-                $("#f1content").empty();
+				$("#f1content").empty();
+				$('#dlgtest').html("<p>" + ret.message + "</p>");
                 if (ret.status && ret.data && ret.data != '[]')
                 {
                     $("#connectftp").prop('disabled', true);

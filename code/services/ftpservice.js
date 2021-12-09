@@ -125,7 +125,11 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
             callback({status: false, message: 'Failed, error: ' + err, data: xmlFilePaths})
     }
     if (callback !== '') {
-        callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
+        try {
+            callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
+        } catch (error) {
+            
+        }
     }
     client.close()
 }

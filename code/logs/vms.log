@@ -16655,3 +16655,204 @@ Error: Timed out while connecting to server
     at listOnTimeout (internal/timers.js:554:17)
     at processTimers (internal/timers.js:497:7)
 
+[2021-12-09T09:34:04.037] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.074] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-09T09:34:04.080] [INFO] app - Reading xml file: /NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.084] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.087] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.090] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.092] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.095] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-09T09:34:04.101] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.104] [INFO] app - Reading xml file: /NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.108] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.113] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:04.117] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:34:22.726] [ERROR] app - 9 Dec 09:34:22 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:36:32.899] [ERROR] app - 9 Dec 09:36:32 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:38:43.064] [ERROR] app - 9 Dec 09:38:43 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:40:53.231] [ERROR] app - 9 Dec 09:40:53 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:43:03.403] [ERROR] app - 9 Dec 09:43:03 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:45:13.574] [ERROR] app - 9 Dec 09:45:13 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:46:52.177] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.212] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-09T09:46:52.220] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.223] [INFO] app - Reading xml file: /NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.227] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.229] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.231] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.239] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.241] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-09T09:46:52.246] [INFO] app - Reading xml file: /NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.249] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.252] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.255] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:46:52.257] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:47:23.745] [ERROR] app - 9 Dec 09:47:23 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:49:33.908] [ERROR] app - 9 Dec 09:49:33 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:51:44.084] [ERROR] app - 9 Dec 09:51:44 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:53:54.270] [ERROR] app - 9 Dec 09:53:54 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:54:18.030] [INFO] app - Initializing database -- OK
+[2021-12-09T09:54:18.034] [INFO] app - Loading modules -- OK
+[2021-12-09T09:54:18.048] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:54:18.048] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:54:18.049] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:54:18.051] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:54:18.051] [INFO] app - Application Started Now
+[2021-12-09T09:54:31.207] [ERROR] app - 9 Dec 09:54:31 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:55:11.646] [INFO] app - Initializing database -- OK
+[2021-12-09T09:55:11.650] [INFO] app - Loading modules -- OK
+[2021-12-09T09:55:11.664] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:55:11.665] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:55:11.666] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:55:11.668] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:55:11.668] [INFO] app - Application Started Now
+[2021-12-09T09:55:20.259] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:55:22.195] [INFO] app - Reading xml file: /NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:55:22.201] [INFO] app - Reading xml file: /NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-09T09:55:24.828] [ERROR] app - 9 Dec 09:55:24 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:56:22.093] [INFO] app - Initializing database -- OK
+[2021-12-09T09:56:22.097] [INFO] app - Loading modules -- OK
+[2021-12-09T09:56:22.110] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:56:22.110] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:56:22.111] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:56:22.113] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:56:22.113] [INFO] app - Application Started Now
+[2021-12-09T09:56:35.272] [ERROR] app - 9 Dec 09:56:35 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:56:50.832] [INFO] app - Initializing database -- OK
+[2021-12-09T09:56:50.836] [INFO] app - Loading modules -- OK
+[2021-12-09T09:56:50.851] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:56:50.851] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:56:50.852] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:56:50.853] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:56:50.854] [INFO] app - Application Started Now
+[2021-12-09T09:57:04.012] [ERROR] app - 9 Dec 09:57:04 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:57:08.298] [INFO] app - Initializing database -- OK
+[2021-12-09T09:57:08.302] [INFO] app - Loading modules -- OK
+[2021-12-09T09:57:08.314] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:57:08.315] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:57:08.316] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:57:08.317] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:57:08.318] [INFO] app - Application Started Now
+[2021-12-09T09:57:21.468] [ERROR] app - 9 Dec 09:57:21 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:57:22.495] [INFO] app - Initializing database -- OK
+[2021-12-09T09:57:22.499] [INFO] app - Loading modules -- OK
+[2021-12-09T09:57:22.513] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:57:22.514] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:57:22.515] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:57:22.516] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:57:22.517] [INFO] app - Application Started Now
+[2021-12-09T09:57:35.679] [ERROR] app - 9 Dec 09:57:35 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:59:09.430] [INFO] app - Initializing database -- OK
+[2021-12-09T09:59:09.440] [INFO] app - Loading modules -- OK
+[2021-12-09T09:59:09.456] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:59:09.456] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:59:09.458] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:59:09.460] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:59:09.460] [INFO] app - Application Started Now
+[2021-12-09T09:59:22.629] [ERROR] app - 9 Dec 09:59:22 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-09T09:59:37.204] [INFO] app - Initializing database -- OK
+[2021-12-09T09:59:37.208] [INFO] app - Loading modules -- OK
+[2021-12-09T09:59:37.221] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:59:37.221] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:59:37.223] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:59:37.225] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:59:37.225] [INFO] app - Application Started Now
+[2021-12-09T09:59:41.324] [INFO] app - Initializing database -- OK
+[2021-12-09T09:59:41.330] [INFO] app - Loading modules -- OK
+[2021-12-09T09:59:41.347] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-09T09:59:41.348] [INFO] app - Starting VMS service  -- OK
+[2021-12-09T09:59:41.350] [INFO] app - Starting Traccar service -- OK
+[2021-12-09T09:59:41.353] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-09T09:59:41.353] [INFO] app - Application Started Now
+[2021-12-09T09:59:54.540] [ERROR] app - 9 Dec 09:59:54 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
