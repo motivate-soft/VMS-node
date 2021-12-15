@@ -37,7 +37,7 @@ function processxml(msg, res) {
 		return;
 	}
     
-    var obj = parse(msg);
+	var obj = parse(msg);
 
 	if (!obj.root) {
 		res.send('Unidentified Obj=' + obj.root);
@@ -55,8 +55,11 @@ function processxml(msg, res) {
     }
 
 	
-	//if (verifyxml(msg, verify, param))
+	// if (verifyxml(msg, verify, param))
 		vmsParse(cmd, param, res);
+	// else {
+	// 	res.send('Authentication failed')
+	// }
 
 }
 
@@ -65,7 +68,9 @@ function verifyxml(msg, verify, param) {
 	var re = true;
 
 	var s = msg.substring(msg.indexOf('<applid>'));
-	var pwd = 'fgc82f2j11p';
+	var pwd = 'p4s5vv123'; // fgc82f2j11p
+
+	// p4s5vv123
 
 	var _crc = crc.crc16ccitt(s).toString(16);
 	var _verify = md5(param.datetime + pwd + param.serial + _crc)
@@ -120,6 +125,7 @@ function vmsParse(cmd, param, res) {
 		res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)
     
 	}
+	// Event 100, 101
 	else if (cmd == 'request') {
         //console.log('Request from DOF: limit=' + limit);
         console.log(cfn.dtNow4Log() + ' ' + 'Request: limit=' + limit);
@@ -224,7 +230,23 @@ function vmsParse(cmd, param, res) {
 				res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)
 			}
 		});
-    }
+	}
+	else if (cmd == 'cmd' || cmd == 'cmdstatus' || cmd == 'cmdcancel') {
+		console.log(cfn.dtNow4Log() + ' ' + 'Request: cmd=' + cmd);
+	} else {
+		var msg = '<applid>Orb_gate</applid>' +
+							'<datetime>' + dt + '</datetime>' +
+							'<serial>' + param.serial + '</serial>' +
+							'<xcode>201</xcode>' +
+							'</vessel>';
+							
+		var _crc = crc.crc16ccitt(msg).toString(16);
+		_crc = cfn.addZero(_crc, 4);
+		var verify = md5(dt + pwd + param.serial + _crc)
+		
+		//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
+		res.header('Content-Type','text/xml').send('<vessel obj="status" verify="' + verify + '">' + msg)
+	}
 }
 
 function vmsResponse(msg) {

@@ -115,18 +115,41 @@ function doFTP() {
 				$('#dlgtest').html("<p>" + ret.message + "</p>");
                 if (ret.status && ret.data && ret.data != '[]')
                 {
-                    $("#connectftp").prop('disabled', true);
-                    var xhr1 = $.ajax({
-                        type: 'POST',
-                        url: crnmod + '/',
-                        data: {"action": "list", "data": JSON.stringify(ret.data)},
-                        beforeSend: function(){
-                            $('#dlgtest').html("<p>" + ret.message + "</p>");
-                        },
-                        success: function(ret) {
-                            $("#f1content").html(ret);
-                        }
-                    });
+					$("#connectftp").prop('disabled', true);
+					
+					var xmlData = [];
+                    
+					ret.data.forEach((filePath, in_) => {
+						var xhr = $.ajax({
+							type: 'POST',
+							url: crnmod + '/service',
+							data: {"action": "read_xml", "ip": ip, "port": port, "username": username, "password": password, "file": filePath },
+							beforeSend: function(){
+								$("#dlgtest").dialog('open').html("<p>Reading " + filePath + "...</p>");
+							},
+							success: function(ret1) {
+								xmlData.push(
+									{
+										path: filePath,
+										type: ret1.message
+									}
+								)
+							},
+							async: false
+						});
+					});
+
+					var xhr1 = $.ajax({
+						type: 'POST',
+						url: crnmod + '/',
+						data: {"action": "list", "data": JSON.stringify(xmlData)},
+						beforeSend: function(){
+							$('#dlgtest').html("<p>" + ret.message + "</p>");
+						},
+						success: function(ret) {
+							$("#f1content").html(ret);
+						}
+					});
                 }
 			}
 		});
@@ -176,10 +199,10 @@ function doParse(filePath) {
         url: crnmod + '/service',
         data: {"action": "read_xml", "ip": ip, "port": port, "username": username, "password": password, "file": filePath },
         beforeSend: function(){
-            $("#dlgtest").dialog('open').html("<p>Reading " + filePath + "...</p>");
+            // $("#dlgtest").dialog('open').html("<p>Reading " + filePath + "...</p>");
         },
         success: function(ret) {
-            $('#dlgtest').html("<p>" + ret.message + "</p><p>" + JSON.stringify(ret.data) + "</p>");
+            // $('#dlgtest').html("<p>" + ret.message + "</p><p>" + JSON.stringify(ret.data) + "</p>");
         }
     });
 }

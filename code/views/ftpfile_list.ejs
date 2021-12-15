@@ -1,8 +1,8 @@
 
     <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
         <tr>
-            <th class="tbltitle" align="left" width="90%">File</th>
-            <th class="tbltitle" align="center" width="10%">Parse</th>
+            <th class="tbltitle" align="left" width="70%">File</th>
+            <th class="tbltitle" align="center" width="30%">Message type</th>
         </tr>
     
     <% if(msg) { %>
@@ -14,8 +14,9 @@
     
         <% var tidcnt = 1; itemlist.forEach(function(itemlist){ %>
         <tr id="tid<%= tidcnt %>" idx="<%= itemlist.idx %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
-            <td class="tblitem pntr" style="text-align:left;"><%- itemlist %></td>
-            <td class="tblitem pntr" style="text-align:center;" onclick="doParse('<%= itemlist %>')"><img src="images/b_edit.png" border="0" title="Parse"></a></td>
+            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.path %></td>
+            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.type %></td>
+            <!-- <td class="tblitem pntr" style="text-align:center;" onclick="doParse('<%= itemlist %>')"><img src="images/b_edit.png" border="0" title="Parse"></a></td> -->
         </tr>
         <% tidcnt++; }) %>
         </table>

@@ -109,14 +109,20 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
             password: password,
             port: port,
             secure: false
-        })
+        });
         const ftpList = await client.list(directory);
+
         for (let index = 0; index < ftpList.length; index++) {
             const fileInfo = new FileInfo(ftpList[index]);
             const file_name = fileInfo.name.name;
             if (ftpList[index].type == 1 && getFileExtension(file_name) === 'xml') {
                 xmlFilePaths.push(directory + '/' + file_name);
+                client.close();
             } else if (ftpList[index].type == 2) {
+                if (file_name == 'read') {
+                    continue;
+                }
+                client.close()
                 await socket_ftp(ip, username, password, port, directory + '/' + file_name)
             }
         }
@@ -237,27 +243,31 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
         
                                     console.dir(Stand_Message_Decoding);
 
-                                    MessageService.create({
-                                        messageId: re.messageId,
-                                        esn: re.esn,
-                                        timeStamp: re.timeStamp,
-                                        unixTime: re.unixTime,
-                                        encodeValue: re.payloadValue,
-                                        decodeValue: JSON.stringify(Stand_Message_Decoding),
-                                        level: Stand_Message_Decoding.level,
-                                        type: subtype
-                                    }).then(() => {
-                                        try {
-                                            callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
-                                        } catch (error) {
-                                            return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
-                                        }
-                                    }).catch((err) => {
-                                        try {
-                                            callback({status: true, message: subtype, data: err})
-                                        } catch (error) {
-                                            return {status: true, message: subtype, data: err}
-                                        }
+                                    c.mkdir('read/'+re.esn, ()=> {
+                                        c.put(content, 'read/'+re.esn + '/' + path.basename(filePath), () => {
+                                            MessageService.create({
+                                                messageId: re.messageId,
+                                                esn: re.esn,
+                                                timeStamp: re.timeStamp,
+                                                unixTime: re.unixTime,
+                                                encodeValue: re.payloadValue,
+                                                decodeValue: JSON.stringify(Stand_Message_Decoding),
+                                                level: Stand_Message_Decoding.level,
+                                                type: subtype
+                                            }).then(() => {
+                                                try {
+                                                    callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
+                                                } catch (error) {
+                                                    return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
+                                                }
+                                            }).catch((err) => {
+                                                try {
+                                                    callback({status: true, message: subtype, data: err})
+                                                } catch (error) {
+                                                    return {status: true, message: subtype, data: err}
+                                                }
+                                            })
+                                        })
                                     })
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) != 24) {
@@ -290,31 +300,33 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Nonstandard_Message_Decoding.unsgdBinaryCountInMeanGPS = byteArray[4];
                                     Nonstandard_Message_Decoding.unsgdBinaryCountInFailedGPS = byteArray[5] * 256 + byteArray[6];
                                     Nonstandard_Message_Decoding.noOfTransmissions = byteArray[7] * 256 + byteArray[8];
-        
-                                    console.dir(Nonstandard_Message_Decoding)
-
-                                    MessageService.create({
-                                        messageId: re.messageId,
-                                        esn: re.esn,
-                                        timeStamp: re.timeStamp,
-                                        unixTime: re.unixTime,
-                                        encodeValue: re.payloadValue,
-                                        decodeValue: JSON.stringify(Nonstandard_Message_Decoding),
-                                        level: Nonstandard_Message_Decoding.level,
-                                        type: message_type
-                                    }).then(() => {
-                                        try {
-                                            callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
-                                        } catch (error) {
-                                            return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
-                                        }
-                                    }).catch((err) => {
-                                        try {
-                                            callback({status: true, message: message_type, data: err})
-                                        } catch (error) {
-                                            return {status: true, message: message_type, data: err}
-                                        }
-                                    })
+                                    
+                                    c.mkdir('read/'+re.esn, ()=> {
+                                        c.put(content, 'read/'+re.esn + '/' + path.basename(filePath), () => {
+                                            MessageService.create({
+                                                messageId: re.messageId,
+                                                esn: re.esn,
+                                                timeStamp: re.timeStamp,
+                                                unixTime: re.unixTime,
+                                                encodeValue: re.payloadValue,
+                                                decodeValue: JSON.stringify(Nonstandard_Message_Decoding),
+                                                level: Nonstandard_Message_Decoding.level,
+                                                type: message_type
+                                            }).then(() => {
+                                                try {
+                                                    callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
+                                                } catch (error) {
+                                                    return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
+                                                }
+                                            }).catch((err) => {
+                                                try {
+                                                    callback({status: true, message: message_type, data: err})
+                                                } catch (error) {
+                                                    return {status: true, message: message_type, data: err}
+                                                }
+                                            })
+                                        });
+                                    });
                                     
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) == 24) {
@@ -325,38 +337,40 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Accumulated_Message_Decoding.accumTimeForVibOfSMARTONE = (byteArray[5] * 256 + byteArray[6]) == 65535 ? -1 : (byteArray[1] * 256 + byteArray[2]);
                                     Accumulated_Message_Decoding.numOfOpenOrCloseOfInput1 = byteArray[7] == 255 ? -1 : byteArray[7];
                                     Accumulated_Message_Decoding.numOfOpenOrCloseOfInput2 = byteArray[8] == 255 ? -1 : byteArray[7];
-        
-                                    console.dir(Accumulated_Message_Decoding)
-
-                                    MessageService.create({
-                                        messageId: re.messageId,
-                                        esn: re.esn,
-                                        timeStamp: re.timeStamp,
-                                        unixTime: re.unixTime,
-                                        encodeValue: re.payloadValue,
-                                        decodeValue: JSON.stringify(Accumulated_Message_Decoding),
-                                        level: Accumulated_Message_Decoding.level,
-                                        type: 'Accumulate/Count Message'
-                                    }).then(() => {
-                                        try {
-                                            callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
-                                        } catch (error) {
-                                            return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
-                                        }
-                                    }).catch((err) => {
-                                        try {
-                                            callback({status: true, message: 'Accumulate/Count Message', data: err})
-                                        } catch (error) {
-                                            return {status: true, message: 'Accumulate/Count Message', data: err}
-                                        }
-                                    })
+                                    
+                                    c.mkdir('read/'+re.esn, ()=> {
+                                        c.put(content, 'read/'+re.esn + '/' + path.basename(filePath), () => {
+                                            MessageService.create({
+                                                messageId: re.messageId,
+                                                esn: re.esn,
+                                                timeStamp: re.timeStamp,
+                                                unixTime: re.unixTime,
+                                                encodeValue: re.payloadValue,
+                                                decodeValue: JSON.stringify(Accumulated_Message_Decoding),
+                                                level: Accumulated_Message_Decoding.level,
+                                                type: 'Accumulate/Count Message'
+                                            }).then(() => {
+                                                try {
+                                                    callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
+                                                } catch (error) {
+                                                    return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
+                                                }
+                                            }).catch((err) => {
+                                                try {
+                                                    callback({status: true, message: 'Accumulate/Count Message', data: err})
+                                                } catch (error) {
+                                                    return {status: true, message: 'Accumulate/Count Message', data: err}
+                                                }
+                                            })
+                                        });
+                                    });
                                 }
                                 else {
                                     // c.destroy()
                                     try {
-                                        callback({status: true, message: 'Reading', data: re})
+                                        callback({status: true, message: 'Unknown message, it maybe test file', data: re})
                                     } catch (error) {
-                                        return {status: true, message: 'Reading', data: re}
+                                        return {status: true, message: 'Unknown message, it maybe test file', data: re}
                                     }
                                 }
                                 
