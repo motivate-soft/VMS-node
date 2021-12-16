@@ -72,8 +72,8 @@ function getLogList(page, search, callback) {
 			'Lat / Long: '+
 			json.latitude + ' ' + json.NS + ' / ' + json.longitude + ' ' + json.EW + '<br>' +
 			'Speed / Heading: ' + json.speed + ' / ' + json.heading + '<br>' +
-			'Validity / Supply: ' + json.validity + ' / ' + ((json.power) ? json.power: json.input_supply) + '<br>' +
-			'Tamper: ' + ((json.tamper) ? json.tamper: json.temper_longitude);
+			'Validity / Supply: ' + json.validity + ' / ' + ((json.power) ? json.power: 0) + '<br>' + // json.input_supply
+			'Tamper: ' + ((json.tamper) ? json.tamper: 0); // json.temper_longitude
 
 			//'Validity / Input Supply: ' + json.validity + ' / ' + json.input_supply + '<br>' +
 			//'Temper: ' + json.temper_longitude;
