@@ -276,7 +276,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             _gpsac = re;
 
                                             _gpsac.forEach(element => {
-                                                if (element.name == esn_num)
+                                                if (element.pgid == esn_num)
                                                 {
                                                     var current_time = new Date();
                                                     emlobj.save({
@@ -358,7 +358,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             _gpsac = re;
 
                                             _gpsac.forEach(element => {
-                                                if (element.name == esn_num)
+                                                if (element.pgid == esn_num)
                                                 {
                                                     emlobj.save({
                                                         email: _gpsac[_accnt].email,
@@ -414,7 +414,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             _gpsac = re;
 
                                             _gpsac.forEach(element => {
-                                                if (element.name == esn_num)
+                                                if (element.pgid == esn_num)
                                                 {
                                                     emlobj.save({
                                                         email: _gpsac[_accnt].email,
