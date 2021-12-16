@@ -2268,3 +2268,232 @@ Error: Timed out while connecting to server
 [2021-12-16T16:12:16.804] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
 [2021-12-16T16:12:16.805] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
 [2021-12-16T16:12:16.808] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:14:17.001] [ERROR] app - 16 Dec 16:14:16 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:16:27.177] [ERROR] app - 16 Dec 16:16:27 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:16:55.525] [INFO] app - Initializing database -- OK
+[2021-12-16T16:16:55.530] [INFO] app - Loading modules -- OK
+[2021-12-16T16:16:55.546] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:16:55.547] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:16:55.548] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:16:55.549] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:16:55.550] [INFO] app - Application Started Now
+[2021-12-16T16:17:08.748] [ERROR] app - 16 Dec 16:17:08 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:17:50.283] [INFO] app - Email to GPS service stopped
+[2021-12-16T16:20:11.689] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:12.690] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:13.691] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:14.692] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:15.693] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run("update `session` set  sesLastUpdated=1639646414693 where sesSid='AZn26mqKPkTxccOxLVH6P9hFp1EJAFJD'", [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:60:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:16.694] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:17.695] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run("update `session` set  sesLastUpdated=1639646416695 where sesSid='AZn26mqKPkTxccOxLVH6P9hFp1EJAFJD'", [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:60:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:18.696] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:19.704] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:20.649] [INFO] app - Initializing database -- OK
+[2021-12-16T16:20:20.653] [INFO] app - Loading modules -- OK
+[2021-12-16T16:20:20.665] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:20:20.666] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:20:20.667] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:20:20.668] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:20:20.668] [INFO] app - Application Started Now
+[2021-12-16T16:20:26.052] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run("insert into `session` ( sesSid,  sesUserIdx,  sesDateCreated,  sesLastUpdated,  sesClientIP)  values ('J4RQPcG4t6qkFMlN2QEXXSNJkC-D7om-', 1, 1639646425052, 1639646425052, '::1')", [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:60:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:33.322] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run("insert into `session` ( sesSid,  sesUserIdx,  sesDateCreated,  sesLastUpdated,  sesClientIP)  values ('J4RQPcG4t6qkFMlN2QEXXSNJkC-D7om-', 1, 1639646432323, 1639646432323, '::1')", [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:60:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:33.843] [ERROR] app - 16 Dec 16:20:33 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:20:34.332] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run("insert into `session` ( sesSid,  sesUserIdx,  sesDateCreated,  sesLastUpdated,  sesClientIP)  values ('J4RQPcG4t6qkFMlN2QEXXSNJkC-D7om-', 1, 1639646433333, 1639646433333, '::1')", [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\sesdao.js:60:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:20:46.990] [ERROR] app - 16 Dec 16:20:46 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:22:01.779] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:22:01.795] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:22:46.865] [INFO] app - Initializing database -- OK
+[2021-12-16T16:22:46.869] [INFO] app - Loading modules -- OK
+[2021-12-16T16:22:46.882] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:22:46.882] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:22:46.883] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:22:46.884] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:22:46.884] [INFO] app - Application Started Now
+[2021-12-16T16:22:51.571] [INFO] app - Initializing database -- OK
+[2021-12-16T16:22:51.576] [INFO] app - Loading modules -- OK
+[2021-12-16T16:22:51.587] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:22:51.587] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:22:51.588] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:22:51.590] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:22:51.590] [INFO] app - Application Started Now
+[2021-12-16T16:23:03.003] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:23:04.741] [ERROR] app - 16 Dec 16:23:04 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:23:17.886] [ERROR] app - 16 Dec 16:23:17 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:23:35.694] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:23:35.711] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:23:35.728] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-16T16:23:35.831] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:24:13.613] [ERROR] app - connect ETIMEDOUT 172.104.56.92:5005
+Error: connect ETIMEDOUT 172.104.56.92:5005
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1144:16)
+[2021-12-16T16:24:35.622] [ERROR] app - connect ETIMEDOUT 172.104.56.92:5005
+Error: connect ETIMEDOUT 172.104.56.92:5005
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1144:16)
+[2021-12-16T16:25:28.088] [ERROR] app - 16 Dec 16:25:28 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:25:41.231] [ERROR] app - 16 Dec 16:25:41 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:26:25.699] [INFO] app - Email to GPS service stopped
+[2021-12-16T16:30:27.309] [INFO] app - Initializing database -- OK
+[2021-12-16T16:30:27.313] [INFO] app - Loading modules -- OK
+[2021-12-16T16:30:27.325] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:30:27.326] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:30:27.327] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:30:27.329] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:30:27.329] [INFO] app - Application Started Now
+[2021-12-16T16:30:40.489] [ERROR] app - 16 Dec 16:30:40 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:31:03.424] [INFO] app - Initializing database -- OK
+[2021-12-16T16:31:03.428] [INFO] app - Loading modules -- OK
+[2021-12-16T16:31:03.445] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T16:31:03.445] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T16:31:03.446] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T16:31:03.448] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T16:31:03.448] [INFO] app - Application Started Now
+[2021-12-16T16:31:16.593] [ERROR] app - 16 Dec 16:31:16 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:31:56.060] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:31:56.082] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:31:56.093] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-16T16:31:56.105] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T16:32:03.454] [INFO] app - Traccar Service: PGID not found for 127.0.0.1
+[2021-12-16T16:32:04.457] [INFO] app - Traccar Service: PGID not found for 127.0.0.1

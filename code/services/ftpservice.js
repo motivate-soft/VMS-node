@@ -3,7 +3,7 @@ var e2glib = require(appConfig.lib_path + '/e2glib.js');
 var moment = require('moment');
 var fs = require('fs');
 var FTPClient = require('ftp');
-var c = new FTPClient();
+
 var path = require('path')
 var parse = require('xml-parser');
 const ftp = require("basic-ftp");
@@ -141,6 +141,7 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
 
 async function read_xml(ip, username, password, port, filePath, callback ) {
     if (filePath) {
+        var c = new FTPClient();
         c.connect({
             host: ip,
             user: username,
@@ -155,6 +156,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                 c.get(filePath, function (err, stream) { //get file from ftp
                     if (err) {
                         try {
+                            c.destroy()
                             callback({status: false, message: 'Failed', data: err})
                         } catch (error) {
                             return {status: false, message: 'Failed', data: err}
@@ -270,54 +272,36 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                     _gpsac = [];
     
-                                    e2glib.getGac(function(re, err) {
-                                    
-                                        if (!err) {
-                                            _gpsac = re;
-
-                                            _gpsac.forEach(element => {
-                                                if (element.pgid == esn_num)
-                                                {
-                                                    var current_time = new Date();
-                                                    emlobj.save({
-                                                        email: _gpsac[_accnt].email,
-                                                        uid: messageId,
-                                                        emaildate: new Date(timeStamp).getTime(),
-                                                        gpsdata: {
-                                                            date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(current_time.getUTCFullYear(), 4),
-                                                            time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
-                                                            latitude: Stand_Message_Decoding.latitude,
-                                                            NS: Stand_Message_Decoding.latHemisphere,
-                                                            longitude: Stand_Message_Decoding.longitude,
-                                                            EW: Stand_Message_Decoding.lngHemisphere,
-                                                            speed: Stand_Message_Decoding.speed,
-                                                            heading: Stand_Message_Decoding.heading,
-                                                            validity: Stand_Message_Decoding.gpsDataValid,
-                                                            power: Stand_Message_Decoding.goodBattery,
-                                                            tamper: Stand_Message_Decoding.motion,
-                                                        },
-                                                        emaildata: {
-                                                            type: "Hex",
-                                                            data: raw_data
-                                                        },
-                                                    });
-                                                }
-                                            });
-
-                                            try {
-                                                callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
-                                            } catch (error) {
-                                                return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
-                                            }
-                                        
-                                        }
-                                        else
-                                            try {
-                                                callback({status: false, message: 'Failed. GPS account not found', data: "GPS account not found"})
-                                            } catch (error) {
-                                                return {status: false, message: 'Failed. GPS account not found', data: "GPS account not found"}
-                                            }
+                                    var current_time = new Date();
+                                    emlobj.save({
+                                        email: ip,
+                                        uid: messageId,
+                                        emaildate: new Date(timeStamp).getTime(),
+                                        gpsdata: {
+                                            date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(current_time.getUTCFullYear(), 4),
+                                            time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
+                                            latitude: Stand_Message_Decoding.latitude,
+                                            NS: Stand_Message_Decoding.latHemisphere,
+                                            longitude: Stand_Message_Decoding.longitude,
+                                            EW: Stand_Message_Decoding.lngHemisphere,
+                                            speed: Stand_Message_Decoding.speed,
+                                            heading: Stand_Message_Decoding.heading,
+                                            validity: Stand_Message_Decoding.gpsDataValid,
+                                            power: Stand_Message_Decoding.goodBattery,
+                                            tamper: Stand_Message_Decoding.motion,
+                                        },
+                                        emaildata: {
+                                            type: "Hex",
+                                            data: raw_data
+                                        },
                                     });
+
+                                    c.destroy()
+                                    try {
+                                        callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
+                                    } catch (error) {
+                                        return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
+                                    }
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) != 24) {
                                     Nonstandard_Message_Decoding.level = 3;
@@ -350,44 +334,24 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Nonstandard_Message_Decoding.unsgdBinaryCountInFailedGPS = byteArray[5] * 256 + byteArray[6];
                                     Nonstandard_Message_Decoding.noOfTransmissions = byteArray[7] * 256 + byteArray[8];
                                     
-                                    _gpsac = [];
-    
-                                    e2glib.getGac(function(re, err) {
-                                    
-                                        if (!err) {
-                                            _gpsac = re;
-
-                                            _gpsac.forEach(element => {
-                                                if (element.pgid == esn_num)
-                                                {
-                                                    emlobj.save({
-                                                        email: _gpsac[_accnt].email,
-                                                        uid: messageId,
-                                                        emaildate: new Date(timeStamp).getTime(),
-                                                        gpsdata: Nonstandard_Message_Decoding,
-                                                        emaildata: {
-                                                            type: "Hex",
-                                                            data: raw_data
-                                                        },
-                                                        type: 1
-                                                    });
-                                                }
-                                            });
-
-                                            try {
-                                                callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
-                                            } catch (error) {
-                                                return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
-                                            }
-                                        
-                                        }
-                                        else
-                                            try {
-                                                callback({status: false, message: 'Failed. GPS account not found', data: "GPS account not found"})
-                                            } catch (error) {
-                                                return {status: false, message: 'Failed. GPS account not found', data: "GPS account not found"}
-                                            }
+                                    emlobj.save({
+                                        email: ip,
+                                        uid: messageId,
+                                        emaildate: new Date(timeStamp).getTime(),
+                                        gpsdata: Nonstandard_Message_Decoding,
+                                        emaildata: {
+                                            type: "Hex",
+                                            data: raw_data
+                                        },
+                                        type: 1
                                     });
+
+                                    c.destroy()
+                                    try {
+                                        callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
+                                    } catch (error) {
+                                        return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
+                                    }
                                     
                                 }
                                 else if (parseInt(firstBinary.slice(6), 2) === 3 && parseInt(firstBinary.slice(0, 6), 2) == 24) {
@@ -406,47 +370,29 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     //     });
                                     // });
 
-                                    _gpsac = [];
-    
-                                    e2glib.getGac(function(re, err) {
-                                    
-                                        if (!err) {
-                                            _gpsac = re;
-
-                                            _gpsac.forEach(element => {
-                                                if (element.pgid == esn_num)
-                                                {
-                                                    emlobj.save({
-                                                        email: _gpsac[_accnt].email,
-                                                        uid: messageId,
-                                                        emaildate: new Date(timeStamp).getTime(),
-                                                        gpsdata: Accumulated_Message_Decoding,
-                                                        emaildata: {
-                                                            type: "Hex",
-                                                            data: raw_data
-                                                        },
-                                                        type: 2
-                                                    });
-                                                }
-                                            });
-
-                                            try {
-                                                callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
-                                            } catch (error) {
-                                                return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
-                                            }
-                                        
-                                        }
-                                        else
-                                            try {
-                                                callback({status: false, message: 'Failed. GPS account not found', data: "GPS account not found"})
-                                            } catch (error) {
-                                                return {status: false, message: 'Failed. GPS account not found', data: "GPS account not found"}
-                                            }
+                                    emlobj.save({
+                                        email: ip,
+                                        uid: messageId,
+                                        emaildate: new Date(timeStamp).getTime(),
+                                        gpsdata: Accumulated_Message_Decoding,
+                                        emaildata: {
+                                            type: "Hex",
+                                            data: raw_data
+                                        },
+                                        type: 2
                                     });
+
+                                    c.destroy()
+
+                                    try {
+                                        callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
+                                    } catch (error) {
+                                        return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
+                                    }
                                 }
                                 else {
                                     // c.destroy()
+                                    c.destroy()
                                     try {
                                         callback({status: true, message: 'Unknown message, it maybe test file', data: re})
                                     } catch (error) {
@@ -460,6 +406,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                   })
             }
             catch(e){
+                c.destroy()
                 throw new Error('Cloud not upload file, Please make sure FTP user has write permissions.')
             }
         });
