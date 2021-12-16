@@ -6455,3 +6455,171 @@ Error: Timed out while connecting to server
 [2021-12-16T22:43:27.703] [INFO] app - Reading xml file: NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
 [2021-12-16T22:43:27.710] [INFO] app - Reading xml file: StuMessages_1b382d202b5610068d9a8069f8bef113.xml
 [2021-12-16T22:43:27.716] [INFO] app - Reading xml file: StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T22:45:21.886] [ERROR] app - 16 Dec 22:45:21 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:47:32.057] [ERROR] app - 16 Dec 22:47:32 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:49:42.233] [ERROR] app - 16 Dec 22:49:42 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:51:52.445] [ERROR] app - 16 Dec 22:51:52 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:54:02.613] [ERROR] app - 16 Dec 22:54:02 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:56:12.789] [ERROR] app - 16 Dec 22:56:12 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T22:58:22.974] [ERROR] app - 16 Dec 22:58:22 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:00:33.153] [ERROR] app - 16 Dec 23:00:33 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:02:43.324] [ERROR] app - 16 Dec 23:02:43 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:04:53.500] [ERROR] app - 16 Dec 23:04:53 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:07:03.712] [ERROR] app - 16 Dec 23:07:03 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:09:13.911] [ERROR] app - 16 Dec 23:09:13 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:11:24.079] [ERROR] app - 16 Dec 23:11:24 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:13:34.250] [ERROR] app - 16 Dec 23:13:34 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:15:44.420] [ERROR] app - 16 Dec 23:15:44 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:17:54.591] [ERROR] app - 16 Dec 23:17:54 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:20:04.772] [ERROR] app - 16 Dec 23:20:04 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:22:14.952] [ERROR] app - 16 Dec 23:22:14 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:24:25.119] [ERROR] app - 16 Dec 23:24:25 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:26:35.365] [ERROR] app - 16 Dec 23:26:35 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:28:45.545] [ERROR] app - 16 Dec 23:28:45 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:30:55.722] [ERROR] app - 16 Dec 23:30:55 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:33:05.887] [ERROR] app - 16 Dec 23:33:05 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:35:16.075] [ERROR] app - 16 Dec 23:35:16 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:37:26.243] [ERROR] app - 16 Dec 23:37:26 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:39:36.424] [ERROR] app - 16 Dec 23:39:36 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:41:46.591] [ERROR] app - 16 Dec 23:41:46 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T23:43:56.775] [ERROR] app - 16 Dec 23:43:56 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+

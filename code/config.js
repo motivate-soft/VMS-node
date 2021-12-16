@@ -7,7 +7,6 @@ module.exports = {
     public_path: __dirname + '/public',
     views_path: __dirname + '/views',
     service_path: __dirname + '/services',
-    excel_path: __dirname + '/excel',
     
     mod_file: __dirname + '/mod.xml',
 
