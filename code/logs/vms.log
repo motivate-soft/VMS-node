@@ -2497,3 +2497,29 @@ Error: Timed out while connecting to server
 [2021-12-16T16:31:56.105] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
 [2021-12-16T16:32:03.454] [INFO] app - Traccar Service: PGID not found for 127.0.0.1
 [2021-12-16T16:32:04.457] [INFO] app - Traccar Service: PGID not found for 127.0.0.1
+[2021-12-16T16:33:26.773] [ERROR] app - 16 Dec 16:33:26 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T16:34:35.606] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T16:34:36.607] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
