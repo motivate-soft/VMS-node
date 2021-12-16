@@ -86,7 +86,7 @@ function doFTP() {
 
 	if (save_validateOK()) {
 		$("#dlgtest").dialog({
-			title: 'Test Connection',
+			title: 'Connection',
 			modal: true,
 			autoOpen: false,
 			close: function(event, ui) {
@@ -120,7 +120,7 @@ function doFTP() {
 					var xmlData = [];
                     
 					ret.data.forEach((filePath, in_) => {
-						var xhr = $.ajax({
+						var xhr1 = $.ajax({
 							type: 'POST',
 							url: crnmod + '/service',
 							data: {"action": "read_xml", "ip": ip, "port": port, "username": username, "password": password, "file": filePath },

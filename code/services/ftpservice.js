@@ -93,9 +93,8 @@ async function ftp_connect(ip, username, password, port, callback) {
     xmlFilePaths = [];
     await socket_ftp(ip, username, password, port, "", callback);
 }
-
+const client = new ftp.Client()
 async function socket_ftp(ip, username, password, port, directory, callback = '') {
-    const client = new ftp.Client()
     client.ftp.verbose = false;
     try {
         await client.access({
@@ -112,12 +111,10 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
             const file_name = fileInfo.name.name;
             if (ftpList[index].type == 1 && getFileExtension(file_name) === 'xml') {
                 xmlFilePaths.push(directory + '/' + file_name);
-                client.close();
             } else if (ftpList[index].type == 2) {
                 if (file_name == 'read') {
                     continue;
                 }
-                client.close()
                 await socket_ftp(ip, username, password, port, directory + '/' + file_name)
             }
         }
@@ -138,10 +135,10 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
         }
     }
 }
-
+var c = new FTPClient();
 async function read_xml(ip, username, password, port, filePath, callback ) {
     if (filePath) {
-        var c = new FTPClient();
+        
         c.connect({
             host: ip,
             user: username,
@@ -156,7 +153,6 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                 c.get(filePath, function (err, stream) { //get file from ftp
                     if (err) {
                         try {
-                            c.destroy()
                             callback({status: false, message: 'Failed', data: err})
                         } catch (error) {
                             return {status: false, message: 'Failed', data: err}
@@ -298,7 +294,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             },
                                         });
 
-                                        c.destroy()
+                                        
                                         try {
                                             callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
                                         } catch (error) {
@@ -348,7 +344,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             type: 1
                                         });
 
-                                        c.destroy()
+                                        
                                         try {
                                             callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
                                         } catch (error) {
@@ -384,7 +380,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                             type: 2
                                         });
 
-                                        c.destroy()
+                                        
 
                                         try {
                                             callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
@@ -393,8 +389,8 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                         }
                                     }
                                     else {
-                                        // c.destroy()
-                                        c.destroy()
+                                        // 
+                                        
                                         try {
                                             callback({status: true, message: 'Unknown message, it maybe test file', data: re})
                                         } catch (error) {
@@ -413,7 +409,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                   })
             }
             catch(e){
-                c.destroy()
+                
                 throw new Error('Cloud not upload file, Please make sure FTP user has write permissions.')
             }
         });
