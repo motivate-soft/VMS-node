@@ -274,7 +274,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
     
                                     var current_time = new Date();
                                     emlobj.save({
-                                        email: ip,
+                                        email: ""+ esn_num+"_ftp@"+ip,
                                         uid: messageId,
                                         emaildate: new Date(timeStamp).getTime(),
                                         gpsdata: {
@@ -335,7 +335,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     Nonstandard_Message_Decoding.noOfTransmissions = byteArray[7] * 256 + byteArray[8];
                                     
                                     emlobj.save({
-                                        email: ip,
+                                        email: ""+ esn_num+"_ftp@"+ip,
                                         uid: messageId,
                                         emaildate: new Date(timeStamp).getTime(),
                                         gpsdata: Nonstandard_Message_Decoding,
@@ -371,7 +371,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     // });
 
                                     emlobj.save({
-                                        email: ip,
+                                        email: ""+ esn_num+"_ftp@"+ip,
                                         uid: messageId,
                                         emaildate: new Date(timeStamp).getTime(),
                                         gpsdata: Accumulated_Message_Decoding,
