@@ -99,7 +99,7 @@ Connection.prototype.connect = function() {
       tlsOptions;
 
   socket = config.socket || new Socket();
-  socket.setKeepAlive(false);
+  socket.setKeepAlive(true);
   this._sock = undefined;
   this._tagcount = 0;
   this._tmrConn = undefined;
