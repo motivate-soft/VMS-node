@@ -9,7 +9,8 @@ var crc = require('crc');
 var moment = require('moment');
 var http = require('http');
 var fs = require("fs");
-
+var pwd = 'p4s5vv123';
+var applid = 'Orb_gate';
 
 vms_rt.post('/', function(req, res) {
 
@@ -33,14 +34,16 @@ vms_rt.post('/', function(req, res) {
 function processxml(msg, res) {
 
 	if (!msg) {
-		res.send('The msg post variable is missing');
+		// res.send('The msg post variable is missing');
+		exceptionHandling(201, res);
 		return;
 	}
     
 	var obj = parse(msg);
 
 	if (!obj.root) {
-		res.send('Unidentified Obj=' + obj.root);
+		// res.send('Unidentified Obj=' + obj.root);
+		exceptionHandling(201, res);
 		return;
 	}
 
@@ -52,28 +55,34 @@ function processxml(msg, res) {
         
         var tmp = obj.root.children[i];
         param[tmp.name] = tmp.content;
-    }
+	}
+
+	if (!cmd || !verify || !param.datetime || !param.did || !param.limit || isNaN(param.did) || isNaN(param.limit) || cfn.intVal(param.limit) <= 0) {
+		exceptionHandling(201, res);
+		return;
+	}
 
 	
-	// if (verifyxml(msg, verify, param))
-		vmsParse(cmd, param, res);
-	// else {
-	// 	res.send('Authentication failed')
-	// }
+	if (param.applid && verifyxml(msg, verify, param)) {
+		if (cfn.intVal(moment.utc().format('DDMMYYHHmmss') - param.datetime) < 60)
+			vmsParse(cmd, param, res);
+		else {
+				exceptionHandling(203, res);	
+				return;
+			}
+	}
+	else {
+		exceptionHandling(202, res);
+		return;
+	}
 
 }
 
 function verifyxml(msg, verify, param) {
 
-	var re = true;
-
-	var s = msg.substring(msg.indexOf('<applid>'));
-	var pwd = 'p4s5vv123'; // fgc82f2j11p
-
-	// p4s5vv123
-
-	var _crc = crc.crc16ccitt(s).toString(16);
-	var _verify = md5(param.datetime + pwd + param.serial + _crc)
+	var _crc = crc.crc16ccitt(param.datetime + pwd + param.applid).toString(16);
+	_crc = cfn.addZero(_crc, 4);
+	var _verify = md5(_crc)
 	
 	return (_verify == verify);
 }
@@ -100,10 +109,27 @@ function datetimetoUTC(dt) {
 	return re;
 }
 
+function exceptionHandling(errorPort, res) {
+	var dt = moment.utc().format('DDMMYYHHmmss');
+	
+	var msg = '<applid>' + applid + '</applid>' +
+					'<datetime>' + dt + '</datetime>' +
+					'<xcode>' + errorPort + '</xcode>' +
+					'</vessel>';
+
+	var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
+	_crc = cfn.addZero(_crc, 4);
+	var verify = md5(_crc)
+
+	console.log(dt, verify)
+	
+	//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
+	res.header('Content-Type','text/xml').send('<vessel obj="data" verify="">' + msg)
+}
+
 function vmsParse(cmd, param, res) {
 
 	var dt = moment.utc().format('DDMMYYHHmmss');
-	var pwd = 'p4s5vv123';
 	//var pwd = '88';
 	var did = cfn.intVal(param.did);
 	//did = (did == 999999999999) ? 0: (did + 1);
@@ -111,15 +137,15 @@ function vmsParse(cmd, param, res) {
 
     if (cmd == 'test') {
 		// ************************************************** temp stop dof ******************************
-		var msg = '<applid>Orb_gate</applid>' +
+		var msg = '<applid>' + applid + '</applid>' +
 					'<datetime>' + dt + '</datetime>' +
 					'<serial>' + param.serial + '</serial>' +
 					'<xcode>101</xcode>' +
 					'</vessel>';
 					
-		var _crc = crc.crc16ccitt(msg).toString(16);
+		var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
 		_crc = cfn.addZero(_crc, 4);
-		var verify = md5(dt + pwd + param.serial + _crc)
+		var verify = md5(_crc)
 		
 		//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 		res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)
@@ -168,7 +194,7 @@ function vmsParse(cmd, param, res) {
 						else {
 							did = (did == 999999999999) ? 0: (did + 1);
 							
-							var msg = '<applid>Orb_gate</applid>' +
+							var msg = '<applid>' + applid + '</applid>' +
 									'<datetime>' + dt + '</datetime>' +
 									'<xcode>100</xcode>' +
 									'<did>' + cfn.addZero(did, 12) + '</did>' +
@@ -187,9 +213,9 @@ function vmsParse(cmd, param, res) {
 									'<heading>' + gpsdata.heading + '</heading>' +
 									'</vessel>';
 
-							var _crc = crc.crc16ccitt(msg).toString(16);
+							var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
 							_crc = cfn.addZero(_crc, 4);
-							var verify = md5(dt + pwd + param.serial + _crc);
+							var verify = md5(_crc);
 
 							//console.log('crc=' + _crc);
 							//console.log('datetime=' + dt);
@@ -222,30 +248,14 @@ function vmsParse(cmd, param, res) {
 							'<xcode>101</xcode>' +
 							'</vessel>';
 							
-				var _crc = crc.crc16ccitt(msg).toString(16);
+				var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
 				_crc = cfn.addZero(_crc, 4);
-				var verify = md5(dt + pwd + param.serial + _crc)
+				var verify = md5(_crc);
 				
 				//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 				res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)
 			}
 		});
-	}
-	else if (cmd == 'cmd' || cmd == 'cmdstatus' || cmd == 'cmdcancel') {
-		console.log(cfn.dtNow4Log() + ' ' + 'Request: cmd=' + cmd);
-	} else {
-		var msg = '<applid>Orb_gate</applid>' +
-							'<datetime>' + dt + '</datetime>' +
-							'<serial>' + param.serial + '</serial>' +
-							'<xcode>201</xcode>' +
-							'</vessel>';
-							
-		var _crc = crc.crc16ccitt(msg).toString(16);
-		_crc = cfn.addZero(_crc, 4);
-		var verify = md5(dt + pwd + param.serial + _crc)
-		
-		//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
-		res.header('Content-Type','text/xml').send('<vessel obj="status" verify="' + verify + '">' + msg)
 	}
 }
 

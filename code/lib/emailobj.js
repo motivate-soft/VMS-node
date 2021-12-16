@@ -42,10 +42,25 @@ function getLogList(page, search, callback) {
 		var json = cfn.parseJSON(val);
 		var ary = json.data;
 		var re = '';
-		for (i in ary) {
-			var hex = Number(ary[i]).toString(16).toUpperCase();
-			if (hex.length < 2) hex = '0' + hex;
-			re += hex + ' ';
+		if (json.type == 'Buffer') {
+			for (i in ary) {
+				var hex = Number(ary[i]).toString(16).toUpperCase();
+				if (hex.length < 2) hex = '0' + hex;
+				re += hex + ' ';
+			}
+		}
+		else {
+			// if (!ary) {
+			// 	return new Uint8Array();
+			//   }
+			  
+			// var a = [];
+			// for (var i = 2, len = ary.length; i < len; i+=2) {
+			// 	a.push(parseInt(ary.substr(i,2), 16));
+			// }
+			  
+			// return new Uint8Array(a);
+			return ary;
 		}
 		return re;
 	}
@@ -62,6 +77,13 @@ function getLogList(page, search, callback) {
 
 			//'Validity / Input Supply: ' + json.validity + ' / ' + json.input_supply + '<br>' +
 			//'Temper: ' + json.temper_longitude;
+		return re;
+	}
+
+	var gpsstr_for_non_standard = function(val) {
+		var json = cfn.parseJSON(val);
+		var re = 'Type: ' + 
+			json.type + '<br>';
 		return re;
 	}
 	
@@ -85,7 +107,7 @@ function getLogList(page, search, callback) {
 							date: choc.datetime(rows[i].elgDate),
 							emaildate: choc.datetime(rows[i].elgEmailDate),
 							emaildata: (rows[i].elgEmailData) ? tohex(rows[i].elgEmailData): '&nbsp;',
-							gpsdata: gpsstr(rows[i].elgGPSData),
+							gpsdata: rows[i].elgType == 0 ? gpsstr(rows[i].elgGPSData): gpsstr_for_non_standard(rows[i].elgGPSData),
 							vmssent: rows[i].elgVMS_sent,
 							gpssent: rows[0].elgGPS_sent,
 						});

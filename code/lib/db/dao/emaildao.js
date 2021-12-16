@@ -45,11 +45,12 @@ function searchLog(criteria, callback) {
 
 function saveLog(data, callback) {
 
-	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailDate=' + dbu.qDate(data.emaildate), function(err, rows) {
+	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailDate=' + dbu.qDate(data.emaildate) + ' and elgUID=' + dbu.qStr(data.uid), function(err, rows) {
 	
         //console.log(rows);
         //callback(err, 1);
 		if (cfn.length(rows) == 0) {
+			var data_type = data.type ? dbu.qNum(data.type) : 0;
 
 			var sql = 'insert into ' + dbu.qTbl('emaillog') + 
 						' ( ' +
@@ -60,16 +61,18 @@ function saveLog(data, callback) {
 						'elgEmailData, ' +
 						'elgGPSData, ' +
 						'elgVMS_sent, ' +
-						'elgRemark ' +
+						'elgRemark, ' +
+						'elgType ' +
 						' ) values ( ' +
 						dbu.qStr(data.email) + ', ' +
-						dbu.qNum(data.uid) + ', ' +
+						dbu.qStr(data.uid) + ', ' +
 						dbu.qNum(cfn.dateNow()) + ', ' +
 						dbu.qDate(data.emaildate) + ', ' +
 						dbu.qJson(data.emaildata) + ', ' +
 						dbu.qJson(data.gpsdata) + ', ' +
 						dbu.qNum(0) + ', ' +
-						dbu.qStr(data.remark) + ' ' +
+						dbu.qStr(data.remark) + ', ' +
+						data_type + ' ' +
 						' ) ';
 
 			//allback(null, 1);
@@ -126,7 +129,7 @@ function getLogSearch(search) {
 
 function getLog(offset, length, search, callback) {
 
-    var sql = 'select * from ' + dbu.qTbl('emaillog');
+    var sql = 'select * from ' + dbu.qTbl('emaillog'); //  + ' where elgType = ' + dbu.qNum(0)
 
 	sql += getLogSearch(search) + ' order by elgEmailDate ';
 			
@@ -147,7 +150,7 @@ function getLog(offset, length, search, callback) {
 
 function getLogCount(search, callback)	{
 
-	var sql = 'select count(elgIdx) as midx from ' + dbu.qTbl('emaillog');
+	var sql = 'select count(elgIdx) as midx from ' + dbu.qTbl('emaillog'); // + ' where elgType = ' + dbu.qNum(0)
             
 	sql += getLogSearch(search);
 
@@ -168,7 +171,8 @@ function getLogVMS(limit, callback) {
     var sql = 'select * from ' + dbu.qTbl('emaillog') + 
 			' left join ' +  dbu.qTbl('gpsacc') + 
 			' on elgEmail=gacEmail ' +
-            ' where elgVMS_sent=' + dbu.qNum(0) +
+			' where elgVMS_sent=' + dbu.qNum(0) +
+			' and elgType = ' + dbu.qNum(0) +
             //' where elgEmail=' + dbu.qStr('dof_0055@orbcomm.my') +
             ' order by elgIdx desc ' +
             //' order by elgEmailDate desc ' +
@@ -203,7 +207,8 @@ function getLog4TC(callback) {
     var sql = 'select * from ' + dbu.qTbl('emaillog') + 
 			' left join ' +  dbu.qTbl('gpsacc') + 
 			' on elgEmail=gacEmail ' +
-            ' where elgGPS_sent=' + dbu.qNum(0) +
+			' where elgGPS_sent=' + dbu.qNum(0) +
+			' and elgType = ' + dbu.qNum(0) +
             //' order by elgIdx ' +
             ' order by elgEmailDate desc ' +
             ' limit 1 ';

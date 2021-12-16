@@ -141,7 +141,7 @@ function run() {
 				client.on('error', function(err) {
 					cfn.logError(err);
 					console.log(err);
-					if (callback) callback(err);
+					// if (callback) callback(err);
 				});
 				
 				client.on('data', function(data) {
