@@ -3689,3 +3689,2280 @@ Error: SQLITE_BUSY: database is locked
 [2021-12-16T21:17:20.236] [INFO] app - Starting Traccar service -- OK
 [2021-12-16T21:17:20.237] [INFO] app - Starting Email to GPS service -- OK
 [2021-12-16T21:17:20.238] [INFO] app - Application Started Now
+[2021-12-16T21:17:33.389] [ERROR] app - 16 Dec 21:17:33 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:18:21.239] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:22.240] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:23.241] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:24.242] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:25.243] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:26.244] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:27.245] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:28.246] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:29.247] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:30.249] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:31.250] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:32.251] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:33.252] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:34.253] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:35.255] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:36.256] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:37.257] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:38.258] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:39.259] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:40.260] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:41.261] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:42.262] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:43.263] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:44.264] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:45.265] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:46.266] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:47.267] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:48.268] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:49.270] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:50.271] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:51.273] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:52.274] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:53.275] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:54.276] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:55.277] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:56.278] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:57.279] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:58.280] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:18:59.281] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:00.282] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:01.283] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:02.284] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:03.285] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:04.286] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:05.288] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:06.288] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:07.289] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:08.290] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:09.291] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:10.292] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:11.293] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:12.293] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:13.295] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:14.295] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:15.296] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:16.297] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:17.298] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:18.299] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:19.300] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:20.301] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:21.301] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:22.302] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:23.303] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:24.304] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:25.306] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:26.307] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:27.308] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:28.309] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:29.310] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:30.311] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:31.312] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:32.313] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:33.313] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:34.314] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:35.315] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:36.316] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:37.317] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:38.318] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:39.319] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:40.320] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:41.321] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:42.322] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:43.323] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:43.552] [ERROR] app - 16 Dec 21:19:43 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:19:44.324] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:45.326] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:46.327] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:47.328] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:48.335] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:49.335] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:50.336] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:51.337] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:52.338] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:53.354] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:54.355] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:55.356] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:56.357] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:57.357] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:58.359] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:19:59.360] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:00.361] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:01.362] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:02.363] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:03.363] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:04.364] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:05.366] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:06.367] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:07.368] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:08.369] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:09.370] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:10.371] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:11.372] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:12.373] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:13.374] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:14.375] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:15.376] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:16.377] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:17.378] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:18.379] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:19.380] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:20.381] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:21.383] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:22.384] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:23.385] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:24.386] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:25.387] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:26.388] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:27.389] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:28.390] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:29.391] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:30.392] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:31.393] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:32.402] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:33.403] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:34.404] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:35.405] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:36.406] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:37.407] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:38.408] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:39.410] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:40.410] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:41.412] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:42.413] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:43.414] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:44.415] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:45.416] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:46.416] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:47.417] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:48.418] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:49.419] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:50.420] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:51.421] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:52.422] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:53.422] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:54.424] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:55.426] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:56.426] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:57.426] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:58.427] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:20:59.428] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:00.429] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:01.431] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:02.432] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:03.433] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:04.434] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:05.435] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:06.436] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:07.437] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:08.439] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:09.440] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:10.442] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:11.443] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:12.444] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:13.445] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:14.446] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:15.447] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:16.448] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:17.449] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:18.450] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:19.451] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:20.452] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:21.454] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:22.456] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:23.456] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:24.457] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:25.458] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:26.460] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:27.461] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:28.462] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:29.463] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:30.464] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:31.464] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:32.464] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:33.466] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:34.467] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:35.468] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:36.469] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:37.470] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:38.471] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:39.472] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:40.473] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:41.474] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:42.475] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:43.476] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:44.477] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:45.478] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:46.479] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:47.480] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:48.482] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:49.482] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:50.484] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:51.485] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:52.495] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:53.496] [ERROR] app - SQLITE_BUSY: database is locked
+Error: SQLITE_BUSY: database is locked
+--> in Database#run('update `emaillog` set elgGPS_sent=1 where elgIdx=0', [Function])
+    at Object.exec (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:108:19)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:228:6)
+    at Object.update4TC (E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:210:11)
+    at E:\kcs\Projects\nodejs\VMS-node\code\services\traccarservice.js:106:11
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\emailobj.js:202:9
+    at E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dao\emaildao.js:217:9
+    at Statement.<anonymous> (E:\kcs\Projects\nodejs\VMS-node\code\lib\db\dbobj.js:130:21)
+[2021-12-16T21:21:53.712] [ERROR] app - 16 Dec 21:21:53 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:21:54.286] [INFO] app - Initializing database -- OK
+[2021-12-16T21:21:54.290] [INFO] app - Loading modules -- OK
+[2021-12-16T21:21:54.304] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T21:21:54.305] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T21:21:54.307] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T21:21:54.308] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T21:21:54.309] [INFO] app - Application Started Now
+[2021-12-16T21:22:07.461] [ERROR] app - 16 Dec 21:22:07 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:24:17.629] [ERROR] app - 16 Dec 21:24:17 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:25:27.781] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.800] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.803] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.825] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.830] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.833] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-16T21:25:27.842] [INFO] app - Reading xml file: /xml_non_standard/NonAccumMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.843] [INFO] app - Reading xml file: /xml_non_standard/NonDiagMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:27.845] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef113.xml
+[2021-12-16T21:25:27.847] [INFO] app - Reading xml file: /xml_standard/StuMessages_1b382d202b5610068d9a8069f8bef114.xml
+[2021-12-16T21:25:28.681] [INFO] app - Traccar Service: PGID not found for 0-3294695_ftp@127.0.0.1
+[2021-12-16T21:25:29.683] [INFO] app - Traccar Service: PGID not found for 0-3294695_ftp@127.0.0.1
+[2021-12-16T21:25:30.685] [INFO] app - Traccar Service: PGID not found for 0-3294695_ftp@127.0.0.1
+[2021-12-16T21:26:27.791] [ERROR] app - 16 Dec 21:26:27 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:28:37.953] [ERROR] app - 16 Dec 21:28:37 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:30:48.117] [ERROR] app - 16 Dec 21:30:48 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:32:58.286] [ERROR] app - 16 Dec 21:32:58 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:35:08.448] [ERROR] app - 16 Dec 21:35:08 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:37:18.610] [ERROR] app - 16 Dec 21:37:18 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:39:28.774] [ERROR] app - 16 Dec 21:39:28 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:41:38.937] [ERROR] app - 16 Dec 21:41:38 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:43:49.097] [ERROR] app - 16 Dec 21:43:49 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:45:59.262] [ERROR] app - 16 Dec 21:45:59 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:48:09.425] [ERROR] app - 16 Dec 21:48:09 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:50:19.587] [ERROR] app - 16 Dec 21:50:19 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:52:29.754] [ERROR] app - 16 Dec 21:52:29 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:54:39.924] [ERROR] app - 16 Dec 21:54:39 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
+[2021-12-16T21:55:42.471] [INFO] app - Initializing database -- OK
+[2021-12-16T21:55:42.475] [INFO] app - Loading modules -- OK
+[2021-12-16T21:55:42.487] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-16T21:55:42.487] [INFO] app - Starting VMS service  -- OK
+[2021-12-16T21:55:42.488] [INFO] app - Starting Traccar service -- OK
+[2021-12-16T21:55:42.490] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-16T21:55:42.490] [INFO] app - Application Started Now
+[2021-12-16T21:55:55.639] [ERROR] app - 16 Dec 21:55:55 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+
