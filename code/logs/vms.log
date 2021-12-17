@@ -6899,3 +6899,16 @@ Error: Timed out while connecting to server
     at processTimers (internal/timers.js:497:7)
 
 [2021-12-17T21:12:44.832] [INFO] app - Email to GPS service stopped
+[2021-12-17T21:16:52.477] [INFO] app - Initializing database -- OK
+[2021-12-17T21:16:52.480] [INFO] app - Loading modules -- OK
+[2021-12-17T21:16:52.492] [INFO] app - Starting HTTP server [Port:3000]  -- OK
+[2021-12-17T21:16:52.493] [INFO] app - Starting VMS service  -- OK
+[2021-12-17T21:16:52.494] [INFO] app - Starting Traccar service -- OK
+[2021-12-17T21:16:52.496] [INFO] app - Starting Email to GPS service -- OK
+[2021-12-17T21:16:52.497] [INFO] app - Application Started Now
+[2021-12-17T21:17:05.662] [ERROR] app - 17 Dec 21:17:05 - Timed out while connecting to server
+Error: Timed out while connecting to server
+    at Timeout._onTimeout (E:\kcs\Projects\nodejs\VMS-node\code\node_modules\imap\lib\Connection.js:280:15)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
+

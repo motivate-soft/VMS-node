@@ -193,18 +193,22 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                 var lat = Math.floor((byteArray[1] * 65536 + byteArray[2] * 256 + byteArray[3]) * 90 / 8388608 * 1000000) / 1000000;
                                 // 2 ^ 16 = 65536, 2 ^ 8 = 256, 2 ^ 23 = 8388608
+                                Stand_Message_Decoding.latHemisphere = 'N'
                                 if (lat > 90) {
-                                    lat -= 180;
+                                    // lat -= 180;
+                                    Stand_Message_Decoding.latHemisphere = 'S'
                                 }
                                 Stand_Message_Decoding.latitude = lat;
-                                Stand_Message_Decoding.latHemisphere = lat > 0 ? 'N' : 'S';
+                                // Stand_Message_Decoding.latHemisphere = lat > 0 ? 'N' : 'S';
 
                                 var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 1000000) / 1000000;
+                                Stand_Message_Decoding.lngHemisphere = 'E'
                                 if (lng > 180) {
-                                    lng -= 360
+                                    // lng -= 360
+                                    Stand_Message_Decoding.lngHemisphere = 'W'
                                 }
                                 Stand_Message_Decoding.longitude = lng;
-                                Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
+                                // Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
                                 console.log("Byte 7: ", seventhBinary)
