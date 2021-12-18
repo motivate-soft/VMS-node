@@ -180,11 +180,25 @@ function startE2g(callback) {
 		}
 		else
 			cfn.logError(err, true);
-    
     });
+
 }
 
-var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g];
+function startFTP(callback) {
+
+    ftpService.init(function(err) {
+    
+		if (!err) {
+            callback();
+		}
+		else
+			cfn.logError(err, true);
+    
+    });
+	
+}
+
+var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g, startFTP];
 //var process = [initDB, loadMod, startHTTP, startTraccar, startE2g];
 var proc_cnt = 0;
 

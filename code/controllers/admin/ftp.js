@@ -1,7 +1,6 @@
 var express = require('express');
 var ftp_rt = express.Router();
 module.exports = ftp_rt;
-var gaco = require(appConfig.lib_path + '/gacobj.js');
 var mod_xid = 'ftp';
 
 ftp_rt.get('/', function(req, res) {

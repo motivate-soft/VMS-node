@@ -1,3 +1,5 @@
+const Client = require("ftp");
+
 var _editIndex = -1;
 var _running = false;
 var status_interval = 2000;
@@ -14,6 +16,7 @@ function init() {
 function FTPConnecting() {
 	if (_running) {
 		alert('Please disconnect the FTP first');
+		
 	}
 	return _running;
 }
@@ -33,7 +36,7 @@ function startserv() {
 
 function stopserv() {
 
-	$("#tcsstatus").html('<font color="#aa0000"><b>Stopping...</b></font>');
+	$("#ftpstatus").html('<font color="#aa0000"><b>Stopping...</b></font>');
 
     $.ajax({
         type: 'POST',
@@ -66,7 +69,7 @@ function get_ServiceStatus() {
 				_running = false;
 				status = '<font color="#aa0000"><b>Stopped</b></font>';
 			}
-			$("#tcsstatus").html(status);
+			$("#ftpstatus").html(status);
 			
 			if (_running) {
 				$("#btnstarts").prop('disabled', true);  

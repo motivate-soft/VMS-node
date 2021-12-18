@@ -8,17 +8,14 @@ var path = require('path')
 var parse = require('xml-parser');
 const ftp = require("basic-ftp");
 const { FileInfo } = require('basic-ftp');
-// const MessageService = require('../models/message.service');
 
-var _gpsac = [];
-var _accnt = 0;
-//var _interval = 20000;				// **** 20 sec
-var _interval = 1000;				// **** 1 sec
-var _initstart_interval = 60000;   	// **** 1 min
+var _interval = 3600000;				// **** 1hour 3600000
 var _running = false;
 var _sleeping = false;
 var _stopping = false;
 var _firsttime = true;
+
+var ftpip, ftpport, ftppassword, ftpusername;
 
 let Stand_Message_Decoding = {
     type: 'Standard message type',
@@ -83,7 +80,6 @@ function getStatus() {
 function init(callback) {
 
 	reload(function() {
-	
 		start();
 		callback();
     });
@@ -461,7 +457,9 @@ function start() {
     if (_firsttime) {
         _firsttime = false;
         _sleeping = true;
-        setTimeout(run, _initstart_interval);
+        setTimeout(run, 3000);
+    } else {
+        run()
     }
 }
 
@@ -483,7 +481,8 @@ function next() {
 		_stopping = false;
 		_sleeping = false;
 		_running = false;
-		cfn.logInfo('FTP disconnected', true);
+        cfn.logInfo('FTP disconnected', true);
+        setTimeout(run, 3000);
 		return;
 	}
 	else if (_running) {
@@ -497,33 +496,40 @@ function run() {
 
 	if (!_running) return;
 	_sleeping = false;
+    
+    dbo.getMData('ftp', function(re) {
 	
+		var ftpinfo = cfn.parseJSON(re);
+		ftpip = ftpinfo.ip;
+        ftpport = ftpinfo.port;
+        ftpusername = ftpinfo.username;
+        ftppassword = ftpinfo.password;
+
+        ftp_connect(ftpip, ftpusername, ftppassword, ftpport, function(re){
+            if (!re.status) {
+                console.log(cfn.dtNow4Log() + ' ' + re.message);
+                return;
+            } else {
+                if (re.data.length == 0) {
+                    console.log(cfn.dtNow4Log() + ' ' + ' - Not found files uploaded to FTP.');
+                } else {
+                    console.log(cfn.dtNow4Log() + ' ' + ' - Found ' + re.data.length + ' new files.');
+                }
+            }
+        })
+
+        if (_running) {
+            next()
+        }
+        else {
+            _stopping = false;
+            cfn.logInfo('FTP connection stopped', true);
+            return;
+        }
+    });
 	
 }
 
 function getFileExtension(fileName) {
     return path.extname(fileName).slice(1)
 }
-
-function datetimetoUTC(dt) {
-
-	var re = {};
-	
-	if (!dt || typeof dt != 'string') return re;
-	
-	var day = dt.substr(0,2);
-	var mth = dt.substr(2,2);
-	var yr = dt.substr(4,2);
-	var hr = dt.substr(6,2);
-	var mn = dt.substr(8,2);
-	var sc = dt.substr(10,2);
-	
-	var mmt = moment('20' + yr + '-' + mth + '-' + day + ' ' + hr + ':' + mn + ':' + sc);
-	var mmtutc = mmt.utc();
-	
-	re['date'] = mmtutc.format('DDMMYY');
-	re['time'] = mmtutc.format('HHmmss');
-	
-	return re;
-}
-
