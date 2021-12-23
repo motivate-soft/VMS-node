@@ -112,7 +112,9 @@ function run() {
 	_sleeping = false;
 	//console.log('accnt = ' + _accnt + ' / ' + _gpsac.length);
 
-	if (cfn.length(_gpsac) > 0) {
+	let email = "" + _gpsac[_accnt].email
+	
+	if (cfn.length(_gpsac) > 0 && email.search(/ftp@/g) < 0) {
 
 		//cfn.logInfo('Checking email from ' + _gpsac[_accnt].email, true);
 		//console.log('Checking email from ' + _gpsac[_accnt].email);

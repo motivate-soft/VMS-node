@@ -165,7 +165,10 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                     moda.parseResultXML(obj, function(re) {
                         cfn.logInfo('Reading xml file: ' + filePath, true);
                         var byteArray = hexStringToByte(re.payloadValue);
-                        const esn_num = re.esn;
+                        // var find = '0-';
+                        // var re = new RegExp(find, 'g');
+                        let esn_num = "" + re.esn
+                        esn_num = esn_num.replace(/0-/g, "")
                         const messageId = re.messageId;
                         const raw_data = re.payloadValue;
                         const timeStamp = re.timeStamp;
@@ -271,7 +274,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                 var current_time = new Date();
                                 emlobj.save({
-                                    email: ""+ esn_num+"_ftp@"+ip,
+                                    email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
                                     emaildate: new Date(timeStamp).getTime(),
                                     gpsdata: {
