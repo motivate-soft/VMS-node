@@ -31,7 +31,7 @@ let Stand_Message_Decoding = {
     lngHemisphere: 'E', // 'WESTERN'
     subtype: '', // for location message, 0 - non, 1 - Device Turned On, 2-Change of Location alert, 3-Input Status Changed, 4-Undesired input State, 5-Re-counter
     reserverdInSMARTOne: 0, // 0-false, 1-true
-    heading: '', // 000 = N, 001 = NE, 010 = E, 011 = SE, 100 = S, 101 = SW, 110 = W, 111 = NW,
+    heading: 0, // 000 = N, 001 = NE, 010 = E, 011 = SE, 100 = S, 101 = SW, 110 = W, 111 = NW,
     speed: 0
 }
 
@@ -190,7 +190,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 Stand_Message_Decoding.reserverdInSMARTOne = parseInt(firstBinary.slice(0, 1), 2); // 7
                                 // Stand_Message_Decoding.gpsFailCounter = parseInt(firstBinary.slice(0, 2), 2) // 7:6
 
-                                var lat = Math.floor((byteArray[1] * 65536 + byteArray[2] * 256 + byteArray[3]) * 90 / 8388608 * 1000000) / 1000000;
+                                var lat = Math.floor((byteArray[1] * 65536 + byteArray[2] * 256 + byteArray[3]) * 90 / 8388608 * 10000) / 10000;
                                 // 2 ^ 16 = 65536, 2 ^ 8 = 256, 2 ^ 23 = 8388608
                                 Stand_Message_Decoding.latHemisphere = 'N'
                                 if (lat > 90) {
@@ -200,7 +200,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 Stand_Message_Decoding.latitude = lat;
                                 // Stand_Message_Decoding.latHemisphere = lat > 0 ? 'N' : 'S';
 
-                                var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 1000000) / 1000000;
+                                var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 10000) / 10000;
                                 Stand_Message_Decoding.lngHemisphere = 'E'
                                 if (lng > 180) {
                                     // lng -= 360
@@ -280,9 +280,9 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     gpsdata: {
                                         date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(current_time.getUTCFullYear(), 4),
                                         time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
-                                        latitude: Stand_Message_Decoding.latitude,
+                                        latitude: cfn.addZero(Math.floor(Stand_Message_Decoding.latitude), 4) + '.' + cfn.addZero(Math.ceil((Stand_Message_Decoding.latitude - Math.floor(Stand_Message_Decoding.latitude)) * 10000), 4),
                                         NS: Stand_Message_Decoding.latHemisphere,
-                                        longitude: Stand_Message_Decoding.longitude,
+                                        longitude: cfn.addZero(Math.floor(Stand_Message_Decoding.longitude), 5) + '.' + cfn.addZero(Math.ceil((Stand_Message_Decoding.longitude - Math.floor(Stand_Message_Decoding.longitude)) * 10000), 4),
                                         EW: Stand_Message_Decoding.lngHemisphere,
                                         speed: Stand_Message_Decoding.speed,
                                         heading: Stand_Message_Decoding.heading,
