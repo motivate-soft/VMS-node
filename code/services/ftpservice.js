@@ -278,7 +278,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                     uid: messageId,
                                     emaildate: new Date(timeStamp).getTime(),
                                     gpsdata: {
-                                        date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(current_time.getUTCFullYear(), 4),
+                                        date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(Math.floor(current_time.getUTCFullYear() % 100), 2),
                                         time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
                                         latitude: cfn.addZero(Math.floor(Stand_Message_Decoding.latitude), 4) + '.' + cfn.addZero(Math.ceil((Stand_Message_Decoding.latitude - Math.floor(Stand_Message_Decoding.latitude)) * 10000), 4),
                                         NS: Stand_Message_Decoding.latHemisphere,
