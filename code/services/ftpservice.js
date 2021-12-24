@@ -334,17 +334,17 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 Nonstandard_Message_Decoding.unsgdBinaryCountInFailedGPS = byteArray[5] * 256 + byteArray[6];
                                 Nonstandard_Message_Decoding.noOfTransmissions = byteArray[7] * 256 + byteArray[8];
                                 
-                                emlobj.save({
-                                    email: ""+ esn_num+"_ftp@"+ip,
-                                    uid: messageId,
-                                    emaildate: new Date(timeStamp).getTime(),
-                                    gpsdata: Nonstandard_Message_Decoding,
-                                    emaildata: {
-                                        type: "Hex",
-                                        data: raw_data
-                                    },
-                                    type: 1
-                                });
+                                // emlobj.save({
+                                //     email: ""+ esn_num+"_ftp@"+ip,
+                                //     uid: messageId,
+                                //     emaildate: new Date(timeStamp).getTime(),
+                                //     gpsdata: Nonstandard_Message_Decoding,
+                                //     emaildata: {
+                                //         type: "Hex",
+                                //         data: raw_data
+                                //     },
+                                //     type: 1
+                                // });
 
                                 
                                 try {
@@ -370,17 +370,17 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 //     });
                                 // });
 
-                                emlobj.save({
-                                    email: ""+ esn_num+"_ftp@"+ip,
-                                    uid: messageId,
-                                    emaildate: new Date(timeStamp).getTime(),
-                                    gpsdata: Accumulated_Message_Decoding,
-                                    emaildata: {
-                                        type: "Hex",
-                                        data: raw_data
-                                    },
-                                    type: 2
-                                });
+                                // emlobj.save({
+                                //     email: ""+ esn_num+"_ftp@"+ip,
+                                //     uid: messageId,
+                                //     emaildate: new Date(timeStamp).getTime(),
+                                //     gpsdata: Accumulated_Message_Decoding,
+                                //     emaildata: {
+                                //         type: "Hex",
+                                //         data: raw_data
+                                //     },
+                                //     type: 2
+                                // });
 
                                 
 
