@@ -168,7 +168,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                         // var find = '0-';
                         // var re = new RegExp(find, 'g');
                         let esn_num = "" + re.esn
-                        esn_num = esn_num.replace(/0-/g, "")
+                        // esn_num = esn_num.replace(/0-/g, "")
                         const messageId = re.messageId;
                         const raw_data = re.payloadValue;
                         const timeStamp = re.timeStamp;
