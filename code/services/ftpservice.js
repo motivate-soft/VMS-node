@@ -211,31 +211,31 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
                                 console.log("Byte 7: ", seventhBinary)
-                                var heading = 'N';
+                                var heading = 0;
                                 switch (parseInt(seventhBinary.slice(5, 7), 2)) {
                                     case 0:
-                                        heading = 'N'
+                                        heading = 0
                                         break;
                                     case 1:
-                                        heading = 'NE'
+                                        heading = 45
                                         break;
                                     case 2:
-                                        heading = 'E'
+                                        heading = 90
                                         break;
                                     case 3:
-                                        heading = 'SE'
+                                        heading = 135
                                         break;
                                     case 4:
-                                        heading = 'S'
+                                        heading = 180
                                         break;
                                     case 5:
-                                        heading = 'SW'
+                                        heading = 225
                                         break;
                                     case 6:
-                                        heading = 'W'
+                                        heading = 270
                                         break;
                                     case 7:
-                                        heading = 'NW'
+                                        heading = 315
                                         break;
                                     default:
                                         break;
