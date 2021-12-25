@@ -9,7 +9,7 @@ var parse = require('xml-parser');
 const ftp = require("basic-ftp");
 const { FileInfo } = require('basic-ftp');
 
-var _interval = 3600000;				// **** 1hour 3600000
+var _interval = 300000;				// **** 1hour 3600000
 var _running = false;
 var _sleeping = false;
 var _stopping = false;
