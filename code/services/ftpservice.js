@@ -9,7 +9,7 @@ var parse = require('xml-parser');
 const ftp = require("basic-ftp");
 const { FileInfo } = require('basic-ftp');
 
-var _interval = 300000;				// **** 1hour 3600000
+var _interval = 300000;				// **** 1hour 300000
 var _running = false;
 var _sleeping = false;
 var _stopping = false;
@@ -17,6 +17,7 @@ var _firsttime = true;
 
 var ftpip, ftpport, ftppassword, ftpusername;
 
+const Remote_READ_Directory_Name = "read";
 let Stand_Message_Decoding = {
     type: 'Standard message type',
     level: 0,
@@ -109,7 +110,7 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
                 xmlFilePaths.push(file_name);
                 await downloadFile(ip, username, password, port, 'excel/'+file_name, directory + '/' + file_name)
             } else if (ftpList[index].type == 2) {
-                if (file_name == 'read') {
+                if (file_name == Remote_READ_Directory_Name) {
                     continue;
                 }
                 await socket_ftp(ip, username, password, port, directory + '/' + file_name)
@@ -126,6 +127,7 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
     if (callback !== '') {
         client.close()
         try {
+            console.log(xmlFilePaths)
             callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
         } catch (error) {
             
@@ -142,12 +144,29 @@ async function downloadFile(ip, username, password, port, dest_path, from_path) 
             secure: false
         });
         await client.downloadTo(dest_path, from_path);
+        await client.remove(from_path, true);
     }
     catch(err) {
         console.log(err)
     }
 }
-var c = new FTPClient();
+
+async function uploadFile(ip, username, password, port, dest_path, file_name, from_path) {
+    try {
+        await client.access({
+            host: ip,
+            user: username,
+            password: password,
+            port: port,
+            secure: false
+        });
+        await client.ensureDir(dest_path)
+        await client.uploadFrom(from_path, file_name);
+    }
+    catch(err) {
+        console.log(err)
+    }
+}
 async function read_xml(ip, username, password, port, filePath, callback ) {
     if (filePath) {
         
@@ -162,13 +181,20 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                 var obj = parse(data);
 
                 if (obj.root && obj.root.children)
-                    moda.parseResultXML(obj, function(re) {
+                    moda.parseResultXML(obj, async function(re) {
                         cfn.logInfo('Reading xml file: ' + filePath, true);
                         var byteArray = hexStringToByte(re.payloadValue);
                         // var find = '0-';
                         // var re = new RegExp(find, 'g');
                         let esn_num = "" + re.esn
                         // esn_num = esn_num.replace(/0-/g, "")
+                        if (esn_num == "") {
+                            callback({status: false, message: 'ESN lable does not exist.'})
+                            return                
+                        }
+
+                        await uploadFile(ip, username, password, port, Remote_READ_Directory_Name + "/"+esn_num, filePath, './excel/'+filePath)
+
                         const messageId = re.messageId;
                         const raw_data = re.payloadValue;
                         const timeStamp = re.timeStamp;
@@ -362,27 +388,6 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 Accumulated_Message_Decoding.accumTimeForVibOfSMARTONE = (byteArray[5] * 256 + byteArray[6]) == 65535 ? -1 : (byteArray[1] * 256 + byteArray[2]);
                                 Accumulated_Message_Decoding.numOfOpenOrCloseOfInput1 = byteArray[7] == 255 ? -1 : byteArray[7];
                                 Accumulated_Message_Decoding.numOfOpenOrCloseOfInput2 = byteArray[8] == 255 ? -1 : byteArray[7];
-                                
-                                // c.mkdir('read/'+re.esn, ()=> {
-                                //     c.put(content, 'read/'+re.esn + '/' + path.basename(filePath), () => {
-
-                                        
-                                //     });
-                                // });
-
-                                // emlobj.save({
-                                //     email: ""+ esn_num+"_ftp@"+ip,
-                                //     uid: messageId,
-                                //     emaildate: new Date(timeStamp).getTime(),
-                                //     gpsdata: Accumulated_Message_Decoding,
-                                //     emaildata: {
-                                //         type: "Hex",
-                                //         data: raw_data
-                                //     },
-                                //     type: 2
-                                // });
-
-                                
 
                                 try {
                                     callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
