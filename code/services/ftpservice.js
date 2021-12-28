@@ -86,7 +86,7 @@ function init(callback) {
     });
 }
 let xmlFilePaths = [];
-async function ftp_connect(ip, username, password, port, callback) {
+async function ftp_connect_for_service(ip, username, password, port, callback) {
     xmlFilePaths = [];
     await socket_ftp(ip, username, password, port, "");
     
@@ -95,6 +95,11 @@ async function ftp_connect(ip, username, password, port, callback) {
     });
 
     callback({status: true, data: xmlFilePaths})
+}
+
+async function ftp_connect(ip, username, password, port, callback) {
+    xmlFilePaths = [];
+    await socket_ftp(ip, username, password, port, '', callback);
 }
 
 const client = new ftp.Client()
@@ -127,14 +132,15 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
     catch(err) {
         if (callback !== '')
         {
-            client.close()
             callback({status: false, message: 'Failed, error: ' + err, data: xmlFilePaths})
         }
     }
     if (callback !== '') {
-        client.close()
         try {
-            callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
+            if (xmlFilePaths.length == 0)
+                callback({status: true, message: 'No data', data: xmlFilePaths})
+            else
+                callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
         } catch (error) {
             
         }
@@ -177,6 +183,7 @@ async function uploadFile(ip, username, password, port, dest_path, file_name, fr
     client1.close()
 }
 async function read_xml(ip, username, password, port, filePath, callback = '' ) {
+    console.log(filePath)
     if (filePath) {
         try {
             fs.readFile('./excel/'+filePath, 'utf8', function(err, data){
@@ -530,7 +537,7 @@ function run() {
         ftpusername = ftpinfo.username;
         ftppassword = ftpinfo.password;
 
-        ftp_connect(ftpip, ftpusername, ftppassword, ftpport, function(re){
+        ftp_connect_for_service(ftpip, ftpusername, ftppassword, ftpport, function(re){
             if (!re.status) {
                 console.log(cfn.dtNow4Log() + ' ' + re.message);
                 return;

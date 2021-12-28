@@ -81,12 +81,11 @@ function get_ServiceStatus() {
 			}
         }
     });    
-	setTimeout(get_ServiceStatus, status_interval);
 
 }
 
 function doFTP() {
-
+	console.log("doFTP")
 	if (save_validateOK()) {
 		$("#dlgtest").dialog({
 			title: 'Connection',
