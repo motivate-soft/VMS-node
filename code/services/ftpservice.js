@@ -323,7 +323,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 var timeString = timeStamps[1];
                                 var dateParts = dateString.split("/");
                                 var timeParts = timeString.split(":");
-                                var email_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], +timeParts[0], +timeParts[1], +timeParts[2]);
+                                var email_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], +timeParts[0] + 8, +timeParts[1], +timeParts[2]);
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
