@@ -215,6 +215,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                         const messageId = re.messageId;
                         const raw_data = re.payloadValue;
                         const timeStamp = re.timeStamp;
+                        const unixTime = re.unixTime;
                         console.info("Encoded value: ", re.payloadValue)
                         if (re.payloadValue && byteArray.length > 0) {
                             var firstBinary = dec2bin(byteArray[0], 8);
@@ -316,6 +317,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 _gpsac = [];
 
                                 var current_time = new Date();
+                                current_time.setUTCMilliseconds(unixTime);
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,

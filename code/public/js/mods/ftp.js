@@ -85,7 +85,6 @@ function get_ServiceStatus() {
 }
 
 function doFTP() {
-	console.log("doFTP")
 	if (save_validateOK()) {
 		$("#dlgtest").dialog({
 			title: 'Connection',
