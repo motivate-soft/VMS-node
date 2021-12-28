@@ -17,7 +17,7 @@ var _firsttime = true;
 
 var ftpip, ftpport, ftppassword, ftpusername;
 
-const Remote_READ_Directory_Name = "read";
+const Remote_READ_Directory_Name = "ESN";
 let Stand_Message_Decoding = {
     type: 'Standard message type',
     level: 0,
