@@ -88,8 +88,16 @@ function init(callback) {
 let xmlFilePaths = [];
 async function ftp_connect(ip, username, password, port, callback) {
     xmlFilePaths = [];
-    await socket_ftp(ip, username, password, port, "", callback);
+    await socket_ftp(ip, username, password, port, "");
+    
+    xmlFilePaths.forEach(async (filePath, index) => {
+        if (index == xmlFilePaths.length - 1)
+            await read_xml(ip, username, password, port, filePath, callback);
+        else 
+            await read_xml(ip, username, password, port, filePath);
+    });
 }
+
 const client = new ftp.Client()
 async function socket_ftp(ip, username, password, port, directory, callback = '') {
     client.ftp.verbose = false;
@@ -127,7 +135,6 @@ async function socket_ftp(ip, username, password, port, directory, callback = ''
     if (callback !== '') {
         client.close()
         try {
-            console.log(xmlFilePaths)
             callback({status: true, message: 'Connected successfully.', data: xmlFilePaths})
         } catch (error) {
             
@@ -152,28 +159,31 @@ async function downloadFile(ip, username, password, port, dest_path, from_path) 
 }
 
 async function uploadFile(ip, username, password, port, dest_path, file_name, from_path) {
+    const client1 = new ftp.Client()
     try {
-        await client.access({
+        
+        await client1.access({
             host: ip,
             user: username,
             password: password,
             port: port,
             secure: false
         });
-        await client.ensureDir(dest_path)
-        await client.uploadFrom(from_path, file_name);
+        await client1.ensureDir(dest_path)
+        await client1.uploadFrom(from_path, file_name);
     }
     catch(err) {
         console.log(err)
     }
+    client1.close()
 }
-async function read_xml(ip, username, password, port, filePath, callback ) {
+async function read_xml(ip, username, password, port, filePath, callback = '' ) {
     if (filePath) {
-        
         try {
             fs.readFile('./excel/'+filePath, 'utf8', function(err, data){
 
                 if(err) {
+                    if (callback !== '')
                     callback({status: false, message: 'failed: ' + err})
                     return;
                 }
@@ -189,6 +199,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                         let esn_num = "" + re.esn
                         // esn_num = esn_num.replace(/0-/g, "")
                         if (esn_num == "") {
+                            if (callback !== '')
                             callback({status: false, message: 'ESN lable does not exist.'})
                             return                
                         }
@@ -324,6 +335,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                 
                                 try {
+                                    if (callback !== '')
                                     callback({status: true, message: subtype, data: "Successfully pushed decode value to Database server."})
                                 } catch (error) {
                                     return {status: true, message: subtype, data: "Successfully pushed decode value to Database server."}
@@ -374,6 +386,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
 
                                 
                                 try {
+                                    if (callback !== '')
                                     callback({status: true, message: message_type, data: "Successfully pushed decode value to Database server."})
                                 } catch (error) {
                                     return {status: true, message: message_type, data: "Successfully pushed decode value to Database server."}
@@ -390,6 +403,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 Accumulated_Message_Decoding.numOfOpenOrCloseOfInput2 = byteArray[8] == 255 ? -1 : byteArray[7];
 
                                 try {
+                                    if (callback !== '')
                                     callback({status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."})
                                 } catch (error) {
                                     return {status: true, message: 'Accumulate/Count Message', data: "Successfully pushed decode value to Database server."}
@@ -399,6 +413,7 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                                 // 
                                 
                                 try {
+                                    if (callback !== '')
                                     callback({status: true, message: 'Unknown message, it maybe test file', data: re})
                                 } catch (error) {
                                     return {status: true, message: 'Unknown message, it maybe test file', data: re}
@@ -406,16 +421,19 @@ async function read_xml(ip, username, password, port, filePath, callback ) {
                             }
                             
                         } else {
+                            if (callback !== '')
                             callback({status: false, message: 'Incorrect file', data: err})
                         }
                     });
                 else {
+                    if (callback !== '')
                     callback({status: false, message: 'Incorrect file', data: err})
                 }
             })
             
         } catch (error) {
-            callback({status: false, message: 'Not found file'})
+            if (callback !== '')
+                callback({status: false, message: 'Not found file'})
         }
     } else {
         return {}
