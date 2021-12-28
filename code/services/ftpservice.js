@@ -317,21 +317,20 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 _gpsac = [];
 
                                 var current_time = new Date();
-                                current_time.setUTCMilliseconds(unixTime);
-
+                                current_time.setTime(unixTime);
                                 var timeStamps = timeStamp.split(" ");
                                 var dateString = timeStamps[0];
                                 var timeString = timeStamps[1];
                                 var dateParts = dateString.split("/");
                                 var timeParts = timeString.split(":");
-                                var email_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], +timeParts[2], +timeParts[1]);
+                                var email_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], +timeParts[0], +timeParts[1], +timeParts[2]);
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
                                     emaildate: email_date.getTime(),
                                     gpsdata: {
-                                        date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(Math.floor(current_time.getUTCFullYear() % 100), 2),
-                                        time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
+                                        date: cfn.addZero(email_date.getDate(), 2)+cfn.addZero(email_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(email_date.getFullYear() % 100), 2),
+                                        time: cfn.addZero(email_date.getHours(), 2)+cfn.addZero(email_date.getMinutes(), 2)+cfn.addZero(email_date.getSeconds(), 2),
                                         latitude: cfn.addZero(Math.floor(Stand_Message_Decoding.latitude), 4) + '.' + cfn.addZero(Math.ceil((Stand_Message_Decoding.latitude - Math.floor(Stand_Message_Decoding.latitude)) * 10000), 4),
                                         NS: Stand_Message_Decoding.latHemisphere,
                                         longitude: cfn.addZero(Math.floor(Stand_Message_Decoding.longitude), 5) + '.' + cfn.addZero(Math.ceil((Stand_Message_Decoding.longitude - Math.floor(Stand_Message_Decoding.longitude)) * 10000), 4),
