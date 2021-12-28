@@ -318,10 +318,17 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
 
                                 var current_time = new Date();
                                 current_time.setUTCMilliseconds(unixTime);
+
+                                var timeStamps = timeStamp.split(" ");
+                                var dateString = timeStamps[0];
+                                var timeString = timeStamps[1];
+                                var dateParts = dateString.split("/");
+                                var timeParts = timeString.split(":");
+                                var email_date = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0], +timeParts[2], +timeParts[1]);
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
-                                    emaildate: new Date(timeStamp).getTime(),
+                                    emaildate: email_date.getTime(),
                                     gpsdata: {
                                         date: cfn.addZero(current_time.getUTCDate(), 2)+cfn.addZero(current_time.getUTCMonth(), 2)+cfn.addZero(Math.floor(current_time.getUTCFullYear() % 100), 2),
                                         time: cfn.addZero(current_time.getUTCHours(), 2)+cfn.addZero(current_time.getUTCMinutes(), 2)+cfn.addZero(current_time.getUTCSeconds(), 2),
