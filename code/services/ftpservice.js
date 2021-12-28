@@ -537,8 +537,10 @@ function run() {
             } else {
                 if (re.data.length == 0) {
                     console.log(cfn.dtNow4Log() + ' ' + ' - Not found files uploaded to FTP.');
+                    xmlFilePaths = [];
                 } else {
                     console.log(cfn.dtNow4Log() + ' ' + ' - Found ' + re.data.length + ' new files.');
+                    xmlFilePaths = [];
                 }
             }
         })
