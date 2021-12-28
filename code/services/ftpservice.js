@@ -91,11 +91,10 @@ async function ftp_connect(ip, username, password, port, callback) {
     await socket_ftp(ip, username, password, port, "");
     
     xmlFilePaths.forEach(async (filePath, index) => {
-        if (index == xmlFilePaths.length - 1)
-            await read_xml(ip, username, password, port, filePath, callback);
-        else 
-            await read_xml(ip, username, password, port, filePath);
+        await read_xml(ip, username, password, port, filePath);
     });
+
+    callback({status: true, data: xmlFilePaths})
 }
 
 const client = new ftp.Client()
@@ -192,7 +191,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
 
                 if (obj.root && obj.root.children)
                     moda.parseResultXML(obj, async function(re) {
-                        cfn.logInfo('Reading xml file: ' + filePath, true);
+                        // cfn.logInfo('Reading xml file: ' + filePath, true);
                         var byteArray = hexStringToByte(re.payloadValue);
                         // var find = '0-';
                         // var re = new RegExp(find, 'g');
