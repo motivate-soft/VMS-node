@@ -328,7 +328,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
-                                    emaildate: unixTime,
+                                    emaildate: current_time.getTime(),
                                     gpsdata: {
                                         date: cfn.addZero(email_date.getDate(), 2)+cfn.addZero(email_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(email_date.getFullYear() % 100), 2),
                                         time: cfn.addZero(email_date.getHours(), 2)+cfn.addZero(email_date.getMinutes(), 2)+cfn.addZero(email_date.getSeconds(), 2),
