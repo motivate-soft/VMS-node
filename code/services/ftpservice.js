@@ -252,7 +252,6 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 }
                                 Stand_Message_Decoding.longitude = Math.abs(lng) * 100;
 
-                                console.log(Stand_Message_Decoding.longitude, Stand_Message_Decoding.latitude)
                                 // Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
@@ -329,7 +328,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 emlobj.save({
                                     email: ""+ esn_num+"_ftp@orbcomm.us",
                                     uid: messageId,
-                                    emaildate: email_date.getTime(),
+                                    emaildate: unixTime,
                                     gpsdata: {
                                         date: cfn.addZero(email_date.getDate(), 2)+cfn.addZero(email_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(email_date.getFullYear() % 100), 2),
                                         time: cfn.addZero(email_date.getHours(), 2)+cfn.addZero(email_date.getMinutes(), 2)+cfn.addZero(email_date.getSeconds(), 2),
