@@ -238,19 +238,21 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 // 2 ^ 16 = 65536, 2 ^ 8 = 256, 2 ^ 23 = 8388608
                                 Stand_Message_Decoding.latHemisphere = 'N'
                                 if (lat > 90) {
-                                    // lat -= 180;
+                                    lat -= 180;
                                     Stand_Message_Decoding.latHemisphere = 'S'
                                 }
-                                Stand_Message_Decoding.latitude = lat * 100;
+                                Stand_Message_Decoding.latitude = Math.abs(lat) * 100;
                                 // Stand_Message_Decoding.latHemisphere = lat > 0 ? 'N' : 'S';
 
                                 var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 10000000) / 10000000;
                                 Stand_Message_Decoding.lngHemisphere = 'E'
                                 if (lng > 180) {
-                                    // lng -= 360
+                                    lng -= 360
                                     Stand_Message_Decoding.lngHemisphere = 'W'
                                 }
-                                Stand_Message_Decoding.longitude = lng * 100;
+                                Stand_Message_Decoding.longitude = Math.abs(lng) * 100;
+
+                                console.log(Stand_Message_Decoding.longitude, Stand_Message_Decoding.latitude)
                                 // Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
