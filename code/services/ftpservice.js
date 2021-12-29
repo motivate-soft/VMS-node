@@ -250,7 +250,7 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                     // lng -= 360
                                     Stand_Message_Decoding.lngHemisphere = 'W'
                                 }
-                                Stand_Message_Decoding.longitude = lng * 1000;
+                                Stand_Message_Decoding.longitude = lng * 100;
                                 // Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
