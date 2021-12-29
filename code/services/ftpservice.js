@@ -234,23 +234,23 @@ async function read_xml(ip, username, password, port, filePath, callback = '' ) 
                                 Stand_Message_Decoding.reserverdInSMARTOne = parseInt(firstBinary.slice(0, 1), 2); // 7
                                 // Stand_Message_Decoding.gpsFailCounter = parseInt(firstBinary.slice(0, 2), 2) // 7:6
 
-                                var lat = Math.floor((byteArray[1] * 65536 + byteArray[2] * 256 + byteArray[3]) * 90 / 8388608 * 10000) / 10000;
+                                var lat = Math.floor((byteArray[1] * 65536 + byteArray[2] * 256 + byteArray[3]) * 90 / 8388608 * 1000000) / 1000000;
                                 // 2 ^ 16 = 65536, 2 ^ 8 = 256, 2 ^ 23 = 8388608
                                 Stand_Message_Decoding.latHemisphere = 'N'
                                 if (lat > 90) {
                                     // lat -= 180;
                                     Stand_Message_Decoding.latHemisphere = 'S'
                                 }
-                                Stand_Message_Decoding.latitude = lat;
+                                Stand_Message_Decoding.latitude = lat * 100;
                                 // Stand_Message_Decoding.latHemisphere = lat > 0 ? 'N' : 'S';
 
-                                var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 10000) / 10000;
+                                var lng = Math.floor((byteArray[4] * 65536 + byteArray[5] * 256 + byteArray[6]) * 180 / 8388608 * 10000000) / 10000000;
                                 Stand_Message_Decoding.lngHemisphere = 'E'
                                 if (lng > 180) {
                                     // lng -= 360
                                     Stand_Message_Decoding.lngHemisphere = 'W'
                                 }
-                                Stand_Message_Decoding.longitude = lng;
+                                Stand_Message_Decoding.longitude = lng * 1000;
                                 // Stand_Message_Decoding.lngHemisphere = lng > 0 ? 'E' : 'W';
 
                                 var seventhBinary = dec2bin(byteArray[7], 8);
