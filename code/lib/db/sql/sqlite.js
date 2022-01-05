@@ -107,7 +107,7 @@ module.exports = {
                 sql : 'CREATE TABLE #name# (' +
                         'elgIdx 		INTEGER, ' +
                         'elgEmail		TEXT NOT NULL, ' +
-                        'elgUID 		INTEGER NOT NULL, ' +
+                        'elgUID 		TEXT NOT NULL, ' +
                         'elgDate 		INTEGER NOT NULL, ' +
                         'elgEmailDate   INTEGER NOT NULL, ' +
                         'elgEmailData 	TEXT NOT NULL, ' +
@@ -115,6 +115,7 @@ module.exports = {
                         'elgVMS_sent 	INTEGER NOT NULL DEFAULT 0, ' +
                         'elgGPS_sent 	INTEGER NOT NULL DEFAULT 0, ' +
                         'elgRemark		TEXT DEFAULT NULL, ' +
+                        'elgType	INTEGER DEFAULT 0, ' +
                         'PRIMARY KEY (elgIdx) ' +
                         ');',
                 insert : '',

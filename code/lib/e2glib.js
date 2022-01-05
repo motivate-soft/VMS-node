@@ -303,7 +303,7 @@ function saveGPSData(data, param, callback) {
 
 		var loop = function() {
 
-			var euid = data[mcnt].uid;
+			var euid = '' + data[mcnt].uid;
 			var edate = data[mcnt].date;
 			var ebody = Buffer.from(data[mcnt].buf);
 			

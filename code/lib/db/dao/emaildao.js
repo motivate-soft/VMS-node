@@ -131,7 +131,7 @@ function getLog(offset, length, search, callback) {
 
     var sql = 'select * from ' + dbu.qTbl('emaillog'); //  + ' where elgType = ' + dbu.qNum(0)
 
-	sql += getLogSearch(search) + ' order by elgEmailDate ';
+	sql += getLogSearch(search) + ' order by elgEmailDate DESC';
 			
 	if (offset > -1 && length > -1)
 		sql += ' limit ' + offset + ', ' + length;
