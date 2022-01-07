@@ -62,8 +62,8 @@ function processxml(msg, res) {
 		return;
 	}
 
-	
-	if (param.applid && verifyxml(msg, verify, param)) {
+	applid = param.applid;
+	if (applid && verifyxml(msg, verify, param)) {
 		if (cfn.intVal(moment.utc().format('DDMMYYHHmmss') - param.datetime) < 60)
 			vmsParse(cmd, param, res);
 		else {
@@ -78,11 +78,23 @@ function processxml(msg, res) {
 
 }
 
+// function verifyxml(msg, verify, param) {
+
+// 	var _crc = crc.crc16ccitt(param.datetime + pwd + param.applid).toString(16);
+// 	_crc = cfn.addZero(_crc, 4);
+// 	var _verify = md5(_crc)
+	
+// 	return (_verify == verify);
+// }
 function verifyxml(msg, verify, param) {
 
-	var _crc = crc.crc16ccitt(param.datetime + pwd + param.applid).toString(16);
-	_crc = cfn.addZero(_crc, 4);
-	var _verify = md5(_crc)
+	var re = true;
+
+	var s = msg.substring(msg.indexOf('<applid>'));
+	var pwd1 = 'fgc82f2j11p';
+
+	var _crc = crc.crc16ccitt(s).toString(16);
+	var _verify = md5(param.datetime + pwd1 + param.serial + _crc)
 	
 	return (_verify == verify);
 }
@@ -117,11 +129,11 @@ function exceptionHandling(errorPort, res) {
 					'<xcode>' + errorPort + '</xcode>' +
 					'</vessel>';
 
-	var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
-	_crc = cfn.addZero(_crc, 4);
-	var verify = md5(_crc)
+	// var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
+	// _crc = cfn.addZero(_crc, 4);
+	// var verify = md5(_crc)
 
-	console.log(dt, verify)
+	// console.log(dt, verify)
 	
 	//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 	res.header('Content-Type','text/xml').send('<vessel obj="data" verify="">' + msg)
@@ -213,9 +225,9 @@ function vmsParse(cmd, param, res) {
 									'<heading>' + gpsdata.heading + '</heading>' +
 									'</vessel>';
 
-							var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
+							var _crc = crc.crc16ccitt(msg).toString(16);
 							_crc = cfn.addZero(_crc, 4);
-							var verify = md5(_crc);
+							var verify = md5(dt + pwd + param.serial + _crc);
 
 							//console.log('crc=' + _crc);
 							//console.log('datetime=' + dt);
