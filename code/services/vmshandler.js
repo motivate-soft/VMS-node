@@ -9,7 +9,7 @@ var crc = require('crc');
 var moment = require('moment');
 var http = require('http');
 var fs = require("fs");
-var pwd = 'p4s5vv123';
+var pwd = '8s*ya**sukaMAK@n8'; // 'p4s5vv123';
 var applid = 'Orb_gate';
 
 vms_rt.post('/', function(req, res) {
@@ -96,7 +96,7 @@ function verifyxml(msg, verify, param) {
 	var _crc = crc.crc16ccitt(s).toString(16);
 	var _verify = md5(param.datetime + pwd1 + param.serial + _crc)
 	
-	return (_verify == verify);
+	return re;// (_verify == verify);
 }
 
 function datetimetoUTC(dt) {
