@@ -134,7 +134,7 @@ function exceptionHandling(errorPort, res) {
 	// var verify = md5(_crc)
 
 	// console.log(dt, verify)
-	console.log(cfn.dtNow4Log() + ' ' + 'Data sent. message: ' + msg);
+	console.log(cfn.dtNow4Log() + ' ' + 'Error message: ' + msg);
 	//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 	res.header('Content-Type','text/xml').send('<vessel obj="data" verify="">' + msg)
 }
@@ -260,11 +260,14 @@ function vmsParse(cmd, param, res) {
 							'<xcode>101</xcode>' +
 							'</vessel>';
 							
-				var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
+				// var _crc = crc.crc16ccitt(dt + pwd + applid).toString(16);
+				// _crc = cfn.addZero(_crc, 4);
+				// var verify = md5(_crc);
+				var _crc = crc.crc16ccitt(msg).toString(16);
 				_crc = cfn.addZero(_crc, 4);
-				var verify = md5(_crc);
+				var verify = md5(dt + pwd + param.serial + _crc);
 
-				console.log(cfn.dtNow4Log() + ' ' + 'Data sent. message: ' + msg);
+				console.log(cfn.dtNow4Log() + ' ' + 'Error message: ' + msg);
 				
 				//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 				res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)
