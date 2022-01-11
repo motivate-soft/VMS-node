@@ -1,6 +1,7 @@
 var emlobj = require(appConfig.lib_path + '/emailobj.js');
 var net = require('net');
 var moment = require('moment');
+var request = require('request');
 
 var tcip = '';
 var tcport = 0;
@@ -44,9 +45,27 @@ function reload(callback) {
 		var tcinfo = cfn.parseJSON(re);
 		tcip = tcinfo.ip;
 		tcport = tcinfo.port;
+		var tcsport = tcinfo.sport;
+		var tcemail = tcinfo.email;
+		var tcpassword = tcinfo.password;
 
+		request.post(`http://${tcip}:${tcsport}/api/session`, { form: {
+			email: tcemail,
+			password: tcpassword
+		}}, function (error, response) { 
+			if (error) cfn.logInfo('Traccar server session error: ' + error, true);
+			
+			request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
+				username: tcemail,
+				password: tcpassword
+			}}, function(err, res) {
+				console.log(res.body)
+			})
+		});
+		
 		callback();
-    });
+	});
+
 }
 
 function start() {
@@ -68,6 +87,7 @@ function stop() {
 
 	if (_sleeping) {
 		cfn.logInfo('Traccar service stopped', true);
+		_stopping = false;
 	}
 	else {	
 		_stopping = true;
@@ -99,20 +119,59 @@ function run() {
 	
 		var idx = re.idx;
 		var email = cfn.strVal(re.email);
+		var gsm = cfn.strVal(re.gsm);
 		var pgid = cfn.strVal(re.pgid);
 		var gpsdata = cfn.parseJSON(re.gpsdata);
-	
+
 		if (!gpsdata.date) {
-			emlobj.update4TC(idx);
+			// emlobj.update4TC(idx);
 			next();
 		}
 		else {
-				
-			console.log(tcip + ':'+ tcport);
-			console.log(re);
 			//next();
 
 			var dtutc = datetimetoUTC(gpsdata.date + gpsdata.time);
+
+			if (gsm && tcip && tcport) {
+				console.log(cfn.dtNow4Log() + ' ' + 'Posting to traccar - GSM: '+ gsm +' to '+tcip+':'+tcport);
+				
+				var client = new net.Socket();
+		
+				//tcip = 'www.traccar.org';
+				client.connect({host: tcip, port: tcport}, function() {
+				//	client.write('$PGID,' + pgid + '*0F\r\n');
+					client.write('$PGID,' + pgid + '*0F\r\n' +
+			                     '$GPRMC,' + dtutc.time + 
+                                    ',A,' +
+                                    gpsdata.latitude + ',' + 
+                                    gpsdata.NS + ',' +
+                                    gpsdata.longitude + ','+ 
+                                    gpsdata.EW + ',' +
+                                    gpsdata.speed + ',' +
+                                    gpsdata.heading + ',' + 
+                                    dtutc.date + ',' +
+                                    '000.0,E ' + '*68\r\n');
+					client.write('\r\n');
+				});
+
+				client.on('error', function(err) {
+					cfn.logError(err);
+					console.log(err);
+					// if (callback) callback(err);
+				});
+				
+				client.on('data', function(data) {
+					console.log('Received: ' + data);
+					client.end();
+				});
+
+				client.on('close', function() {
+					console.log('Connection closed');
+					console.log('  -- OK');
+					client.destroy();
+					emlobj.update4TC(idx);
+				});	
+			}
 			
 			//if (email == 'dof_0019@orbcomm.my' && tcip && tcport && pgid && gpsdata.date && gpsdata.time && gpsdata.latitude && gpsdata.longitude) {
 			if (tcip && tcport && pgid && gpsdata.date && gpsdata.time && gpsdata.latitude && gpsdata.longitude) {
@@ -169,7 +228,7 @@ function run() {
                     cfn.logInfo('Traccar Service: Invalid GPS data - latitude is null for: ' + re.email + '[Index:' + idx + ']', true);
                 if (!gpsdata.longitude) 
                     cfn.logInfo('Traccar Service: Invalid GPS data - longitude is null for: ' + re.email + '[Index:' + idx + ']', true);
-                emlobj.update4TC(idx);
+                // emlobj.update4TC(idx);
                 next();
             }
 		}
@@ -182,22 +241,29 @@ function test(ip, port, callback) {
 	var connected = false;
 	var errmsg = '';
 
-	client.connect({host: ip, port: port}, function() {
-		connected = true;
-		client.write('\r\n');
-	});
-
-	client.on('error', function(err) {
-		errmsg = err.message;
-	});
-
-	client.on('close', function() {
-		client.destroy();
-		if (errmsg)
-			callback(errmsg);
-		else
-			callback('Connection OK');
-	});	
+	try {
+		client.connect({host: ip, port: port}, function() {
+			connected = true;
+			client.write('\r\n');
+		});
+	
+		client.on('error', function(err) {
+			errmsg = err.message;
+		});
+	
+		client.on('close', function() {
+			client.destroy();
+			if (errmsg) {
+				callback(errmsg);
+			}
+			else {
+				callback('Connection OK');
+			}
+		});	
+	} catch (error) {
+		callback(JSON.stringify(error));
+		client.close()
+	}
 }
 
 function datetimetoUTC(dt) {

@@ -77,7 +77,7 @@ function get_ServiceStatus() {
 				$("#btnstops").prop('disabled', true);
 			}
         }
-    });    
+	});    
 	setTimeout(get_ServiceStatus, status_interval);
 
 }
@@ -119,7 +119,8 @@ function save_validateOK() {
 
     if (validateForm([
                         {id: "fip", type: "val", msg: "Host"},
-                        {id: "fport", type: "num", msg: "Port"},
+						{id: "fport", type: "num", msg: "Socket Port"},
+						{id: "fsport", type: "num", msg: "Server Port"},
                     ])) {
 		return true;
     }

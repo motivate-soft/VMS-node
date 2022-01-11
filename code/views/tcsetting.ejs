@@ -31,7 +31,10 @@ $(function() {
     <table width="100%" cellpadding="3" cellspacing="0" border="0" class="tbl">
 	<%- include("tags/errmsg") %>
     <%- include("tags/input_text_req", {tg: {name:"Host", id:"fip", val:data.ip, type:"text", width:"300px", remk:"" } }) %>
-    <%- include("tags/input_text_req", {tg: {name:"Port", id:"fport", val:data.port, type:"text", width:"150px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Socket Port", id:"fport", val:data.port, type:"text", width:"150px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Server Port", id:"fsport", val:data.sport, type:"text", width:"300px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Email", id:"femail", val:data.email, type:"text", width:"300px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Password", id:"fpassword", val:data.password, type:"text", width:"300px", remk:"" } }) %>
 	<tr> 
         <td align="right" width="150" height="22" class="text12">&nbsp;</td>
         <td valign="top"><input type="button" id="tcstest" name="tcstest" value=" Test Connection " onclick="doTest()"></td>

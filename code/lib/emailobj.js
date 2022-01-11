@@ -186,6 +186,7 @@ function getLog4TC(callback) {
 				re = {
 						idx: rows[0].elgIdx,
 						pgid: rows[0].gacPGID,
+						gsm: rows[0].gacDesc,
 						email: rows[0].elgEmail,
 						uid: rows[0].elgUID,
 						date: rows[0].elgDate,

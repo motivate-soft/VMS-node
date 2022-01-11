@@ -46,15 +46,19 @@ tcsetting_rt.post('/', function(req, res){
 	
 		var fip = req.body.fip;
 		var fport = req.body.fport;
+		var fsport = req.body.fsport;
+		var femail = req.body.femail;
+		var fpassword = req.body.fpassword;
 		
 		var emsg = cfn.validCheck([
 								{type:'str', val:fip, msg:'IP Address'},
-								{type:'num', val:fport, msg:'Port'},
+								{type:'num', val:fport, msg:'Socket Port'},
+								{type:'num', val:fsport, msg:'Server Port'},
 							]);
 		
 		if (!emsg) {
 		
-			var savedata = JSON.stringify({ip: fip, port: fport});
+			var savedata = JSON.stringify({ip: fip, port: fport, sport: fsport, email: femail, password: fpassword});
 			
 			dbo.setMData('traccar', savedata, function(err) {
 			
