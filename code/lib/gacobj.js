@@ -5,6 +5,7 @@ module.exports = {
 	getGpsAccData: getGpsAccData,
 	addeditGpsAcc: addeditGpsAcc,
 	deleteGpsAcc: deleteGpsAcc,
+	getGPSListForGSM: getGPSListForGSM
 }
 
 function getGpsAccList(page, search, callback) {
@@ -76,6 +77,33 @@ function getGpsAccData(idx, callback) {
 			callback({}, err.message);
 	});
 }
+
+function getGPSListForGSM(callback) {
+
+	gacdao.getGpsAccDataForGSM(function(err, rows) {
+				
+		var re = [];
+
+		if (!err && cfn.length(rows) > 0) {
+		
+			for (var i in rows) {
+				re.push({
+					idx: rows[i].gacIdx,
+					name: rows[i].gacName,
+					pgid: rows[i].gacDesc,
+					email: rows[i].gacEmail,
+				});
+			}
+		}
+		
+		if (err) 
+			callback(re, err.message);
+		else
+			callback(re, null);
+	});
+	
+}
+
 
 function addeditGpsAcc(idx, data, callback) {
 

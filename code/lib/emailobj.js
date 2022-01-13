@@ -107,7 +107,7 @@ function getLogList(page, search, callback) {
 							date: choc.datetime(rows[i].elgDate),
 							emaildate: choc.datetime(rows[i].elgEmailDate),
 							emaildata: (rows[i].elgEmailData) ? tohex(rows[i].elgEmailData): '&nbsp;',
-							gpsdata: rows[i].elgType == 0 ? gpsstr(rows[i].elgGPSData): gpsstr_for_non_standard(rows[i].elgGPSData),
+							gpsdata: gpsstr(rows[i].elgGPSData), // rows[i].elgType == 0 ? gpsstr(rows[i].elgGPSData): gpsstr_for_non_standard(rows[i].elgGPSData),
 							vmssent: rows[i].elgVMS_sent,
 							gpssent: rows[0].elgGPS_sent,
 						});
@@ -194,6 +194,7 @@ function getLog4TC(callback) {
 						emaildata: rows[0].elgEmailData,
 						gpsdata: rows[0].elgGPSData,
 						gpssent: rows[0].elgGPS_sent,
+						type: rows[0].elgType,
 					};
 			}
 		}

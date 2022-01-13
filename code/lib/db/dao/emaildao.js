@@ -172,7 +172,7 @@ function getLogVMS(limit, callback) {
 			' left join ' +  dbu.qTbl('gpsacc') + 
 			' on elgEmail=gacEmail ' +
 			// ' where elgVMS_sent=' + dbu.qNum(0) +
-			' where elgType = ' + dbu.qNum(0) +
+			// ' where elgType = ' + dbu.qNum(0) +
             //' where elgEmail=' + dbu.qStr('dof_0055@orbcomm.my') +
             ' order by elgIdx desc ' +
             //' order by elgEmailDate desc ' +
@@ -208,7 +208,6 @@ function getLog4TC(callback) {
 			' left join ' +  dbu.qTbl('gpsacc') + 
 			' on elgEmail=gacEmail ' +
 			' where elgGPS_sent=' + dbu.qNum(0) +
-			' and elgType = ' + dbu.qNum(0) +
             //' order by elgIdx ' +
             ' order by elgEmailDate desc ' +
             ' limit 1 ';
