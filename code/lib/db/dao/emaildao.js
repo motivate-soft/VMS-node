@@ -171,7 +171,7 @@ function getLogVMS(limit, callback) {
     var sql = 'select * from ' + dbu.qTbl('emaillog') + 
 			' left join ' +  dbu.qTbl('gpsacc') + 
 			' on elgEmail=gacEmail ' +
-			// ' where elgVMS_sent=' + dbu.qNum(0) +
+			' where elgVMS_sent=' + dbu.qNum(0) +
 			// ' where elgType = ' + dbu.qNum(0) +
             //' where elgEmail=' + dbu.qStr('dof_0055@orbcomm.my') +
             ' order by elgIdx desc ' +
