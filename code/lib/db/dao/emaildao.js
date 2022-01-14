@@ -45,7 +45,7 @@ function searchLog(criteria, callback) {
 
 function saveLog(data, callback) {
 
-	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailDate=' + dbu.qDate(data.emaildate) + ' and elgUID=' + dbu.qStr(data.uid), function(err, rows) {
+	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailData=' + dbu.qJson(data.emaildata), function(err, rows) { // + ' and elgUID=' + dbu.qStr(data.uid)
 	
         //console.log(rows);
         //callback(err, 1);
