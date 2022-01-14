@@ -92,8 +92,6 @@ function reload(callback) {
 										if (filtered_device && Object.assign([], filtered_device).length > 0) {
 											var positionId = filtered_device[0]['positionId'];
 
-											positionId = 97
-
 											if (positionId > 0) {
 												request.get(`http://${tcip}:${tcsport}/api/positions?id=${positionId}`, { auth: {
 													username: tcemail,
