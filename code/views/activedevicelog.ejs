@@ -1,0 +1,40 @@
+<%- include("overall_header") %>
+
+<script type="text/javascript">
+
+var parentnav = '<%= mod.parent.path %>';
+var crnmod = '<%= mod.path %>';
+
+</script>
+
+<%- include("tags/modheader") %>
+<script type="text/javascript">
+
+    var parentnav = '<%= mod.parent.path %>';
+    var crnmod = '<%= mod.path %>';
+
+    $(function() {
+        var xhr1 = $.ajax({
+            type: 'POST',
+            url: crnmod + '/',
+            data: {"action": "list"},
+            beforeSend: function(){
+                $("#f2content").empty();
+            },
+            success: function(ret) {
+                $("#f2content").html(ret);
+            }
+        });
+    });
+
+</script>
+<div id="panel_content">
+    <div class="toolbar">
+        <div style="clear:both"></div>
+    </div>
+
+	<div id="f2content"></div>
+	
+</div>
+
+<%- include("overall_footer") %>

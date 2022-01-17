@@ -1,0 +1,31 @@
+
+    <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
+        <tr>
+            <th class="tbltitle" align="left" width="10%">Device ID</th>
+            <th class="tbltitle" align="left" width="30%">Device Name</th>
+            <th class="tbltitle" align="left" width="30%">Device Identifier</th>
+            <th class="tbltitle" align="center" width="15%">Active Times for 1 Day</th>
+            <th class="tbltitle" align="center" width="15%">Active Times for 1 Month</th>
+        </tr>
+    
+    <% if(msg) { %>
+        <tr id="tid<%= itemlist.id %>" idx="<%= itemlist.id %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+            <td colspan="100"><%- msg %></td>
+        </tr>
+    
+    <% } else{ %>
+    
+        <% var tidcnt = 1; itemlist.forEach(function(itemlist){ %>
+        <tr id="tid<%= tidcnt %>" idx="<%= itemlist.id %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
+            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.id %></td>
+            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.name %></td>
+            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.uniqueId %></td>
+            <td class="tblitem pntr" style="text-align:center;"><%- itemlist.oneDay %></td>
+            <td class="tblitem pntr" style="text-align:center;"><%- itemlist.oneMonth %></td>
+            <!-- <td class="tblitem pntr" style="text-align:center;" onclick="doParse('<%= itemlist %>')"><img src="images/b_edit.png" border="0" title="Parse"></a></td> -->
+        </tr>
+        <% tidcnt++; }) %>
+        </table>
+        
+    <% } %>
+    &nbsp;<br>

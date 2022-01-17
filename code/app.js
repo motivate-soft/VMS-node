@@ -51,6 +51,7 @@ global.e2g = require(appConfig.service_path + '/emailtogps.js');
 global.vms = require(appConfig.service_path + '/vmshandler.js');
 global.tcs = require(appConfig.service_path + '/traccarservice.js');
 global.ftpService = require(appConfig.service_path + '/ftpservice.js');
+global.staticService = require(appConfig.service_path + '/staticservice.js');
 
 function initDB(callback) {
     dbo.connect(function() {
@@ -198,7 +199,20 @@ function startFTP(callback) {
 	
 }
 
-var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g, startFTP];
+function startCalculatingActiveDevice(callback) {
+
+    staticService.init(function(err) {
+    
+		if (!err) {
+            callback();
+		}
+		else
+			cfn.logError(err, true);
+    
+    });
+	
+}
+var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g, startFTP, startCalculatingActiveDevice];
 //var process = [initDB, loadMod, startHTTP, startTraccar, startE2g];
 var proc_cnt = 0;
 

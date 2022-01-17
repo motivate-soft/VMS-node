@@ -120,6 +120,19 @@ module.exports = {
                         ');',
                 insert : '',
                 },
+        static: {
+                name : 'static',
+                drop: 0,
+                sql : 'CREATE TABLE #name# (' +
+                        'staticId 	  INTEGER, ' +
+                        'staticName    	  TEXT NOT NULL, ' +
+                        'staticUniqueId   TEXT NOT NULL, ' +
+                        'staticStatus 	  INTEGER NOT NULL DEFAULT 0, ' +
+                        'staticLastUpdate INTEGER, ' +
+                        'PRIMARY KEY (staticId) ' +
+                        ');',
+                insert : '',
+                },
 
         /*eventcode: {
                 name : 'eventcode',

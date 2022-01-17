@@ -29,6 +29,10 @@
 		<sub name="Data Logging" path="/datalog" xid="datalog" image="datalog.png">
 			<action name="View" xid="view" />
 		</sub>
+
+		<sub name="Active Device Logging" path="/activedevicelog" xid="activedevicelog" image="datalog.png">
+			<action name="View" xid="view" />
+		</sub>
     </module>
    
 </modules>
