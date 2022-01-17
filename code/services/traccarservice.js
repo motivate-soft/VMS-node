@@ -60,6 +60,10 @@ function reload(callback) {
 		}}, function (error, response) { 
 			if (error) cfn.logInfo('Traccar server session error: ' + error, true);
 			else {
+				if (JSON.parse(response.body)['disabled']) {
+					cfn.logInfo('Traccar account disabled', true);
+					return
+				}
 				if (!response.headers['set-cookie']) return
 				token = response.headers['set-cookie'][0];
 				request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
@@ -91,9 +95,10 @@ function reload(callback) {
 										})
 										if (filtered_device && Object.assign([], filtered_device).length > 0) {
 											var positionId = filtered_device[0]['positionId'];
+											var deviceID = filtered_device[0]['id'];
 
 											if (positionId > 0) {
-												request.get(`http://${tcip}:${tcsport}/api/positions?id=${positionId}`, { auth: {
+												request.get(`http://${tcip}:${tcsport}/api/positions`, { auth: {
 													username: tcemail,
 													password: tcpassword
 												}, headers: { 'Cookie': token } }, function(err_, res_pos) {
@@ -102,35 +107,38 @@ function reload(callback) {
 													const Position_Data = JSON.parse(res_pos.body);
 
 													Position_Data.forEach(position => {
-														var email_date = formatDateFromTraccarServer(position['serverTime']);
-														var gps_date = formatDateFromTraccarServer(position['deviceTime']);
+														console.log(position['deviceId'])
+														if (position['deviceId'] === deviceID) {
+															var email_date = formatDateFromTraccarServer(position['serverTime']);
+															var gps_date = formatDateFromTraccarServer(position['deviceTime']);
 
-														var lat = Math.floor(Math.abs(position['latitude']) * 100 * 1000000) / 1000000;
-														var lng = Math.floor(Math.abs(position['longitude']) * 100 * 10000000) / 10000000;
+															var lat = Math.floor(Math.abs(position['latitude']) * 100 * 1000000) / 1000000;
+															var lng = Math.floor(Math.abs(position['longitude']) * 100 * 10000000) / 10000000;
 
-														emlobj.save({
-															email: element['email'],
-															uid: "gsm_" + position['id'],
-															emaildate: parseInt(email_date.getTime()),
-															gpsdata: {
-																date: cfn.addZero(gps_date.getDate(), 2)+cfn.addZero(gps_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(gps_date.getFullYear() % 100), 2),
-																time: cfn.addZero(gps_date.getHours(), 2)+cfn.addZero(gps_date.getMinutes(), 2)+cfn.addZero(gps_date.getSeconds(), 2),
-																latitude: cfn.addZero(Math.floor(lat), 4) + '.' + cfn.addZero(Math.ceil((lat - Math.floor(lat)) * 10000), 4),
-																NS: parseInt(position['latitude']) > 0 ? 'N' : 'S',
-																longitude: cfn.addZero(Math.floor(lng), 5) + '.' + cfn.addZero(Math.ceil((lng - Math.floor(lng)) * 10000), 4),
-																EW: parseInt(position['longitude']) > 0 ? 'E' : 'W',
-																speed: position['speed'],
-																heading: position['course'],
-																validity: position['valid'] ? 1 : 0,
-																power: position['outdated'] ? 1 : 0,
-																tamper: position['attributes']['motion'] ? 1 : 0,
-															},
-															emaildata: {
-																type: "GSM",
-																data: JSON.stringify(position)
-															},
-															type: 1
-														});
+															emlobj.save({
+																email: element['email'],
+																uid: "gsm_" + position['id'],
+																emaildate: parseInt(email_date.getTime()),
+																gpsdata: {
+																	date: cfn.addZero(gps_date.getDate(), 2)+cfn.addZero(gps_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(gps_date.getFullYear() % 100), 2),
+																	time: cfn.addZero(gps_date.getHours(), 2)+cfn.addZero(gps_date.getMinutes(), 2)+cfn.addZero(gps_date.getSeconds(), 2),
+																	latitude: cfn.addZero(Math.floor(lat), 4) + '.' + cfn.addZero(Math.ceil((lat - Math.floor(lat)) * 10000), 4),
+																	NS: parseInt(position['latitude']) > 0 ? 'N' : 'S',
+																	longitude: cfn.addZero(Math.floor(lng), 5) + '.' + cfn.addZero(Math.ceil((lng - Math.floor(lng)) * 10000), 4),
+																	EW: parseInt(position['longitude']) > 0 ? 'E' : 'W',
+																	speed: position['speed'],
+																	heading: position['course'],
+																	validity: position['valid'] ? 1 : 0,
+																	power: position['outdated'] ? 1 : 0,
+																	tamper: position['attributes']['motion'] ? 1 : 0,
+																},
+																emaildata: {
+																	type: "GSM",
+																	data: JSON.stringify(position)
+																},
+																type: 1
+															});
+														}
 													});
 												});
 											}
