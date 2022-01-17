@@ -139,7 +139,7 @@ function getLogVMS(limit, callback) {
                 re.push({
 					idx: rows[i].elgIdx,
 					name: rows[i].gacName,
-					pgid: rows[i].gacPGID,
+					pgid: rows[i].elgUID.search(/gsm_@/g) > 0 ? rows[i].gacDesc : rows[i].gacPGID,
 					email: rows[i].elgEmail,
 					uid: rows[i].elgUID,
 					date: rows[i].elgDate,

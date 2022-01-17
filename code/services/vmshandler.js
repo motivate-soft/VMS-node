@@ -166,13 +166,14 @@ function vmsParse(cmd, param, res) {
 	// Event 100, 101
 	else if (cmd == 'request') {
         //console.log('Request from DOF: limit=' + limit);
-        console.log(cfn.dtNow4Log() + ' ' + 'Request: limit=' + limit);
 		emlobj.getLogVMS(limit, function(re) {
 		//emlobj.getLogVMS(1, function(re) {
 			
 			//fs.appendFile('rows.txt', dbu.qJson(re), function (err) {});
-			
+
 			if (cfn.length(re) > 0) {
+
+				console.log(cfn.dtNow4Log() + ' ' + 'Request: limit=' + limit);
 
 				var data = '';
 				//var idxs = [];
@@ -267,7 +268,7 @@ function vmsParse(cmd, param, res) {
 				_crc = cfn.addZero(_crc, 4);
 				var verify = md5(dt + pwd + param.serial + _crc);
 
-				console.log(cfn.dtNow4Log() + ' ' + 'Error message: ' + msg);
+				console.log(cfn.dtNow4Log() + ' ' + 'No data: ' + msg);
 				
 				//vmsResponse('<vessel obj="data" verify="' + verify + '">' + msg);
 				res.header('Content-Type','text/xml').send('<vessel obj="data" verify="' + verify + '">' + msg)

@@ -107,7 +107,6 @@ function reload(callback) {
 													const Position_Data = JSON.parse(res_pos.body);
 
 													Position_Data.forEach(position => {
-														console.log(position['deviceId'])
 														if (position['deviceId'] === deviceID) {
 															var email_date = formatDateFromTraccarServer(position['serverTime']);
 															var gps_date = formatDateFromTraccarServer(position['deviceTime']);
