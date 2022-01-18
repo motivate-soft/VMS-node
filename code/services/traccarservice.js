@@ -103,7 +103,6 @@ function reload(callback) {
 													password: tcpassword
 												}, headers: { 'Cookie': token } }, function(err_, res_pos) {
 
-													console.log(cfn.dtNow4Log() + ' ' + 'Position Data for GSM gotten from Traccar server, Posiiton ID: ', positionId);
 													const Position_Data = JSON.parse(res_pos.body);
 
 													Position_Data.forEach(position => {
@@ -136,6 +135,10 @@ function reload(callback) {
 																	data: JSON.stringify(position)
 																},
 																type: 1
+															}, function(re_) {
+																if (re_) {
+																	console.log(cfn.dtNow4Log() + ' ' + 'Position Data for GSM gotten from Traccar server, Posiiton ID: ', positionId);
+																}
 															});
 														}
 													});
