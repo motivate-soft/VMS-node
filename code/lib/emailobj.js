@@ -185,7 +185,7 @@ function getLog4TC(callback) {
 			if (cfn.length(rows) > 0) {
 				re = {
 						idx: rows[0].elgIdx,
-						pgid: rows[0].elgUID.search(/gsm_@/g) > 0 ? rows[i].gacDesc : rows[i].gacPGID,
+						pgid: rows[0].elgUID.search(/gsm_@/g) > 0 ? rows[0].gacDesc : rows[0].gacPGID,
 						gsm: rows[0].gacDesc,
 						email: rows[0].elgEmail,
 						uid: rows[0].elgUID,
