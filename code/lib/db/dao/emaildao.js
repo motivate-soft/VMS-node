@@ -72,7 +72,7 @@ function saveLog(data, callback) {
 						dbu.qDate(data.emaildate) + ', ' +
 						dbu.qJson(data.emaildata) + ', ' +
 						dbu.qJson(data.gpsdata) + ', ' +
-						gps_sent + ', '
+						dbu.qNum(gps_sent) + ', ' +
 						dbu.qNum(0) + ', ' +
 						dbu.qStr(data.remark) + ', ' +
 						data_type + ' ' +
