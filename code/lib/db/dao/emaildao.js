@@ -51,6 +51,7 @@ function saveLog(data, callback) {
         //callback(err, 1);
 		if (cfn.length(rows) == 0) {
 			var data_type = data.type ? dbu.qNum(data.type) : 0;
+			var gps_sent = data.gpssent ? dbu.qNum(data.gpssent) : 0;
 
 			var sql = 'insert into ' + dbu.qTbl('emaillog') + 
 						' ( ' +
@@ -60,6 +61,7 @@ function saveLog(data, callback) {
 						'elgEmailDate, ' +
 						'elgEmailData, ' +
 						'elgGPSData, ' +
+						'elgGPS_sent, ' +
 						'elgVMS_sent, ' +
 						'elgRemark, ' +
 						'elgType ' +
@@ -70,6 +72,7 @@ function saveLog(data, callback) {
 						dbu.qDate(data.emaildate) + ', ' +
 						dbu.qJson(data.emaildata) + ', ' +
 						dbu.qJson(data.gpsdata) + ', ' +
+						gps_sent + ', '
 						dbu.qNum(0) + ', ' +
 						dbu.qStr(data.remark) + ', ' +
 						data_type + ' ' +
