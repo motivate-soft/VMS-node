@@ -118,9 +118,10 @@ function doTest() {
 function save_validateOK() {
 
     if (validateForm([
-                        {id: "fip", type: "val", msg: "Host"},
-						{id: "fport", type: "num", msg: "Socket Port"},
+						{id: "fip", type: "val", msg: "Host for Server"},
 						{id: "fsport", type: "num", msg: "Server Port"},
+						{id: "fport", type: "num", msg: "Socket Port"},
+						{id: "fhost", type: "val", msg: "Host for Socket"},
                     ])) {
 		return true;
     }

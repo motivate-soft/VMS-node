@@ -27,12 +27,12 @@ function getMaxUID(email, callback) {
 
 }
 
-function searchLog(criteria, callback) {
+async function searchLog(criteria, callback) {
 
     var sql = 'select * from ' + dbu.qTbl('emaillog') + 
             ' where ' + criteria;
 			
-    dbo.query(sql, function(err, rows) {
+    await dbo.query(sql, function(err, rows) {
     
         if (!err) {
             callback(null, rows);
@@ -43,9 +43,9 @@ function searchLog(criteria, callback) {
 
 }
 
-function saveLog(data, callback) {
+async function saveLog(data, callback) {
 
-	searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgEmailData=' + dbu.qJson(data.emaildata) + ' and elgUID=' + dbu.qStr(data.uid), function(err, rows) { // + 
+	await searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgUID=' + dbu.qStr(data.uid), async function(err, rows) { // + ' and elgEmailData=' + dbu.qJson(data.emaildata) +
 	
         //console.log(rows);
         //callback(err, 1);
@@ -80,7 +80,7 @@ function saveLog(data, callback) {
 
 			//allback(null, 1);
 					
-			dbo.exec(sql, function(err) {
+			await dbo.exec(sql, function(err) {
                 //console.log('save data: '+data.email);
 				callback(err, 1);
 			});

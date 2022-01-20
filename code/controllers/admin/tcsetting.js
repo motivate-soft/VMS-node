@@ -45,20 +45,27 @@ tcsetting_rt.post('/', function(req, res){
 		crrf.setCurrentMod(mod_xid);
 	
 		var fip = req.body.fip;
+		var fhost = req.body.fhost;
 		var fport = req.body.fport;
 		var fsport = req.body.fsport;
 		var femail = req.body.femail;
 		var fpassword = req.body.fpassword;
+		var fhostdisable = req.body.fhostdisable;
+
+		if (fhostdisable) {
+			fhost = fip
+		}
 		
 		var emsg = cfn.validCheck([
-								{type:'str', val:fip, msg:'IP Address'},
+								{type:'str', val:fip, msg:'Host for Server'},
+								{type:'str', val:fhost, msg:'Host for Socket'},
 								{type:'num', val:fport, msg:'Socket Port'},
 								{type:'num', val:fsport, msg:'Server Port'},
 							]);
 		
 		if (!emsg) {
 		
-			var savedata = JSON.stringify({ip: fip, port: fport, sport: fsport, email: femail, password: fpassword});
+			var savedata = JSON.stringify({ip: fip, port: fport, host: fhost, sport: fsport, email: femail, password: fpassword, hostdisable: fhostdisable});
 			
 			dbo.setMData('traccar', savedata, function(err) {
 			

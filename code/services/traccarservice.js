@@ -5,6 +5,8 @@ var moment = require('moment');
 var request = require('request');
 var WebSocket = require('ws');
 var tcip = '';
+var tchost = '';
+var tchostdisable = false;
 var tcport = 5005;
 var tcsport = 8082;
 var tcemail = '';
@@ -53,6 +55,8 @@ function reload(callback) {
 		tcsport = tcinfo.sport;
 		tcemail = tcinfo.email;
 		tcpassword = tcinfo.password;
+		tchost = tcinfo.host;
+		tchostdisable = tcinfo.hostdisable;
 
 		request.post(`http://${tcip}:${tcsport}/api/session`, { form: {
 			email: tcemail,
@@ -109,7 +113,7 @@ function reload(callback) {
 												if (filtered_device && Object.assign([], filtered_device).length > 0) {
 													var deviceID = filtered_device[0]['id'];
 
-													Position_Data.forEach(position => {
+													Position_Data.forEach(async position => {
 														if (position['deviceId'] === deviceID) {
 															var email_date = formatDateFromTraccarServer(position['serverTime']);
 															var gps_date = formatDateFromTraccarServer(position['deviceTime']);
@@ -120,8 +124,10 @@ function reload(callback) {
 															var lng_decimal = (Math.abs(position['longitude']) - Math.abs(Math.floor(position['longitude']))) * 60;
 															var lat = lat_degree + lat_decimal;
 															var lng = lng_degree + lng_decimal;
+
+															console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 1)
 		
-															emlobj.save({
+															await emlobj.save({
 																email: element['email'],
 																uid: "gsm_" + position['id'],
 																emaildate: parseInt(email_date.getTime()),
@@ -145,11 +151,13 @@ function reload(callback) {
 																type: 1,
 																gpssent: 1
 															}, function(re_) {
-													
+																console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 2)
 																if (re_) {
 																	console.log(cfn.dtNow4Log() + ' ' + 'Position Data for GSM gotten from Traccar server, Posiiton ID: ', position['id']);
 																}
 															});
+
+															console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 3)
 														}
 													});
 												}
@@ -267,7 +275,11 @@ function run() {
 				var client = new net.Socket();
 		
 				//tcip = 'www.traccar.org';
-				client.connect({host: tcip, port: tcport}, function() {
+				var hostforsocket = tchost
+				if (tchostdisable) {
+					hostforsocket = tcip
+				}
+				client.connect({host: hostforsocket, port: tcport}, function() {
 				//	client.write('$PGID,' + pgid + '*0F\r\n');
 					client.write('$PGID,' + pgid + '*0F\r\n' +
 			                     '$GPRMC,' + dtutc.time + 

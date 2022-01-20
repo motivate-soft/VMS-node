@@ -30,9 +30,11 @@ $(function() {
 
     <table width="100%" cellpadding="3" cellspacing="0" border="0" class="tbl">
 	<%- include("tags/errmsg") %>
-    <%- include("tags/input_text_req", {tg: {name:"Host", id:"fip", val:data.ip, type:"text", width:"300px", remk:"" } }) %>
-    <%- include("tags/input_text_req", {tg: {name:"Socket Port", id:"fport", val:data.port, type:"text", width:"150px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Host for Server", id:"fip", val:data.ip, type:"text", width:"300px", remk:"" } }) %>
     <%- include("tags/input_text_req", {tg: {name:"Server Port", id:"fsport", val:data.sport, type:"text", width:"300px", remk:"" } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Host for Socket", id:"fhost", val:data.host, type:"text", width:"300px", remk:"" } }) %>
+    <%- include("tags/input_check", {tg: {name:"Disable Host for Socket", id:"fhostdisable", val:"1", remk:"", chk:data.hostdisable } }) %>
+    <%- include("tags/input_text_req", {tg: {name:"Socket Port", id:"fport", val:data.port, type:"text", width:"150px", remk:"" } }) %>
     <%- include("tags/input_text_req", {tg: {name:"Email", id:"femail", val:data.email, type:"text", width:"300px", remk:"" } }) %>
     <%- include("tags/input_text_req", {tg: {name:"Password", id:"fpassword", val:data.password, type:"text", width:"300px", remk:"" } }) %>
 	<tr> 
