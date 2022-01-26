@@ -23,9 +23,9 @@ function getUID(email, callback) {
     });
 }
 
-async function save(data, callback) {
+function save(data, callback) {
 
-    await emaildao.saveLog(data, function(err, added) {
+    emaildao.saveLog(data, function(err, added) {
     
         if (err) cfn.logError(err, added);
         

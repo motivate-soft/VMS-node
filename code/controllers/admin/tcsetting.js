@@ -50,11 +50,11 @@ tcsetting_rt.post('/', function(req, res){
 		var fsport = req.body.fsport;
 		var femail = req.body.femail;
 		var fpassword = req.body.fpassword;
-		var fhostdisable = req.body.fhostdisable;
+		var fhostdisable = cfn.strVal(req.body.fhostdisable);
 
-		if (fhostdisable) {
-			fhost = fip
-		}
+		// if (fhostdisable == '1') {
+		// 	fhost = fip
+		// }
 		
 		var emsg = cfn.validCheck([
 								{type:'str', val:fip, msg:'Host for Server'},
@@ -88,6 +88,10 @@ function view_tcsetting(req, res, msg) {
 	dbo.getMData('traccar', function(re) {
 	
 		var tcinfo = cfn.parseJSON(re);
+
+		if (tcinfo.hostdisable == '1') {
+			tcinfo.hostdisable = 'checked'
+		}
 
 		res.render('tcsetting', cfn.hashConcat([
 								crrf.overall_output(), 

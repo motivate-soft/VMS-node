@@ -38,12 +38,16 @@ function init(callback) {
 		}}, function (error, response) { 
 			if (error) cfn.logInfo('Traccar server session error: ' + error, true);
 			else {
-				if (JSON.parse(response.body)['disabled']) {
-					cfn.logInfo('Traccar account disabled', true);
-					return
-				}
-				if (!response.headers['set-cookie']) return
-                token = response.headers['set-cookie'][0];
+				try {
+                    if (JSON.parse(response.body)['disabled']) {
+                        cfn.logInfo('Traccar account disabled', true);
+                        return
+                    }
+                    if (!response.headers['set-cookie']) return
+                    token = response.headers['set-cookie'][0];
+                } catch (error_) {
+                    cfn.logInfo('Incorrect IP or port', true);
+                }
                 
                 start()
             }
@@ -95,6 +99,15 @@ function next() {
 
 function run() {
     if (token && tcemail && tcpassword && token != '') {
+        request.get(`http://${tcip}:${tcsport}/api/notifications`, { auth: { //geofences
+            username: tcemail,
+            password: tcpassword
+        }, headers: { 'Cookie': token } }, function(err, res) {
+            if (!err) {
+
+                // console.dir(JSON.parse(res.body))
+            }
+        });
         request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
             username: tcemail,
             password: tcpassword

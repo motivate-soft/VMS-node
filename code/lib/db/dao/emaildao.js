@@ -43,9 +43,9 @@ async function searchLog(criteria, callback) {
 
 }
 
-async function saveLog(data, callback) {
+function saveLog(data, callback) {
 
-	await searchLog('elgEmail=' + dbu.qStr(data.email) + ' and elgUID=' + dbu.qStr(data.uid), async function(err, rows) { // + ' and elgEmailData=' + dbu.qJson(data.emaildata) +
+	searchLog(' elgEmail=' + dbu.qStr(data.email) + ' and elgUID=' + dbu.qStr(data.uid), function(err, rows) { // + ' and elgEmailData=' + dbu.qJson(data.emaildata) +
 	
         //console.log(rows);
         //callback(err, 1);
@@ -80,7 +80,7 @@ async function saveLog(data, callback) {
 
 			//allback(null, 1);
 					
-			await dbo.exec(sql, function(err) {
+			dbo.exec(sql, function(err) {
                 //console.log('save data: '+data.email);
 				callback(err, 1);
 			});
@@ -179,7 +179,7 @@ function getLogVMS(limit, callback) {
             //' where elgEmail=' + dbu.qStr('dof_0055@orbcomm.my') +
             ' order by elgIdx desc ' +
             //' order by elgEmailDate desc ' +
-            ' limit 0, ' + limit;
+            ' limit ' + limit;
 
     dbo.query(sql, function(err, rows) {
         callback(err, rows);

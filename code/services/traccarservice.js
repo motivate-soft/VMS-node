@@ -4,6 +4,8 @@ var net = require('net');
 var moment = require('moment');
 var request = require('request');
 var WebSocket = require('ws');
+var async_ = require('async');
+const { resolve } = require('path');
 var tcip = '';
 var tchost = '';
 var tchostdisable = false;
@@ -12,8 +14,12 @@ var tcsport = 8082;
 var tcemail = '';
 var tcpassword = '';
 var token = ''
+var Position_Data = [];
+var Position_ID = []
+var Saved_ID = []
+var flag = 0;
 //var _interval = 20000;				// **** 20 sec
-var _interval = 1000;				// **** 1 sec
+var _interval = 5000;				// **** 1 sec
 var _initstart_interval = 10000;   	// **** 1 min
 var _running = false;
 var _sleeping = false;
@@ -39,10 +45,9 @@ function getStatus() {
 function init(callback) {
 
 	reload(function() {
-	
 		start();
 		callback();
-    });
+	})
 }
 
 function reload(callback) {
@@ -56,7 +61,7 @@ function reload(callback) {
 		tcemail = tcinfo.email;
 		tcpassword = tcinfo.password;
 		tchost = tcinfo.host;
-		tchostdisable = tcinfo.hostdisable;
+		tchostdisable = tcinfo.hostdisable == '1';
 
 		request.post(`http://${tcip}:${tcsport}/api/session`, { form: {
 			email: tcemail,
@@ -64,29 +69,23 @@ function reload(callback) {
 		}}, function (error, response) { 
 			if (error) cfn.logInfo('Traccar server session error: ' + error, true);
 			else {
-				if (JSON.parse(response.body)['disabled']) {
-					cfn.logInfo('Traccar account disabled', true);
-					return
-				}
-				if (!response.headers['set-cookie']) return
-				token = response.headers['set-cookie'][0];
-				request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
-					username: tcemail,
-					password: tcpassword
-				}, headers: { 'Cookie': token } }, function(err, res) {
-					if (!err) {
+				try {
+					if (JSON.parse(response.body)['disabled']) {
+						cfn.logInfo('Traccar account disabled', true);
+						return
+					}
+					if (!response.headers['set-cookie']) return
+					token = response.headers['set-cookie'][0];
+					Position_Data = []
+					Position_ID = []
+					Saved_ID = []
 
-						const Traccar_Devices = JSON.parse(res.body);
-
-						if (tcip && tcport && tcsport) {
-							// console.log(cfn.dtNow4Log() + ' ' + 'Posting to traccar - GSM: '+ gsm +' to '+tcip+':'+tcsport + '/api/socket');
-				
-							var socket = new WebSocket(`ws://${tcip}:${tcsport}/api/socket`, [], {
+					var socket = new WebSocket(`ws://${tcip}:${tcsport}/api/socket`, [], {
 								'headers': { 'Cookie': token }
 							});
 				
 							socket.on('open', function open() {
-								console.log('Succesfully connected to Traccar');
+								// console.log('Succesfully connected to Traccar');
 							});
 										
 							socket.on('message', function(message, flags){
@@ -97,74 +96,7 @@ function reload(callback) {
 									// console.log("Device: " + JSON.stringify(data.devices))
 								}
 								if (data_.positions) {
-									gaco.getGPSListForGSM(function(data, msg) {
-
-										request.get(`http://${tcip}:${tcsport}/api/positions`, { auth: {
-											username: tcemail,
-											password: tcpassword
-										}, headers: { 'Cookie': token } }, function(err_, res_pos) {
-
-											const Position_Data = JSON.parse(res_pos.body);
-
-											Object.assign([], data).forEach(element => {
-												var filtered_device = Traccar_Devices.filter(function(f, in_) {
-													return f['uniqueId'] == element['pgid']
-												})
-												if (filtered_device && Object.assign([], filtered_device).length > 0) {
-													var deviceID = filtered_device[0]['id'];
-
-													Position_Data.forEach(async position => {
-														if (position['deviceId'] === deviceID) {
-															var email_date = formatDateFromTraccarServer(position['serverTime']);
-															var gps_date = formatDateFromTraccarServer(position['deviceTime']);
-		
-															var lat_degree = Math.abs(Math.floor(position['latitude'])) * 100;
-															var lng_degree = Math.abs(Math.floor(position['longitude'])) * 100;
-															var lat_decimal = (Math.abs(position['latitude']) - Math.abs(Math.floor(position['latitude']))) * 60;
-															var lng_decimal = (Math.abs(position['longitude']) - Math.abs(Math.floor(position['longitude']))) * 60;
-															var lat = lat_degree + lat_decimal;
-															var lng = lng_degree + lng_decimal;
-
-															console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 1)
-		
-															await emlobj.save({
-																email: element['email'],
-																uid: "gsm_" + position['id'],
-																emaildate: parseInt(email_date.getTime()),
-																gpsdata: {
-																	date: cfn.addZero(gps_date.getDate(), 2)+cfn.addZero(gps_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(gps_date.getFullYear() % 100), 2),
-																	time: cfn.addZero(gps_date.getHours(), 2)+cfn.addZero(gps_date.getMinutes(), 2)+cfn.addZero(gps_date.getSeconds(), 2),
-																	latitude: cfn.addZero(Math.floor(lat), 4) + '.' + cfn.addZero(Math.ceil((lat - Math.floor(lat)) * 10000), 4),
-																	NS: parseInt(position['latitude']) > 0 ? 'N' : 'S',
-																	longitude: cfn.addZero(Math.floor(lng), 5) + '.' + cfn.addZero(Math.ceil((lng - Math.floor(lng)) * 10000), 4),
-																	EW: parseInt(position['longitude']) > 0 ? 'E' : 'W',
-																	speed: position['speed'],
-																	heading: position['course'],
-																	validity: position['valid'] ? 0 : 1,
-																	power: position['outdated'] ? 1 : 0,
-																	tamper: position['attributes']['motion'] ? 0 : 1,
-																},
-																emaildata: {
-																	type: "GSM",
-																	data: JSON.stringify(position)
-																},
-																type: 1,
-																gpssent: 1
-															}, function(re_) {
-																console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 2)
-																if (re_) {
-																	console.log(cfn.dtNow4Log() + ' ' + 'Position Data for GSM gotten from Traccar server, Posiiton ID: ', position['id']);
-																}
-															});
-
-															console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>", 3)
-														}
-													});
-												}
-											});
-											
-										});
-									});
+									next_traccar()
 								}
 								if (data_.events) {
 									// console.log("Events: " + JSON.stringify(data.events))
@@ -174,18 +106,65 @@ function reload(callback) {
 							});
 										
 							socket.on('disconnect', function(){
-								console.log('disconnected');
+								// console.log('disconnected');
 							});
-									
-						}
-					}
-				})
+				} catch (error_) {
+					token = null;
+					Position_Data = []
+					cfn.logInfo('Incorrect IP or port', true);
+				}
 			}
 		});
 		
 		callback();
 	});
 
+}
+
+function thirdFunction(position, in_, element) {
+	return new Promise((resolve, reject) => {
+		var email_date = formatDateFromTraccarServer(position['serverTime']);
+		var gps_date = formatDateFromTraccarServer(position['deviceTime']);
+
+		var lat_degree = Math.abs(Math.floor(position['latitude'])) * 100;
+		var lng_degree = Math.abs(Math.floor(position['longitude'])) * 100;
+		var lat_decimal = (Math.abs(position['latitude']) - Math.abs(Math.floor(position['latitude']))) * 60;
+		var lng_decimal = (Math.abs(position['longitude']) - Math.abs(Math.floor(position['longitude']))) * 60;
+		var lat = lat_degree + lat_decimal;
+		var lng = lng_degree + lng_decimal;
+
+		emlobj.save({
+			email: element['email'],
+			uid: "gsm_" + position['id'],
+			emaildate: parseInt(gps_date.getTime()),
+			gpsdata: {
+				date: cfn.addZero(gps_date.getDate(), 2)+cfn.addZero(gps_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(gps_date.getFullYear() % 100), 2),
+				time: cfn.addZero(gps_date.getHours(), 2)+cfn.addZero(gps_date.getMinutes(), 2)+cfn.addZero(gps_date.getSeconds(), 2),
+				latitude: cfn.addZero(Math.floor(lat), 4) + '.' + cfn.addZero(Math.ceil((lat - Math.floor(lat)) * 10000), 4),
+				NS: parseInt(position['latitude']) > 0 ? 'N' : 'S',
+				longitude: cfn.addZero(Math.floor(lng), 5) + '.' + cfn.addZero(Math.ceil((lng - Math.floor(lng)) * 10000), 4),
+				EW: parseInt(position['longitude']) > 0 ? 'E' : 'W',
+				speed: position['speed'],
+				heading: position['course'],
+				validity: position['valid'] ? 0 : 1,
+				power: position['outdated'] ? 1 : 0,
+				tamper: position['attributes']['motion'] ? 0 : 1,
+			},
+			emaildata: {
+				type: "GSM",
+				data: JSON.stringify(position)
+			},
+			type: 1,
+			gpssent: 1
+		}, function(re_) {
+			if (re_) {
+				Saved_ID.push(position['id'])
+				console.log("ID: ", position['id'], " Time: ", position['deviceTime'])
+				console.log(cfn.dtNow4Log() + ' ' + 'Position Data for GSM gotten from Traccar server, Posiiton ID: ', position['id']);
+			}
+			resolve('Saved')
+		});
+	})
 }
 
 function formatDateFromTraccarServer(str_date) {
@@ -200,19 +179,31 @@ function formatDateFromTraccarServer(str_date) {
 function start() {
 
 	cfn.logInfo('Starting Traccar service -- OK', true);
-    _running = true;
-    _stopping = false;
-	
-    if (_firsttime) {
-        _firsttime = false;
-        _sleeping = true;
-        setTimeout(run, _initstart_interval);
+	_running = true;
+	_stopping = false;
+
+	if (_firsttime) {
+		_firsttime = false;
+		_sleeping = true;
+		setTimeout(run, _initstart_interval);
+		if (token && token != '') {
+			setTimeout(run_traccar, _initstart_interval);
+		} else {
+			reload(function() {
+				setTimeout(run_traccar, _initstart_interval);
+			})
+		}
 	}
+	else {
+		run();
+		run_traccar()
+	}
+
 }
 
 function stop() {
 
-    _running = false;
+	_running = false;
 
 	if (_sleeping) {
 		cfn.logInfo('Traccar service stopped', true);
@@ -239,6 +230,84 @@ function next() {
 										
 }
 
+function next_traccar() {
+
+	if (_stopping) {
+		_stopping = false;
+		_sleeping = false;
+		_running = false;
+		return;
+	}
+	else if (_running) {
+		_sleeping = true;
+		setTimeout(run_traccar, 10000);
+	}
+										
+}
+
+function run_traccar() {
+	if (!_running) return;
+	_sleeping = false;
+
+	if (token && Position_Data.length == 0) { //  && Position_Data.length == 0
+		request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
+					username: tcemail,
+					password: tcpassword
+		}, headers: { 'Cookie': token } }, function(err, res) {
+			if (!err) {
+				try {
+					const Traccar_Devices = JSON.parse(res.body);
+
+					if (tcip && tcport && tcsport) {
+
+						gaco.getGPSListForGSM( function(data, msg) {
+
+							request.get(`http://${tcip}:${tcsport}/api/positions`, { auth: {
+								username: tcemail,
+								password: tcpassword
+							}, headers: { 'Cookie': token } }, async function(err_, res_pos) {
+
+								Position_Data = JSON.parse(res_pos.body);
+
+								Object.assign([], data).forEach(async (element, in_d) => {
+									var filtered_device = Traccar_Devices.filter(function(f, in_) {
+										return f['uniqueId'] == element['pgid']
+									})
+									if (filtered_device && Object.assign([], filtered_device).length > 0) {
+										var deviceID = filtered_device[0]['id'];
+										
+										async_.forEachOf(Position_Data, async (position, in_, inner_callback) => {
+
+											if (element['email'].search(/_ftp@/g) < 0 && position['deviceId'] === deviceID && filtered_device[0]['status'] == 'online' && Position_ID.indexOf(position['id']) < 0 && Saved_ID.indexOf(position['id']) < 0) {
+												Position_ID.push(position['id'])
+												await thirdFunction(position, in_, element)
+											}
+										
+										}, err => {
+											if (err) console.log(err.message)
+										})
+							
+									}
+									if (in_d == Object.assign([], data).length - 1)
+									{
+										// Position_ID = []
+										Position_Data = []
+									}
+								});
+								
+							});
+							
+						});
+								
+					}
+				} catch (error) {
+					cfn.logInfo('Incorrect account or address for traccar', true);					
+				}
+			}
+		})
+	}
+}
+
 function run() {
 
 	if (!_running) return;
@@ -254,7 +323,7 @@ function run() {
 		var gpsdata = cfn.parseJSON(re.gpsdata);
 		var uid = cfn.strVal(re.uid);
 
-		if ( type == 1 && gsm && gsm != '') {
+		if ( uid.search(/gsm_@/g) > 0) {
 			pgid = gsm
 		}
 
@@ -268,9 +337,7 @@ function run() {
 			var dtutc = datetimetoUTC(gpsdata.date + gpsdata.time);
 			
 			//if (email == 'dof_0019@orbcomm.my' && tcip && tcport && pgid && gpsdata.date && gpsdata.time && gpsdata.latitude && gpsdata.longitude) {
-			if (tcip && tcport && pgid && gpsdata.date && gpsdata.time && gpsdata.latitude && gpsdata.longitude && uid.search(/gsm_@/g) < 0) {
-
-				console.log(cfn.dtNow4Log() + ' ' + 'Posting to traccar - PGID: '+pgid+' to '+tcip+':'+tcport);
+			if (tcip && tcport && pgid && gpsdata.date && gpsdata.time && gpsdata.latitude && gpsdata.longitude ) { // && uid.search(/gsm_@/g) < 0
 				
 				var client = new net.Socket();
 		
@@ -279,6 +346,7 @@ function run() {
 				if (tchostdisable) {
 					hostforsocket = tcip
 				}
+				console.log(cfn.dtNow4Log() + ' ' + 'Posting to traccar - PGID: '+pgid+' to '+hostforsocket+':'+tcport);
 				client.connect({host: hostforsocket, port: tcport}, function() {
 				//	client.write('$PGID,' + pgid + '*0F\r\n');
 					client.write('$PGID,' + pgid + '*0F\r\n' +
@@ -308,7 +376,7 @@ function run() {
 				});
 
 				client.on('close', function() {
-					console.log('Connection closed');
+					// console.log('Connection closed');
 					console.log('  -- OK');
 					client.destroy();
 					emlobj.update4TC(idx);

@@ -559,16 +559,17 @@ function run() {
                     xmlFilePaths = [];
                 }
             }
+
+            if (_running) {
+                next()
+            }
+            else {
+                _stopping = false;
+                cfn.logInfo('FTP connection stopped', true);
+                return;
+            }
         })
 
-        if (_running) {
-            next()
-        }
-        else {
-            _stopping = false;
-            cfn.logInfo('FTP connection stopped', true);
-            return;
-        }
     });
 	
 }
