@@ -1,11 +1,11 @@
 
     <table class="tbl" width="100%" cellpadding="3" cellspacing="0" border="0">
         <tr>
-            <th class="tbltitle" align="left" width="10%">Device ID</th>
-            <th class="tbltitle" align="left" width="30%">Device Name</th>
-            <th class="tbltitle" align="left" width="30%">Device Identifier</th>
-            <th class="tbltitle" align="center" width="15%">Active Times for 1 Day</th>
-            <th class="tbltitle" align="center" width="15%">Active Times for 1 Month</th>
+            <th class="tbltitle" align="left" width="27.5%">Device Name</th>
+            <th class="tbltitle" align="left" width="27.5%">Device Identifier</th>
+            <th class="tbltitle" align="center" width="15%">Active Status(%) for today</th>
+            <th class="tbltitle" align="center" width="15%">Active Status(%) this year</th>
+            <th class="tbltitle" align="center" width="15%">Active Status(%) this year</th>
         </tr>
     
     <% if(msg) { %>
@@ -17,11 +17,11 @@
     
         <% var tidcnt = 1; itemlist.forEach(function(itemlist){ %>
         <tr id="tid<%= tidcnt %>" idx="<%= itemlist.id %>" onmouseover="highlight(this)" onmouseout="unhighlight(this)">
-            <td class="tblitem pntr" style="text-align:left;"><%- itemlist.id %></td>
             <td class="tblitem pntr" style="text-align:left;"><%- itemlist.name %></td>
             <td class="tblitem pntr" style="text-align:left;"><%- itemlist.uniqueId %></td>
-            <td class="tblitem pntr" style="text-align:center;"><%- itemlist.oneDay %></td>
-            <td class="tblitem pntr" style="text-align:center;"><%- itemlist.oneMonth %></td>
+            <td class="tblitem pntr" style="text-align:center;background-color: <%= itemlist.oneDay > 85 ? 'yellow' : 'transparent' %>;"><%- itemlist.oneDay %></td>
+            <td class="tblitem pntr" style="text-align:center;background-color: <%= itemlist.oneMonth > 85 ? 'yellow' : 'transparent' %>;"><%- itemlist.oneMonth %></td>
+            <td class="tblitem pntr" style="text-align:center;background-color: <%= itemlist.oneYear > 85 ? 'yellow' : 'transparent' %>;"><%- itemlist.oneYear %></td>
             <!-- <td class="tblitem pntr" style="text-align:center;" onclick="doParse('<%= itemlist %>')"><img src="images/b_edit.png" border="0" title="Parse"></a></td> -->
         </tr>
         <% tidcnt++; }) %>

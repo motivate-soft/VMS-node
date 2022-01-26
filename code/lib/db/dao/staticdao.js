@@ -2,8 +2,8 @@ var moment = require('moment');
 
 module.exports = {
 	searchStatic: searchStatic,
-	saveStatic: saveStatic,
-	getStatic: getStatic,
+	getStaticForGSM: getStaticForGSM,
+	getStaticForPGID: getStaticForPGID,
 	updateStatic: updateStatic,
 }
 
@@ -12,7 +12,7 @@ function searchStatic(criteria, callback) {
     var sql = 'select * from ' + dbu.qTbl('static') + 
             ' where ' + criteria +
             ' order by staticId desc ' +
-            ' limit 0, ' + 1;
+            ' limit ' + 1;
 			
     dbo.query(sql, function(err, rows) {
     
@@ -25,49 +25,64 @@ function searchStatic(criteria, callback) {
 
 }
 
-function saveStatic(data, callback) {
+function getStaticForGSM(data, callback) {
 
-	searchStatic('staticName=' + dbu.qStr(data.name) + ' and staticUniqueId=' + dbu.qStr(data.uniqueId), function(err, rows) {
-		if (cfn.length(rows) == 0 || (dbu.qNum(cfn.dateNow()) - dbu.qNum(rows[0]['staticLastUpdate'])) > 7200000) {
-            
-			var sql = 'insert into ' + dbu.qTbl('static') + 
-						' ( ' +
-						'staticName, ' +
-						'staticUniqueId, ' +
-                        'staticStatus, ' +
-                        'staticLastUpdate ' +
-						' ) values ( ' +
-						dbu.qStr(data.name) + ', ' +
-						dbu.qStr(data.uniqueId) + ', ' +
-						dbu.qNum(data.status) + ', ' +
-						dbu.qNum(cfn.dateNow()) + ' ' +
-						' ) ';
-					
-			dbo.exec(sql, function(err) {
-                //console.log('save data: '+data.email);
-				callback(err, 1);
-			});
-		} 
-        else {
-            //console.log('found');
-            callback(null, 0);
+    var sql = 'select count(elgIdx) as midx from ' + dbu.qTbl('emaillog') + 
+	' where elgVMS_sent=' + dbu.qNum(1) + ' and elgEmail=' + dbu.qStr(data.email) + ' and elgDate >= ' + dbu.qDate(cfn.strVal(data.fromdate) + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' and elgUID LIKE ' + dbu.qLike("gsm");
+
+	var sqlForTotalCount = 'select count(elgIdx) as tidx from ' + dbu.qTbl('emaillog') + 
+	' where elgEmail=' + dbu.qStr(data.email) + ' and elgDate >= ' + dbu.qDate(cfn.strVal(data.fromdate) + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' and elgUID LIKE ' + dbu.qLike("gsm");
+
+    dbo.query(sql, function(err, rows) {
+
+		var active_count = 0;
+		if (!err && cfn.length(rows) > 0) {
+			active_count = rows[0].midx;
         }
-	});
+		
+		dbo.query(sqlForTotalCount, function(err_, rows_) {
+			if (!err_ && cfn.length(rows_) > 0) {
+				callback({
+					tc: rows_[0].tidx,
+					ac: active_count
+				});
+			}
+			else callback({
+				tc: 0,
+				ac: active_count
+			});
+		});
+    });
 
 }
 
-function getStatic(data, limit, callback) {
+function getStaticForPGID(data, callback) {
 
-    var sql = 'select count(staticId) as midx from ' + dbu.qTbl('static') + 
-    ' where staticName=' + dbu.qStr(data.name) + ' and staticUniqueId=' + dbu.qStr(data.uniqueId) + ' and staticStatus=1' +
-    ' order by staticId desc ' +
-    ' limit 0, ' + limit; // 12 - day, 360 - 1 month
+    var sql = 'select count(elgIdx) as midx from ' + dbu.qTbl('emaillog') + 
+	' where elgVMS_sent=' + dbu.qNum(1) + ' and elgEmail=' + dbu.qStr(data.email) + ' and elgDate >= ' + dbu.qDate(cfn.strVal(data.fromdate) + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' and elgUID NOT LIKE ' + dbu.qLike("gsm");
+
+	var sqlForTotalCount = 'select count(elgIdx) as tidx from ' + dbu.qTbl('emaillog') + 
+	' where elgEmail=' + dbu.qStr(data.email) + ' and elgDate >= ' + dbu.qDate(cfn.strVal(data.fromdate) + ' 00:00:00', 'DD/MM/YYYY HH:mm:ss') + ' and elgUID NOT LIKE ' + dbu.qLike("gsm");
 
     dbo.query(sql, function(err, rows) {
-        if (!err && cfn.length(rows) > 0) {
-			callback(rows[0].midx);
+
+		var active_count = 0;
+		if (!err && cfn.length(rows) > 0) {
+			active_count = rows[0].midx;
         }
-        else callback(0);
+		
+		dbo.query(sqlForTotalCount, function(err_, rows_) {
+			if (!err_ && cfn.length(rows_) > 0) {
+				callback({
+					tc: rows_[0].tidx,
+					ac: active_count
+				});
+			}
+			else callback({
+				tc: 0,
+				ac: active_count
+			});
+		});
     });
 
 }

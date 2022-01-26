@@ -275,10 +275,11 @@ function run_traccar() {
 									})
 									if (filtered_device && Object.assign([], filtered_device).length > 0) {
 										var deviceID = filtered_device[0]['id'];
+										var device_email = element['email'];
 										
 										async_.forEachOf(Position_Data, async (position, in_, inner_callback) => {
 
-											if (element['email'].search(/_ftp@/g) < 0 && position['deviceId'] === deviceID && filtered_device[0]['status'] == 'online' && Position_ID.indexOf(position['id']) < 0 && Saved_ID.indexOf(position['id']) < 0) {
+											if (device_email.search(/ftp@/g) < 0 && position['deviceId'] === deviceID && filtered_device[0]['status'] == 'online' && Position_ID.indexOf(position['id']) < 0 && Saved_ID.indexOf(position['id']) < 0) {
 												Position_ID.push(position['id'])
 												await thirdFunction(position, in_, element)
 											}

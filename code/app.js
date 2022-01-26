@@ -199,20 +199,7 @@ function startFTP(callback) {
 	
 }
 
-function startCalculatingActiveDevice(callback) {
-
-    staticService.init(function(err) {
-    
-		if (!err) {
-            callback();
-		}
-		else
-			cfn.logError(err, true);
-    
-    });
-	
-}
-var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g, startFTP, startCalculatingActiveDevice];
+var process = [initDB, loadMod, startHTTP, startVMS, startTraccar, startE2g, startFTP];
 //var process = [initDB, loadMod, startHTTP, startTraccar, startE2g];
 var proc_cnt = 0;
 

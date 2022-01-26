@@ -3,9 +3,6 @@ var datalog_rt = express.Router();
 module.exports = datalog_rt;
 
 var mod_xid = 'activedevicelog';
-
-var staticdao = require(appConfig.lib_path + '/db/dao/staticdao.js');
-
 datalog_rt.get('/', function(req, res) {
 
     crrf.sessionValid(req, res, function() {

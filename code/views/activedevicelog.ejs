@@ -23,7 +23,8 @@ var crnmod = '<%= mod.path %>';
             },
             success: function(ret) {
                 $("#f2content").html(ret);
-            }
+            },
+            async: false
         });
     });
 

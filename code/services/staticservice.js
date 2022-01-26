@@ -1,4 +1,5 @@
 var staticdao = require(appConfig.lib_path + '/db/dao/staticdao.js');
+var gaco = require(appConfig.lib_path + '/gacobj.js');
 var request = require('request');
 
 var tcip = '';
@@ -14,147 +15,106 @@ var _sleeping = false;
 var _stopping = false;
 var _firsttime = true;
 var Traccar_Devices = [];
+let static_data = [];
 
 module.exports = {
-	init: init,
-    start: start,
     getStatus: getStatus
 }
 
-function init(callback) {
-
-	dbo.getMData('traccar', function(re) {
-	
-		var tcinfo = cfn.parseJSON(re);
-		tcip = tcinfo.ip;
-		tcport = tcinfo.port;
-		tcsport = tcinfo.sport;
-		tcemail = tcinfo.email;
-		tcpassword = tcinfo.password;
-
-		request.post(`http://${tcip}:${tcsport}/api/session`, { form: {
-			email: tcemail,
-			password: tcpassword
-		}}, function (error, response) { 
-			if (error) cfn.logInfo('Traccar server session error: ' + error, true);
-			else {
-				try {
-                    if (JSON.parse(response.body)['disabled']) {
-                        cfn.logInfo('Traccar account disabled', true);
-                        return
-                    }
-                    if (!response.headers['set-cookie']) return
-                    token = response.headers['set-cookie'][0];
-                } catch (error_) {
-                    cfn.logInfo('Incorrect IP or port', true);
-                }
-                
-                start()
-            }
-        })
-    })
-}
-
-function start() {
-    cfn.logInfo('Calculating the active status device -- OK', true);
-    _running = true;
-    _stopping = false;
-    
-    if (_firsttime) {
-        _firsttime = false;
-        _sleeping = true;
-        setTimeout(run, _initstart_interval);
-    }
-    else {
-        run();
-    }
-}
-
-function stop() {
-
-    _running = false;
-
-	if (_sleeping) {
-		cfn.logInfo('Calculating active device', true);
-	}
-	else {	
-		_stopping = true;
-	}
-}
-
-function next() {
-
-	if (_stopping) {
-		_stopping = false;
-		_sleeping = false;
-		_running = false;
-		cfn.logInfo('Calculating active devices stopped', true);
-		return;
-	}
-	else if (_running) {
-		_sleeping = true;
-		setTimeout(run, _interval);
-	}
-}
-
-function run() {
-    if (token && tcemail && tcpassword && token != '') {
-        request.get(`http://${tcip}:${tcsport}/api/notifications`, { auth: { //geofences
-            username: tcemail,
-            password: tcpassword
-        }, headers: { 'Cookie': token } }, function(err, res) {
-            if (!err) {
-
-                // console.dir(JSON.parse(res.body))
-            }
-        });
-        request.get(`http://${tcip}:${tcsport}/api/devices`, { auth: {
-            username: tcemail,
-            password: tcpassword
-        }, headers: { 'Cookie': token } }, function(err, res) {
-            if (!err) {
-
-                Traccar_Devices = JSON.parse(res.body);
-
-                Object.assign([], Traccar_Devices).forEach(device => {
-                    staticdao.saveStatic({
-                        name: device['name'],
-                        uniqueId: device['uniqueId'],
-                        status: device['status'] == 'online' ? 1 : 0
-                    }, function(re) {})
-                });
-            }
-        });
-    }
-}
-
 function getStatus(callback) {
-    if (Traccar_Devices.length > 0) {
-        let data = [];
-        Object.assign([], Traccar_Devices).forEach((device, id_) => {
-            staticdao.getStatic({
-                name: device['name'],
-                uniqueId: device['uniqueId'],
-            }, 360, function(re) {
-                const monthly_report = re
+    gaco.getGPSList( function(data, msg) {
+        static_data = []
+        Object.assign([], data).forEach(async (device, id_) => {
+            var result = await calcActiveStatusForPGID(device)
 
-                staticdao.getStatic({
-                    name: device['name'],
-                    uniqueId: device['uniqueId'],
-                }, 12, function(re_) {
-                    const dayly_report = re_
+            if (result == 'saved' && id_ === Object.assign([], data).length - 1)
+            {
+                callback(static_data)
+            }
+        });
+    });
+}
 
-                    data.push({
+function calcActiveStatusForPGID(device) {
+    return new Promise((resolve, reject) => {
+        var curr_date = new Date();
+        var year_date = new Date(curr_date.getFullYear(), 0, 1, 8, 0, 0);
+        var month_ago = new Date(curr_date.getFullYear(), curr_date.getMonth(), 1, 8, 0, 0)
+        var yesterday = new Date(curr_date.getFullYear(), curr_date.getMonth(), curr_date.getDate(), 8, 0, 0)
+
+        year_date =  '' + year_date.getDate() + '/' + year_date.getMonth() + 1 + '/' + year_date.getFullYear()
+        month_ago =  '' + month_ago.getDate() + '/' + month_ago.getMonth() + 1 + '/' + month_ago.getFullYear()
+        yesterday =  '' + yesterday.getDate() + '/' + yesterday.getMonth() + 1 + '/' + yesterday.getFullYear()
+
+        staticdao.getStaticForPGID({
+            email: device['email'],
+            fromdate: year_date,
+        }, function(re) {
+            const year_report = (re && parseInt(re['tc']) > 0) ? Math.floor(parseInt(re['ac']) / parseInt(re['tc']) * 1000) / 10: 0
+
+            staticdao.getStaticForPGID({
+                email: device['email'],
+                fromdate: month_ago,
+            }, function(re_) {
+                const month_report = (re_ && parseInt(re_['tc']) > 0) ? Math.floor(parseInt(re_['ac']) / parseInt(re_['tc']) * 1000) / 10 : 0
+
+                staticdao.getStaticForPGID({
+                    email: device['email'],
+                    fromdate: yesterday,
+                }, async function(re__) {
+                    const date_report = (re__ && parseInt(re__['tc']) > 0) ? Math.floor(parseInt(re__['ac']) / parseInt(re__['tc']) * 1000) / 10 : 0
+
+                    static_data.push({
                         id: device['id'],
                         name: device['name'],
-                        uniqueId: device['uniqueId'],
-                        oneDay: monthly_report,
-                        oneMonth: dayly_report
-                    })  
-                    if (id_ === Traccar_Devices.length - 1)
-                        callback(data)
+                        uniqueId: device['pgid_origin'],
+                        oneDay: date_report,
+                        oneMonth: month_report,
+                        oneYear: year_report
+                    })
+
+                  //  if (device['pgid'] && device['pgid'] != '') {
+                        staticdao.getStaticForGSM({
+                            email: device['email'],
+                            fromdate: year_date,
+                        }, function(re) {
+                            const year_report = (re && parseInt(re['tc']) > 0) ? Math.floor(parseInt(re['ac']) / parseInt(re['tc']) * 1000) / 10: 0
+                
+                            staticdao.getStaticForGSM({
+                                email: device['email'],
+                                fromdate: month_ago,
+                            }, function(re_) {
+                                const month_report = (re_ && parseInt(re_['tc']) > 0) ? Math.floor(parseInt(re_['ac']) / parseInt(re_['tc']) * 1000) / 10 : 0
+                
+                                staticdao.getStaticForGSM({
+                                    email: device['email'],
+                                    fromdate: yesterday,
+                                }, function(re__) {
+                                    const date_report = (re__ && parseInt(re__['tc']) > 0) ? Math.floor(parseInt(re__['ac']) / parseInt(re__['tc']) * 1000) / 10 : 0
+                                    
+                                    if (device['pgid'] && device['pgid'] != '') {
+                                        static_data.push({
+                                            id: device['id'],
+                                            name: device['name'],
+                                            uniqueId: device['pgid'],
+                                            oneDay: date_report,
+                                            oneMonth: month_report,
+                                            oneYear: year_report
+                                        })
+                                    }
+                                    resolve('saved')
+                                    
+                                })
+                                
+                            })
+                            
+                        })
+                    //} 
+                    
                 })
+                
             })
-        });
-    }
+            
+        })
+    })
 }

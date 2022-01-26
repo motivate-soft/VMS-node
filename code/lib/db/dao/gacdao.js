@@ -2,6 +2,7 @@
 module.exports = {
 	getGpsAccData: getGpsAccData,
 	getGpsAccDataForGSM: getGpsAccDataForGSM, 
+	getGpsAccDataForAll: getGpsAccDataForAll, 
     getGpsAccs: getGpsAccs,
 	getGpsAccsCount: getGpsAccsCount,
 	addGpsAcc: addGpsAcc,
@@ -58,6 +59,19 @@ function getGpsAccData(gacidx, callback) {
 function getGpsAccDataForGSM(callback) {
 	var sql = 'select * from ' + dbu.qTbl('gpsacc') + 
             ' where gacDesc <> ""';
+			
+    dbo.query(sql, function(err, rows) {
+    
+        if (!err && cfn.length(rows) > 0) {
+            callback(null, rows);
+        }
+        else callback(err, null);
+        
+    });
+}
+
+function getGpsAccDataForAll(callback) {
+	var sql = 'select * from ' + dbu.qTbl('gpsacc');
 			
     dbo.query(sql, function(err, rows) {
     
