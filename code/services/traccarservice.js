@@ -138,8 +138,8 @@ function thirdFunction(position, in_, element) {
 			uid: "gsm_" + position['id'],
 			emaildate: parseInt(gps_date.getTime()),
 			gpsdata: {
-				date: cfn.addZero(gps_date.getDate(), 2)+cfn.addZero(gps_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(gps_date.getFullYear() % 100), 2),
-				time: cfn.addZero(gps_date.getHours(), 2)+cfn.addZero(gps_date.getMinutes(), 2)+cfn.addZero(gps_date.getSeconds(), 2),
+				date: cfn.addZero(email_date.getDate(), 2)+cfn.addZero(email_date.getMonth() + 1, 2)+cfn.addZero(Math.floor(email_date.getFullYear() % 100), 2),
+				time: cfn.addZero(email_date.getHours(), 2)+cfn.addZero(email_date.getMinutes(), 2)+cfn.addZero(email_date.getSeconds(), 2),
 				latitude: cfn.addZero(Math.floor(lat), 4) + '.' + cfn.addZero(Math.ceil((lat - Math.floor(lat)) * 10000), 4),
 				NS: parseInt(position['latitude']) > 0 ? 'N' : 'S',
 				longitude: cfn.addZero(Math.floor(lng), 5) + '.' + cfn.addZero(Math.ceil((lng - Math.floor(lng)) * 10000), 4),

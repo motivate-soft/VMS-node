@@ -1,28 +1,8 @@
 var moment = require('moment');
 
 module.exports = {
-	searchStatic: searchStatic,
 	getStaticForGSM: getStaticForGSM,
-	getStaticForPGID: getStaticForPGID,
-	updateStatic: updateStatic,
-}
-
-function searchStatic(criteria, callback) {
-
-    var sql = 'select * from ' + dbu.qTbl('static') + 
-            ' where ' + criteria +
-            ' order by staticId desc ' +
-            ' limit ' + 1;
-			
-    dbo.query(sql, function(err, rows) {
-    
-        if (!err) {
-            callback(null, rows);
-        }
-        else callback(err, null);
-        
-    });
-
+	getStaticForPGID: getStaticForPGID
 }
 
 function getStaticForGSM(data, callback) {
@@ -84,17 +64,5 @@ function getStaticForPGID(data, callback) {
 			});
 		});
     });
-
-}
-
-function updateStatic(staticName, staticeUniqueId, callback) {
-
-	var sql = 'update ' + dbu.qTbl('static') +
-			' set staticStatus=' + 'staticStatus' + dbu.qNum(1) +
-			' where staticName=' + dbu.qStr(staticName) + ' and staticUniqueId=' + dbu.qStr(staticeUniqueId);
-			
-	dbo.exec(sql, function(err) {
-		if (callback) callback(err);
-	});
 
 }

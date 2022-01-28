@@ -136,10 +136,11 @@ function getLogVMS(limit, callback) {
 		if (!err) {
 
             for (i in rows) {
+				var uid = cfn.strVal(rows[i].elgUID)
                 re.push({
 					idx: rows[i].elgIdx,
 					name: rows[i].gacName,
-					pgid: rows[i].elgUID.search(/gsm_@/g) > 0 ? rows[i].gacDesc : rows[i].gacPGID,
+					pgid: uid.search(/gsm_@/g) > 0 ? rows[i].gacDesc : rows[i].gacPGID,
 					email: rows[i].elgEmail,
 					uid: rows[i].elgUID,
 					date: rows[i].elgDate,
@@ -178,14 +179,16 @@ function getLog4TC(callback) {
 
     emaildao.getLog4TC(function(err, rows) {
 
-        var re = {};
+		var re = {};
         
 		if (!err) {
 
 			if (cfn.length(rows) > 0) {
+
+				var uid = cfn.strVal(rows[0].elgUID)
 				re = {
 						idx: rows[0].elgIdx,
-						pgid: rows[0].elgUID.search(/gsm_@/g) > 0 ? rows[0].gacDesc : rows[0].gacPGID,
+						pgid: uid.search(/gsm_@/g) > 0 ? rows[0].gacDesc : rows[0].gacPGID,
 						gsm: rows[0].gacDesc,
 						email: rows[0].elgEmail,
 						uid: rows[0].elgUID,
